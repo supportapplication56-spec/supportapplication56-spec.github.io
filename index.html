@@ -3,51 +3,290 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#081b2a">
-  <meta name="description" content="Rivulet Dev — مطور مستقل للتطبيقات والأدوات الرقمية. تعرف على تطبيق سبلا (SUBULA) وتواصل مع المطور.">
-  <title>Rivulet Dev | تطوير التطبيقات</title>
+  <meta name="theme-color" content="#071720">
+  <meta name="description" content="Rivulet Dev — نصنع تجارب تستحق أن تُعاش. تصميم وتطوير تطبيقات رقمية تنساب ببساطة، وتبقى بتفاصيلها.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rivulet Dev — نصنع تجارب تستحق أن تُعاش">
+  <meta property="og:description" content="هوية مستقلة لصناعة تطبيقات سلسة، مدروسة، وقريبة من الإنسان.">
+  <meta property="og:url" content="https://supportapplication56-spec.github.io/">
+  <meta name="color-scheme" content="dark">
+  <title>Rivulet Dev — نصنع تجارب تستحق أن تُعاش</title>
   <style>
-    :root{color-scheme:dark;--bg:#071925;--panel:#102b3a;--line:#315063;--text:#f3fafc;--muted:#b4ccd6;--aqua:#76e0cf;--sky:#9ed4ff}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;background:radial-gradient(ellipse 90% 65% at 30% -15%,#14516a 0,transparent 60%),linear-gradient(150deg,#071925,#081e2a 60%,#0b2a31);color:var(--text);line-height:1.85;min-height:100vh}
-    a{color:var(--aqua)}a:focus-visible{outline:3px solid #b8fff2;outline-offset:4px;border-radius:5px}.wrap{max-width:1050px;margin:auto;padding:0 24px}
-    header{border-bottom:1px solid #ffffff22}nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:16px}.wordmark{font-size:1.25rem;font-weight:800;letter-spacing:.03em;color:var(--text);text-decoration:none;direction:ltr}.wordmark span{color:var(--aqua)}.navlinks{display:flex;gap:24px;flex-wrap:wrap}.navlinks a{color:var(--muted);text-decoration:none;font-size:.94rem}.navlinks a:hover{color:#fff}
-    main{padding:80px 0 90px}.eyebrow{color:var(--aqua);font-weight:750;letter-spacing:.08em}.hero{padding:20px 0 72px}.hero h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.25;letter-spacing:-.035em;margin:16px 0}.hero h1 span{color:var(--aqua)}.hero p{max-width:730px;color:var(--muted);font-size:1.15rem;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{padding:12px 22px;border:1px solid var(--line);border-radius:12px;color:var(--text);text-decoration:none;font-weight:650}.btn.primary{background:var(--aqua);color:#07302e;border-color:transparent}.btn:hover{filter:brightness(1.1)}
-    .wave{height:3px;margin:0 0 40px;background:linear-gradient(90deg,transparent,var(--aqua),var(--sky),transparent);border-radius:20px}.grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:18px}.card{background:linear-gradient(165deg,#16394a88,#0c2936aa);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 20px 65px #00000016}.card h2{font-size:1.55rem;margin:0 0 10px}.card p{color:var(--muted);margin:0 0 15px}.tag{display:inline-block;background:#76e0cf17;border:1px solid #76e0cf55;color:var(--aqua);font-size:.8rem;padding:4px 11px;border-radius:999px;margin-bottom:16px}.appname{font-size:1.75rem;font-weight:850}.contact-link{overflow-wrap:anywhere}.english{direction:ltr;text-align:left;margin-top:25px;padding-top:18px;border-top:1px solid #ffffff29}.english h3{margin:0 0 6px;font-size:1rem}.english p{font-size:.92rem}.foot{border-top:1px solid #ffffff24;padding:28px 0;color:var(--muted);font-size:.87rem}.foot .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-    @media(max-width:760px){nav{padding:16px 0;align-items:flex-start;flex-direction:column}.navlinks{gap:18px}main{padding-top:38px}.hero{padding-bottom:42px}.grid{grid-template-columns:1fr}.card{padding:24px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    :root {
+      --bg:#071720; --bg2:#091e29; --surface:#102833; --surface2:#12343f;
+      --edge:rgba(177,223,231,.17); --edge-bright:rgba(121,230,213,.38);
+      --text:#f3f9f9; --muted:#b6cdd2; --soft:#86a5ac;
+      --mint:#78e4d0; --mint-bright:#a8f7e8; --blue:#93c7e8;
+      --radius:24px; --shadow:0 26px 80px rgba(0,0,0,.20);
+    }
+    *, *::before, *::after {box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:110px}
+    body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.85;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body::before{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:1050px;pointer-events:none;background:radial-gradient(ellipse 48% 40% at 79% 18%,rgba(34,112,123,.27),transparent 72%),radial-gradient(ellipse 40% 40% at 24% 50%,rgba(31,99,115,.15),transparent 75%),linear-gradient(180deg,#071a24,#071720);}
+    body::after{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:960px;pointer-events:none;opacity:.23;background-image:linear-gradient(rgba(201,245,243,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(201,245,243,.10) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,#000 0,transparent 86%)}
+    ::selection{background:#62d6c3;color:#061c1b}
+    a{color:inherit}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--mint-bright);outline-offset:5px}
+    .skip{position:absolute;inset-inline-start:18px;top:-70px;z-index:20;padding:8px 14px;background:var(--mint);color:#072421;border-radius:8px}
+    .skip:focus{top:12px}
+    .container{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+    .site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(155,213,214,.11);background:rgba(7,23,32,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .nav{min-height:86px;display:flex;align-items:center;gap:34px;justify-content:space-between}
+    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;direction:ltr;white-space:nowrap}
+    .brand-mark{height:35px;width:35px;display:grid;place-items:center;border:1px solid rgba(120,228,208,.3);border-radius:12px;background:linear-gradient(145deg,rgba(120,228,208,.15),rgba(68,150,185,.07));box-shadow:inset 0 1px rgba(255,255,255,.1)}
+    .brand-mark svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:2.8;stroke-linecap:round}
+    .brand-name{font-size:1.26rem;font-weight:800;letter-spacing:-.055em}.brand-name span{color:var(--mint)}
+    .nav-right{display:flex;align-items:center;gap:27px}.nav-links{display:flex;align-items:center;gap:27px}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:600;transition:color .2s}
+    .nav-links a:hover{color:var(--mint-bright)}
+    .language{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:rgba(173,226,233,.065);color:var(--text);border:1px solid var(--edge);border-radius:12px;min-width:98px;min-height:40px;padding:5px 12px;cursor:pointer;font-size:.86rem;font-weight:700;transition:background .25s,border-color .25s}
+    .language:hover{background:rgba(120,228,208,.11);border-color:var(--edge-bright)}
+    .language svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none}
+    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:44px;min-height:655px;padding-block:108px 110px;position:relative}
+    .hero-copy{position:relative;z-index:2}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--mint);font-weight:700;font-size:.78rem;letter-spacing:.04em;margin:0 0 26px}
+    .eyebrow .dot{height:7px;width:7px;background:var(--mint);border-radius:50%;box-shadow:0 0 0 5px rgba(120,228,208,.09)}
+    h1,h2,h3,p{margin-block-start:0}
+    .hero h1{font-size:clamp(3.4rem,6.5vw,6.3rem);font-weight:850;letter-spacing:-.07em;line-height:1.29;margin:0 0 25px;text-wrap:balance}
+    .hero h1 .line{display:block}.hero h1 .accent{background:linear-gradient(115deg,var(--mint-bright),var(--mint) 65%,#91bde7);color:transparent;background-clip:text;-webkit-background-clip:text}
+    .hero-lede{font-size:clamp(1rem,1.7vw,1.14rem);color:var(--muted);max-width:570px;line-height:2.05;margin-bottom:32px;text-wrap:pretty}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:51px;padding:11px 23px;border-radius:14px;border:1px solid var(--edge);background:rgba(196,230,235,.03);color:var(--text);font-weight:750;font-size:.95rem;line-height:1.4;text-decoration:none;transition:transform .3s cubic-bezier(.22,1,.36,1),background .25s,border-color .25s,box-shadow .3s}
+    .btn:hover{transform:translateY(-3px);background:rgba(191,237,236,.09);border-color:var(--edge-bright)}
+    .btn-primary{background:var(--mint);color:#062722;border-color:var(--mint);box-shadow:0 10px 35px rgba(99,226,202,.12)}
+    .btn-primary:hover{background:#a5f4e6;border-color:#a5f4e6;box-shadow:0 12px 40px rgba(99,226,202,.22)}
+    .btn svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none;flex-shrink:0;transition:transform .3s}
+    .btn:hover .btn-arrow{transform:translateX(-4px)}
+    html[dir=ltr] .btn:hover .btn-arrow{transform:translateX(4px)}
+    .hero-side{width:100%;max-width:510px;justify-self:center;position:relative;isolation:isolate}
+    .flow-scene{position:relative;aspect-ratio:1/1;display:grid;place-items:center}
+    .flow-scene::before{content:"";position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(75,212,197,.10),rgba(33,113,143,.04) 40%,transparent 73%);filter:blur(10px)}
+    .orbit{position:absolute;border:1px solid rgba(112,212,214,.13);border-radius:50%;inset:8%;animation:orbit-breathe 10s ease-in-out infinite}
+    .orbit.inner{inset:20%;border-style:dashed;border-color:rgba(112,212,214,.12);animation-duration:13s;animation-delay:-5s}
+    .motion-art{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 23px 45px rgba(8,126,131,.17))}
+    .motion-art .stream{fill:none;stroke-linecap:round;stroke-linejoin:round;animation:flow 14s linear infinite}
+    .motion-art .stream.a{stroke:url(#streamA);stroke-width:16;stroke-dasharray:650 150;animation-duration:17s}
+    .motion-art .stream.b{stroke:url(#streamB);stroke-width:7;stroke-dasharray:210 48;animation-duration:12s;animation-direction:reverse}
+    .motion-art .stream.c{stroke:rgba(130,228,225,.16);stroke-width:1.5;stroke-dasharray:6 10;animation-duration:22s}
+    .motion-art .point{fill:#b2fff0;filter:drop-shadow(0 0 11px rgba(118,229,217,.8))}
+    .art-tile{position:absolute;min-width:145px;padding:11px 14px;background:rgba(15,43,54,.82);border:1px solid rgba(164,239,235,.22);border-radius:14px;box-shadow:0 18px 35px rgba(0,0,0,.20);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:left;direction:ltr;animation:float 7s ease-in-out infinite}
+    .art-tile small{display:block;color:#92b7bd;letter-spacing:.14em;font-size:.58rem;font-weight:800}
+    .art-tile strong{display:block;font-size:.91rem;letter-spacing:.01em;margin-top:2px;color:#e4fbf7}
+    .art-tile.top{inset-block-start:12%;inset-inline-end:2%;transform:rotate(-2deg)}
+    .art-tile.bottom{inset-block-end:14%;inset-inline-start:0;animation-delay:-3s}
+    .art-core{position:absolute;inset:40%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#1b4752,#0a2734 75%);box-shadow:0 0 0 1px rgba(124,218,213,.28),0 0 52px rgba(62,183,188,.12);font-size:1.6rem;letter-spacing:-.09em;font-weight:850;color:var(--mint);direction:ltr}
+    .art-caption{position:absolute;inset-block-end:5%;inset-inline-end:10%;color:#8facb5;font-size:.68rem;letter-spacing:.14em;direction:ltr}
+    @keyframes flow{to{stroke-dashoffset:-850}}
+    @keyframes orbit-breathe{50%{transform:scale(1.04);opacity:.55}}
+    @keyframes float{0%,100%{translate:0 0}50%{translate:0 -11px}}
+    .section{padding-block:94px;position:relative}
+    .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(123,213,209,.35),transparent)}
+    .section-kicker{color:var(--mint);font-size:.77rem;letter-spacing:.09em;font-weight:800;margin:0 0 11px}
+    .section h2{font-size:clamp(2rem,4vw,3.15rem);font-weight:800;line-height:1.45;letter-spacing:-.05em;margin:0 0 17px;max-width:760px;text-wrap:balance}
+    .section .intro{color:var(--muted);max-width:750px;font-size:1.05rem;line-height:2.1;margin:0 0 35px}
+    .principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .principle{background:linear-gradient(160deg,rgba(26,62,73,.65),rgba(12,36,48,.67));border:1px solid var(--edge);border-radius:var(--radius);padding:30px;min-height:253px;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.22,1,.36,1),border-color .3s,background .3s}
+    .principle:hover{transform:translateY(-6px);border-color:var(--edge-bright)}
+    .principle:after{content:"";position:absolute;inset:auto 20px 0;height:1px;background:linear-gradient(90deg,transparent,rgba(126,224,213,.5),transparent);opacity:0;transition:opacity .3s}.principle:hover:after{opacity:1}
+    .p-symbol{width:46px;height:46px;border:1px solid rgba(117,232,210,.22);border-radius:16px;display:grid;place-items:center;color:var(--mint);background:rgba(99,222,205,.07);margin-bottom:28px}
+    .p-symbol svg{height:23px;width:23px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linejoin:round;stroke-linecap:round}
+    .principle h3{font-size:1.22rem;letter-spacing:-.035em;margin:0 0 9px;line-height:1.45}
+    .principle p{color:var(--muted);font-size:.94rem;line-height:1.9;margin:0}
+    .work{padding-top:85px}
+    .project{border-radius:30px;background:radial-gradient(circle at 12% 22%,rgba(60,174,162,.12),transparent 32%),linear-gradient(145deg,rgba(18,53,65,.97),rgba(11,35,46,.92));border:1px solid rgba(141,217,217,.23);box-shadow:var(--shadow);padding:clamp(27px,5vw,54px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(190px,.8fr);align-items:center;gap:40px;overflow:hidden;position:relative}
+    .status{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;border:1px solid rgba(120,228,208,.26);background:rgba(120,228,208,.065);color:var(--mint);font-size:.75rem;font-weight:700;margin-bottom:22px}
+    .status::before{content:"";width:6px;height:6px;background:var(--mint);border-radius:50%}
+    .project h3{font-size:clamp(2.3rem,4vw,3.65rem);line-height:1.3;margin:0 0 12px;letter-spacing:-.07em}
+    .project h3 .latin{font-size:.42em;color:#a9c7d0;font-weight:700;letter-spacing:.08em;direction:ltr;display:inline-block;vertical-align:middle}
+    .project-copy p{color:var(--muted);margin:0 0 20px;max-width:590px;line-height:2.05}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 23px}
+    .chip{font-size:.79rem;color:#bfdae0;padding:6px 11px;border:1px solid rgba(184,226,232,.14);border-radius:999px;background:rgba(238,255,255,.025)}
+    .project-note{font-size:.82rem!important;color:#92b9bd!important;margin-bottom:0!important}
+    .project-art{min-height:240px;display:grid;place-items:center;position:relative;isolation:isolate}
+    .project-art::before{content:"";width:225px;height:225px;border-radius:40px;transform:rotate(-12deg);background:linear-gradient(145deg,rgba(113,221,193,.11),rgba(55,112,153,.06));border:1px solid rgba(141,218,217,.20);box-shadow:0 24px 60px rgba(0,0,0,.21)}
+    .project-art::after{content:"";position:absolute;width:195px;height:195px;transform:rotate(7deg);border:1px solid rgba(132,224,222,.23);border-radius:34px}
+    .project-emblem{position:absolute;z-index:2;font-weight:900;font-size:4.15rem;letter-spacing:-.08em;line-height:1.25;color:#b3f6e5;text-shadow:0 6px 33px rgba(93,226,206,.16)}
+    .project-emblem small{display:block;text-align:center;font-size:.55rem;letter-spacing:.33em;color:#8fbebd;font-weight:700;margin-top:2px}
+    .contact-panel{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:40px 44px;background:linear-gradient(95deg,rgba(17,51,63,.8),rgba(8,32,42,.85));border:1px solid var(--edge);border-radius:27px}
+    .contact-panel h2{font-size:clamp(1.65rem,3vw,2.45rem);margin:0 0 7px}.contact-panel p{color:var(--muted);margin:0;max-width:590px}
+    .email{overflow-wrap:anywhere;unicode-bidi:isolate;direction:ltr;font-weight:700;display:inline-flex;align-items:center;gap:10px}
+    .contact-panel .email{font-size:clamp(.73rem,1.1vw,.91rem)}
+    .site-footer{border-top:1px solid rgba(181,225,224,.13);padding:29px 0 34px;color:#95b2b9;font-size:.84rem}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+    .footer-row a{text-decoration:none;color:#b9d2d5}.footer-row a:hover{color:var(--mint)}
+    .reveal{opacity:1;transform:none}
+    .js-motion .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}
+    .js-motion .reveal.visible{opacity:1;transform:none}
+    @media(max-width:980px){.nav{gap:16px}.hero{gap:10px;padding-block:78px 75px;min-height:570px}.hero h1{font-size:clamp(3rem,6.7vw,5rem)}.art-tile{min-width:125px}.principle{padding:25px}.project{gap:17px}}
+    @media(max-width:720px){.container{width:min(100% - 38px,590px)}.nav{min-height:69px;gap:10px;flex-wrap:wrap;padding-block:12px}.brand-name{font-size:1.1rem}.brand-mark{width:31px;height:31px;border-radius:11px}.nav-right{gap:10px}.nav-links{gap:13px}.nav-links a{font-size:.79rem}.language{min-width:78px;min-height:37px;padding:4px 8px}.hero{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0;padding-block:66px 54px}.hero h1{font-size:clamp(3.3rem,10.6vw,5rem);line-height:1.33}.hero-lede{font-size:1rem}.hero-side{max-width:420px;width:min(100%,420px);margin-inline:auto;margin-top:16px}.flow-scene{aspect-ratio:1.22}.art-tile.top{inset-block-start:6%}.art-tile.bottom{inset-block-end:7%}.art-caption{inset-block-end:0}.section{padding-block:66px}.principles{grid-template-columns:1fr;gap:12px}.principle{min-height:0;padding:24px}.p-symbol{margin-bottom:16px}.work{padding-top:66px}.project{grid-template-columns:1fr;padding:28px}.project-art{min-height:190px}.project-art::before{width:165px;height:165px;border-radius:26px}.project-art::after{width:145px;height:145px;border-radius:22px}.project-emblem{font-size:3.1rem}.contact-panel{flex-direction:column;align-items:stretch;padding:28px}.footer-row{align-items:start;flex-direction:column}}
+    @media(max-width:430px){.nav{justify-content:space-between}.nav-right{width:100%;justify-content:space-between}.nav-links{gap:17px}.hero{padding-block:54px 40px}.hero h1{font-size:clamp(2.9rem,12vw,3.8rem)}.hero-actions .btn{font-size:.86rem;padding-inline:17px}.art-tile{min-width:110px;padding:8px 10px}.art-tile strong{font-size:.75rem}.art-tile small{font-size:.53rem}.hero-side{margin-top:24px}.section h2{font-size:2rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.js-motion .reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="التنقل الرئيسي">
-      <a class="wordmark" href="#top">Rivulet <span>Dev</span></a>
-      <div class="navlinks"><a href="#subula">تطبيق سبلا</a><a href="#contact">التواصل</a><a href="#english" lang="en">English</a></div>
+  <a href="#main" class="skip" data-i18n="skip">انتقل إلى المحتوى</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="التنقل الرئيسي" id="nav">
+      <a href="#top" class="brand" aria-label="Rivulet Dev — Home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M3 18c4 0 4-8 8-8s4 8 8 8 4-8 6-8"/><path d="M3 23c4 0 4-8 8-8s4 8 8 8 4-8 6-8" opacity=".56"/></svg></span>
+        <span class="brand-name">Rivulet <span>Dev</span></span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#approach" data-i18n="navApproach">فلسفتنا</a>
+          <a href="#work" data-i18n="navWork">أعمالنا</a>
+          <a href="#contact" data-i18n="navContact">تواصل</a>
+        </div>
+        <button id="lang-button" class="language" type="button" aria-label="Switch website language to English" title="Switch website language to English">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          <span id="lang-button-text">English</span>
+        </button>
+      </div>
     </nav>
   </header>
-  <main id="top" class="wrap">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="eyebrow" lang="en" dir="ltr">INDEPENDENT SOFTWARE DEVELOPMENT</div>
-      <h1 id="hero-title">أفكار صغيرة، <span>وأثر يتسع.</span></h1>
-      <p>مرحبًا بك في <b lang="en" dir="ltr">Rivulet Dev</b>، هوية مستقلة لتطوير تطبيقات وأدوات رقمية مفيدة، تجمع بين البساطة والعناية بالتفاصيل.</p>
-      <div class="actions"><a class="btn primary" href="#subula">تعرّف على سبلا</a><a class="btn" href="mailto:supportapplication56@gmail.com">تواصل معنا</a></div>
-    </section>
-    <div class="wave" aria-hidden="true"></div>
-    <div class="grid">
-      <section class="card" id="subula" aria-labelledby="subula-title">
-        <span class="tag">تطبيق قيد الإعداد للنشر</span>
-        <h2 id="subula-title"><span class="appname">سبلا</span> <span lang="en" dir="ltr">| SUBULA</span></h2>
-        <p>تطبيق يعينك على قراءة القرآن الكريم، والأذكار، ومواقيت الصلاة، والقبلة، مع ميزات للتلاوة والتسميع والمواد الصوتية.</p>
-        <p>ستظهر هنا روابط المتجر وسياسة خصوصية التطبيق بعد اعتمادها ونشرها. لا يُعد هذا الموقع إعلانًا بأن التطبيق متاح حاليًا في المتجر.</p>
-        <div class="english" lang="en"><h3>SUBULA</h3><p>An Islamic companion for Quran reading, Adhkar, prayer times, Qibla, and optional recitation features. Store and privacy-policy links will appear once finalized.</p></div>
-      </section>
-      <section class="card" id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">التواصل والدعم</h2>
-        <p>للاستفسارات المتعلقة بالتطبيق أو الدعم الفني أو الخصوصية، راسلنا عبر:</p>
-        <p><a class="contact-link" href="mailto:supportapplication56@gmail.com" dir="ltr">supportapplication56@gmail.com</a></p>
-        <div class="english" lang="en"><h3>Support &amp; privacy inquiries</h3><p>Contact Rivulet Dev using the email address above.</p></div>
+  <main id="main">
+    <div class="container">
+      <section class="hero" id="top" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="eyebrow">تطوير يضع الإنسان أولًا</span></p>
+          <h1 id="hero-heading"><span class="line" data-i18n="heroLine1">نصنع تجارب</span><span class="line accent" data-i18n="heroLine2">تستحق أن تُعاش</span></h1>
+          <p class="hero-lede" data-i18n="heroLede">نؤمن أن التقنية الأجمل هي التي تبدو طبيعية في يدك. نصمم واجهات هادئة، وانتقالات تنساب بسلاسة، وتفاصيل تجعل كل تفاعل أقرب وأسهل.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#approach"><span data-i18n="heroCta">اكتشف فلسفتنا</span><svg class="btn-arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="#work"><span data-i18n="heroSecondary">تعرّف على أعمالنا</span></a>
+          </div>
+        </div>
+        <div class="hero-side" aria-hidden="true">
+          <div class="flow-scene">
+            <div class="orbit"></div><div class="orbit inner"></div>
+            <svg class="motion-art" viewBox="0 0 500 500" fill="none" role="presentation">
+              <defs>
+                <linearGradient id="streamA" x1="60" y1="360" x2="470" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#235367" stop-opacity=".03"/><stop offset=".28" stop-color="#4aa6b9" stop-opacity=".65"/><stop offset=".66" stop-color="#98f9db"/><stop offset="1" stop-color="#75dbdf" stop-opacity=".02"/></linearGradient>
+                <linearGradient id="streamB" x1="115" y1="140" x2="440" y2="390" gradientUnits="userSpaceOnUse"><stop stop-color="#88e8cc" stop-opacity=".03"/><stop offset=".58" stop-color="#72d6ce" stop-opacity=".75"/><stop offset="1" stop-color="#87bde0" stop-opacity=".1"/></linearGradient>
+              </defs>
+              <path class="stream c" d="M-6 305C102 55 123 413 247 241S382 97 506 215"/>
+              <path class="stream a" d="M-19 318C91 58 129 426 256 246S390 70 518 211"/>
+              <path class="stream b" d="M0 264C102 441 157 122 278 212S400 423 516 236"/>
+              <circle class="point" cx="255" cy="246" r="5"/>
+            </svg>
+            <div class="art-core">RD</div>
+            <div class="art-tile top"><small>DESIGN PRINCIPLE</small><strong>Effortless by nature</strong></div>
+            <div class="art-tile bottom"><small>OUR DIRECTION</small><strong>Made to flow</strong></div>
+            <span class="art-caption">RIVULET / EXPERIENCE DESIGN</span>
+          </div>
+        </div>
       </section>
     </div>
+
+    <div class="container"><div class="section-divider" aria-hidden="true"></div></div>
+    <section class="section container" id="approach" aria-labelledby="approach-title">
+      <p class="section-kicker reveal" data-i18n="principleLabel">فلسفة RIVULET DEV</p>
+      <h2 class="reveal" id="approach-title" data-i18n="principleTitle">الانسيابية ليست تأثيرًا بصريًا. إنها طريقة تفكير.</h2>
+      <p class="intro reveal" data-i18n="principleIntro">لا نصنع الحركة لمجرد الإبهار؛ بل لأن لكل لحظة في التجربة وظيفة وإحساسًا. نريد للتطبيق أن يستجيب وكأنّه يفهم ما تتوقعه، قبل أن تفكر في الخطوة التالية.</p>
+      <div class="principles">
+        <article class="principle reveal"><div class="p-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 16c4 0 4-8 8-8s4 8 8 8 4-8 4-8"/><path d="M2 21c4 0 4-8 8-8s4 8 8 8 4-8 4-8" opacity=".65"/></svg></div><h3 data-i18n="p1Title">انسيابية تشعر بها</h3><p data-i18n="p1Body">تنقّل طبيعي واستجابة واضحة، دون تعقيد أو خطوات تقطع إيقاعك.</p></article>
+        <article class="principle reveal"><div class="p-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 15 6-6 4 4 8-8"/><path d="M16 5h5v5"/><path d="M4 21h16" opacity=".6"/></svg></div><h3 data-i18n="p2Title">حركة لها معنى</h3><p data-i18n="p2Body">انتقالات لطيفة تُرشد العين، وتؤكد نتيجة اللمسة، بدل أن تشتّت الانتباه.</p></article>
+        <article class="principle reveal"><div class="p-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/><path d="M12 8v8M8 12h8" opacity=".35"/></svg></div><h3 data-i18n="p3Title">عناية بأدق التفاصيل</h3><p data-i18n="p3Body">من أول انطباع إلى آخر تفاعل؛ وضوح، واتساق، وراحة تجعل التجربة مألوفة.</p></article>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider" aria-hidden="true"></div></div>
+    <section class="section work container" id="work" aria-labelledby="work-title">
+      <p class="section-kicker reveal" data-i18n="workLabel">من أفكارنا إلى تجارب حقيقية</p>
+      <h2 class="reveal" id="work-title" data-i18n="workTitle">نبدأ بما يحمل قيمة.</h2>
+      <p class="intro reveal" data-i18n="workIntro">كل تطبيق له قصته وهويته الخاصة، وتجمعها عناية واحدة بالتجربة.</p>
+      <article class="project reveal" id="subula">
+        <div class="project-copy">
+          <span class="status" data-i18n="status">قيد التحضير للنشر</span>
+          <h3><span data-i18n="subulaName">سُبُلا</span> <span class="latin">SUBULA</span></h3>
+          <p data-i18n="subulaDescription">رفيق إسلامي يجمع قراءة القرآن الكريم والأذكار ومواقيت الصلاة والقبلة وميزات التلاوة والتسميع، بهوية مستقلة صُممت لتكون قريبة من يومك.</p>
+          <div class="chips"><span class="chip" data-i18n="chip1">القرآن الكريم</span><span class="chip" data-i18n="chip2">الأذكار</span><span class="chip" data-i18n="chip3">مواقيت الصلاة</span><span class="chip" data-i18n="chip4">التسميع</span></div>
+          <p class="project-note" data-i18n="subulaNote">صفحة التطبيق وسياسة الخصوصية وروابط المتجر ستُضاف بعد استكمال اعتمادها. التطبيق ليس معلنًا كمتاح في المتجر حاليًا.</p>
+        </div>
+        <div class="project-art" aria-hidden="true"><div class="project-emblem">سبلا<small>SUBULA</small></div></div>
+      </article>
+    </section>
+
+    <div class="container"><div class="section-divider" aria-hidden="true"></div></div>
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel reveal">
+        <div>
+          <p class="section-kicker" data-i18n="contactLabel">نبدأ من محادثة</p>
+          <h2 id="contact-title" data-i18n="contactTitle">لديك سؤال أو فكرة؟</h2>
+          <p data-i18n="contactDescription">للدعم والاستفسارات المتعلقة بالتطبيقات أو الخصوصية، يسعدنا أن نسمع منك.</p>
+        </div>
+        <a class="btn btn-primary email" href="mailto:supportapplication56@gmail.com?subject=Rivulet%20Dev%20%E2%80%94%20Inquiry" aria-label="Email Rivulet Dev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 7 9-7"/></svg><span>supportapplication56@gmail.com</span></a>
+      </div>
+    </section>
   </main>
-  <footer class="foot"><div class="wrap"><span>Rivulet Dev · موقع تعريفي</span><span lang="en" dir="ltr">© 2026 Rivulet Dev</span></div></footer>
+  <footer class="site-footer"><div class="container footer-row"><span>© 2026 Rivulet Dev. <span data-i18n="footer">صُنعت بعناية، لتنساب بسلاسة.</span></span><a href="mailto:supportapplication56@gmail.com" data-i18n="footerContact">التواصل والدعم</a></div></footer>
+  <script>
+    (() => {
+      'use strict';
+      const translations = {
+        ar: {
+          skip:'انتقل إلى المحتوى',navApproach:'فلسفتنا',navWork:'أعمالنا',navContact:'تواصل',eyebrow:'تطوير يضع الإنسان أولًا',
+          heroLine1:'نصنع تجارب',heroLine2:'تستحق أن تُعاش',
+          heroLede:'نؤمن أن التقنية الأجمل هي التي تبدو طبيعية في يدك. نصمم واجهات هادئة، وانتقالات تنساب بسلاسة، وتفاصيل تجعل كل تفاعل أقرب وأسهل.',
+          heroCta:'اكتشف فلسفتنا',heroSecondary:'تعرّف على أعمالنا',principleLabel:'فلسفة RIVULET DEV',
+          principleTitle:'الانسيابية ليست تأثيرًا بصريًا. إنها طريقة تفكير.',
+          principleIntro:'لا نصنع الحركة لمجرد الإبهار؛ بل لأن لكل لحظة في التجربة وظيفة وإحساسًا. نريد للتطبيق أن يستجيب وكأنّه يفهم ما تتوقعه، قبل أن تفكر في الخطوة التالية.',
+          p1Title:'انسيابية تشعر بها',p1Body:'تنقّل طبيعي واستجابة واضحة، دون تعقيد أو خطوات تقطع إيقاعك.',
+          p2Title:'حركة لها معنى',p2Body:'انتقالات لطيفة تُرشد العين، وتؤكد نتيجة اللمسة، بدل أن تشتّت الانتباه.',
+          p3Title:'عناية بأدق التفاصيل',p3Body:'من أول انطباع إلى آخر تفاعل؛ وضوح، واتساق، وراحة تجعل التجربة مألوفة.',
+          workLabel:'من أفكارنا إلى تجارب حقيقية',workTitle:'نبدأ بما يحمل قيمة.',workIntro:'كل تطبيق له قصته وهويته الخاصة، وتجمعها عناية واحدة بالتجربة.',
+          status:'قيد التحضير للنشر',subulaName:'سُبُلا',subulaDescription:'رفيق إسلامي يجمع قراءة القرآن الكريم والأذكار ومواقيت الصلاة والقبلة وميزات التلاوة والتسميع، بهوية مستقلة صُممت لتكون قريبة من يومك.',
+          chip1:'القرآن الكريم',chip2:'الأذكار',chip3:'مواقيت الصلاة',chip4:'التسميع',
+          subulaNote:'صفحة التطبيق وسياسة الخصوصية وروابط المتجر ستُضاف بعد استكمال اعتمادها. التطبيق ليس معلنًا كمتاح في المتجر حاليًا.',
+          contactLabel:'نبدأ من محادثة',contactTitle:'لديك سؤال أو فكرة؟',contactDescription:'للدعم والاستفسارات المتعلقة بالتطبيقات أو الخصوصية، يسعدنا أن نسمع منك.',
+          footer:'صُنعت بعناية، لتنساب بسلاسة.',footerContact:'التواصل والدعم'
+        },
+        en: {
+          skip:'Skip to content',navApproach:'Approach',navWork:'Our work',navContact:'Contact',eyebrow:'PEOPLE-FIRST DIGITAL CRAFT',
+          heroLine1:'We craft experiences',heroLine2:'worth living.',
+          heroLede:'Great technology should feel natural in your hands. We shape calm interfaces, seamless transitions, and thoughtful details that make every interaction feel effortless.',
+          heroCta:'Explore our approach',heroSecondary:'See our work',principleLabel:'THE RIVULET DEV PHILOSOPHY',
+          principleTitle:'Flow is not an effect. It is a way of thinking.',
+          principleIntro:'Motion is not there to impress for its own sake. Every moment should guide, respond, and feel right, so the next step comes naturally.',
+          p1Title:'Effortless flow',p1Body:'Intuitive navigation and clear feedback, without needless friction or interruption.',
+          p2Title:'Motion with meaning',p2Body:'Gentle transitions guide the eye and acknowledge each action instead of demanding attention.',
+          p3Title:'Care in every detail',p3Body:'From the first impression to the final tap: clarity, consistency, and a sense of ease.',
+          workLabel:'FROM IDEAS TO EXPERIENCES',workTitle:'Start with what matters.',workIntro:'Every product has its own story and identity. Thoughtful experiences connect them all.',
+          status:'Preparing for release',subulaName:'سبلا',subulaDescription:'An Islamic companion bringing Quran reading, Adhkar, prayer times, Qibla, recitation, and reading practice together in an identity of its own.',
+          chip1:'Quran',chip2:'Adhkar',chip3:'Prayer times',chip4:'Recitation practice',
+          subulaNote:'The app page, privacy policy, and store links will be added after review and approval. This website does not claim the app is available in a store yet.',
+          contactLabel:'IT STARTS WITH A CONVERSATION',contactTitle:'A question or an idea?',contactDescription:'For app support and privacy questions, we would love to hear from you.',
+          footer:'Crafted with care, designed to flow.',footerContact:'Contact & support'
+        }
+      };
+      const html=document.documentElement;
+      const button=document.getElementById('lang-button');
+      const buttonText=document.getElementById('lang-button-text');
+      function setLanguage(lang){
+        if(!translations[lang]) return;
+        const copy=translations[lang];
+        html.lang=lang; html.dir=lang==='ar'?'rtl':'ltr';
+        for(const el of document.querySelectorAll('[data-i18n]')){
+          const key=el.dataset.i18n;
+          if(Object.prototype.hasOwnProperty.call(copy,key)) el.textContent=copy[key];
+        }
+        buttonText.textContent=lang==='ar'?'English':'العربية';
+        button.setAttribute('aria-label',lang==='ar'?'Switch website language to English':'تغيير لغة الموقع إلى العربية');
+        button.title=button.getAttribute('aria-label');
+        document.querySelector('.nav').setAttribute('aria-label',lang==='ar'?'التنقل الرئيسي':'Main navigation');
+        document.title=lang==='ar'?'Rivulet Dev — نصنع تجارب تستحق أن تُعاش':'Rivulet Dev — Experiences worth living';
+        document.querySelector('meta[name="description"]').content=lang==='ar'?'Rivulet Dev — نصنع تجارب تستحق أن تُعاش. تصميم وتطوير تطبيقات رقمية تنساب ببساطة، وتبقى بتفاصيلها.':'Rivulet Dev — We craft experiences worth living. Intuitive software shaped by care and flow.';
+      }
+      setLanguage('ar');
+      button.addEventListener('click',()=>setLanguage(html.lang==='ar'?'en':'ar'));
+      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!reduced && 'IntersectionObserver' in window){
+        document.body.classList.add('js-motion');
+        const observer=new IntersectionObserver((entries)=>{
+          for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}
+        },{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+      }
+    })();
+  </script>
 </body>
 </html>
