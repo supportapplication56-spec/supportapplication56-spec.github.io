@@ -13,116 +13,191 @@
   <title>Rivulet Dev — نصنع تجارب تستحق أن تُعاش</title>
   <style>
     :root {
-      --bg:#071720; --bg2:#091e29; --surface:#102833; --surface2:#12343f;
-      --edge:rgba(177,223,231,.17); --edge-bright:rgba(121,230,213,.38);
-      --text:#f3f9f9; --muted:#b6cdd2; --soft:#86a5ac;
-      --mint:#78e4d0; --mint-bright:#a8f7e8; --blue:#93c7e8;
-      --radius:24px; --shadow:0 26px 80px rgba(0,0,0,.20);
+      --bg: #071720;
+      --bg-alt: #091e28;
+      --surface: #0d2733;
+      --surface-light: #102d39;
+      --edge: rgba(173, 215, 222, .17);
+      --edge-strong: rgba(153, 223, 217, .35);
+      --text: #f1f8f8;
+      --muted: #bad0d5;
+      --soft: #a2bec5;
+      --mint: #83e4d0;
+      --mint-light: #acf2e3;
+      --blue: #b4d6e8;
+      --radius: 20px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
     }
-    *, *::before, *::after {box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:110px}
-    body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.85;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-    body::before{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:1050px;pointer-events:none;background:radial-gradient(ellipse 48% 40% at 79% 18%,rgba(34,112,123,.27),transparent 72%),radial-gradient(ellipse 40% 40% at 24% 50%,rgba(31,99,115,.15),transparent 75%),linear-gradient(180deg,#071a24,#071720);}
-    body::after{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:960px;pointer-events:none;opacity:.23;background-image:linear-gradient(rgba(201,245,243,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(201,245,243,.10) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,#000 0,transparent 86%)}
-    ::selection{background:#62d6c3;color:#061c1b}
-    a{color:inherit}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--mint-bright);outline-offset:5px}
-    .skip{position:absolute;inset-inline-start:18px;top:-70px;z-index:20;padding:8px 14px;background:var(--mint);color:#072421;border-radius:8px}
-    .skip:focus{top:12px}
-    .container{width:min(1180px,calc(100% - 64px));margin-inline:auto}
-    .site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(155,213,214,.11);background:rgba(7,23,32,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-    .nav{min-height:86px;display:flex;align-items:center;gap:34px;justify-content:space-between}
-    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;direction:ltr;white-space:nowrap}
-    .brand-mark{height:35px;width:35px;display:grid;place-items:center;border:1px solid rgba(120,228,208,.3);border-radius:12px;background:linear-gradient(145deg,rgba(120,228,208,.15),rgba(68,150,185,.07));box-shadow:inset 0 1px rgba(255,255,255,.1)}
-    .brand-mark svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:2.8;stroke-linecap:round}
-    .brand-name{font-size:1.26rem;font-weight:800;letter-spacing:-.055em}.brand-name span{color:var(--mint)}
-    .nav-right{display:flex;align-items:center;gap:27px}.nav-links{display:flex;align-items:center;gap:27px}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:600;transition:color .2s}
-    .nav-links a:hover{color:var(--mint-bright)}
-    .language{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:rgba(173,226,233,.065);color:var(--text);border:1px solid var(--edge);border-radius:12px;min-width:98px;min-height:40px;padding:5px 12px;cursor:pointer;font-size:.86rem;font-weight:700;transition:background .25s,border-color .25s}
-    .language:hover{background:rgba(120,228,208,.11);border-color:var(--edge-bright)}
-    .language svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none}
-    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:44px;min-height:655px;padding-block:108px 110px;position:relative}
-    .hero-copy{position:relative;z-index:2}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--mint);font-weight:700;font-size:.78rem;letter-spacing:.04em;margin:0 0 26px}
-    .eyebrow .dot{height:7px;width:7px;background:var(--mint);border-radius:50%;box-shadow:0 0 0 5px rgba(120,228,208,.09)}
-    h1,h2,h3,p{margin-block-start:0}
-    .hero h1{font-size:clamp(3.4rem,6.5vw,6.3rem);font-weight:850;letter-spacing:-.07em;line-height:1.29;margin:0 0 25px;text-wrap:balance}
-    .hero h1 .line{display:block}.hero h1 .accent{background:linear-gradient(115deg,var(--mint-bright),var(--mint) 65%,#91bde7);color:transparent;background-clip:text;-webkit-background-clip:text}
-    .hero-lede{font-size:clamp(1rem,1.7vw,1.14rem);color:var(--muted);max-width:570px;line-height:2.05;margin-bottom:32px;text-wrap:pretty}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:51px;padding:11px 23px;border-radius:14px;border:1px solid var(--edge);background:rgba(196,230,235,.03);color:var(--text);font-weight:750;font-size:.95rem;line-height:1.4;text-decoration:none;transition:transform .3s cubic-bezier(.22,1,.36,1),background .25s,border-color .25s,box-shadow .3s}
-    .btn:hover{transform:translateY(-3px);background:rgba(191,237,236,.09);border-color:var(--edge-bright)}
-    .btn-primary{background:var(--mint);color:#062722;border-color:var(--mint);box-shadow:0 10px 35px rgba(99,226,202,.12)}
-    .btn-primary:hover{background:#a5f4e6;border-color:#a5f4e6;box-shadow:0 12px 40px rgba(99,226,202,.22)}
-    .btn svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none;flex-shrink:0;transition:transform .3s}
-    .btn:hover .btn-arrow{transform:translateX(-4px)}
-    html[dir=ltr] .btn:hover .btn-arrow{transform:translateX(4px)}
-    .hero-side{width:100%;max-width:510px;justify-self:center;position:relative;isolation:isolate}
-    .flow-scene{position:relative;aspect-ratio:1/1;display:grid;place-items:center}
-    .flow-scene::before{content:"";position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(75,212,197,.10),rgba(33,113,143,.04) 40%,transparent 73%);filter:blur(10px)}
-    .orbit{position:absolute;border:1px solid rgba(112,212,214,.13);border-radius:50%;inset:8%;animation:orbit-breathe 10s ease-in-out infinite}
-    .orbit.inner{inset:20%;border-style:dashed;border-color:rgba(112,212,214,.12);animation-duration:13s;animation-delay:-5s}
-    .motion-art{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 23px 45px rgba(8,126,131,.17))}
-    .motion-art .stream{fill:none;stroke-linecap:round;stroke-linejoin:round;animation:flow 14s linear infinite}
-    .motion-art .stream.a{stroke:url(#streamA);stroke-width:16;stroke-dasharray:650 150;animation-duration:17s}
-    .motion-art .stream.b{stroke:url(#streamB);stroke-width:7;stroke-dasharray:210 48;animation-duration:12s;animation-direction:reverse}
-    .motion-art .stream.c{stroke:rgba(130,228,225,.16);stroke-width:1.5;stroke-dasharray:6 10;animation-duration:22s}
-    .motion-art .point{fill:#b2fff0;filter:drop-shadow(0 0 11px rgba(118,229,217,.8))}
-    .art-tile{position:absolute;min-width:145px;padding:11px 14px;background:rgba(15,43,54,.82);border:1px solid rgba(164,239,235,.22);border-radius:14px;box-shadow:0 18px 35px rgba(0,0,0,.20);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:left;direction:ltr;animation:float 7s ease-in-out infinite}
-    .art-tile small{display:block;color:#92b7bd;letter-spacing:.14em;font-size:.58rem;font-weight:800}
-    .art-tile strong{display:block;font-size:.91rem;letter-spacing:.01em;margin-top:2px;color:#e4fbf7}
-    .art-tile.top{inset-block-start:12%;inset-inline-end:2%;transform:rotate(-2deg)}
-    .art-tile.bottom{inset-block-end:14%;inset-inline-start:0;animation-delay:-3s}
-    .art-core{position:absolute;inset:40%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#1b4752,#0a2734 75%);box-shadow:0 0 0 1px rgba(124,218,213,.28),0 0 52px rgba(62,183,188,.12);font-size:1.6rem;letter-spacing:-.09em;font-weight:850;color:var(--mint);direction:ltr}
-    .art-caption{position:absolute;inset-block-end:5%;inset-inline-end:10%;color:#8facb5;font-size:.68rem;letter-spacing:.14em;direction:ltr}
-    @keyframes flow{to{stroke-dashoffset:-850}}
-    @keyframes orbit-breathe{50%{transform:scale(1.04);opacity:.55}}
-    @keyframes float{0%,100%{translate:0 0}50%{translate:0 -11px}}
-    .section{padding-block:94px;position:relative}
-    .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(123,213,209,.35),transparent)}
-    .section-kicker{color:var(--mint);font-size:.77rem;letter-spacing:.09em;font-weight:800;margin:0 0 11px}
-    .section h2{font-size:clamp(2rem,4vw,3.15rem);font-weight:800;line-height:1.45;letter-spacing:-.05em;margin:0 0 17px;max-width:760px;text-wrap:balance}
-    .section .intro{color:var(--muted);max-width:750px;font-size:1.05rem;line-height:2.1;margin:0 0 35px}
-    .principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .principle{background:linear-gradient(160deg,rgba(26,62,73,.65),rgba(12,36,48,.67));border:1px solid var(--edge);border-radius:var(--radius);padding:30px;min-height:253px;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.22,1,.36,1),border-color .3s,background .3s}
-    .principle:hover{transform:translateY(-6px);border-color:var(--edge-bright)}
-    .principle:after{content:"";position:absolute;inset:auto 20px 0;height:1px;background:linear-gradient(90deg,transparent,rgba(126,224,213,.5),transparent);opacity:0;transition:opacity .3s}.principle:hover:after{opacity:1}
-    .p-symbol{width:46px;height:46px;border:1px solid rgba(117,232,210,.22);border-radius:16px;display:grid;place-items:center;color:var(--mint);background:rgba(99,222,205,.07);margin-bottom:28px}
-    .p-symbol svg{height:23px;width:23px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linejoin:round;stroke-linecap:round}
-    .principle h3{font-size:1.22rem;letter-spacing:-.035em;margin:0 0 9px;line-height:1.45}
-    .principle p{color:var(--muted);font-size:.94rem;line-height:1.9;margin:0}
-    .work{padding-top:85px}
-    .project{border-radius:30px;background:radial-gradient(circle at 12% 22%,rgba(60,174,162,.12),transparent 32%),linear-gradient(145deg,rgba(18,53,65,.97),rgba(11,35,46,.92));border:1px solid rgba(141,217,217,.23);box-shadow:var(--shadow);padding:clamp(27px,5vw,54px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(190px,.8fr);align-items:center;gap:40px;overflow:hidden;position:relative}
-    .status{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;border:1px solid rgba(120,228,208,.26);background:rgba(120,228,208,.065);color:var(--mint);font-size:.75rem;font-weight:700;margin-bottom:22px}
-    .status::before{content:"";width:6px;height:6px;background:var(--mint);border-radius:50%}
-    .project h3{font-size:clamp(2.3rem,4vw,3.65rem);line-height:1.3;margin:0 0 12px;letter-spacing:-.07em}
-    .project h3 .latin{font-size:.42em;color:#a9c7d0;font-weight:700;letter-spacing:.08em;direction:ltr;display:inline-block;vertical-align:middle}
-    .project-copy p{color:var(--muted);margin:0 0 20px;max-width:590px;line-height:2.05}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 23px}
-    .chip{font-size:.79rem;color:#bfdae0;padding:6px 11px;border:1px solid rgba(184,226,232,.14);border-radius:999px;background:rgba(238,255,255,.025)}
-    .project-note{font-size:.82rem!important;color:#92b9bd!important;margin:14px 0 0!important}
-    .project-art{min-height:240px;display:grid;place-items:center;position:relative;isolation:isolate}
-    .project-art::before{content:"";width:225px;height:225px;border-radius:40px;transform:rotate(-12deg);background:linear-gradient(145deg,rgba(113,221,193,.11),rgba(55,112,153,.06));border:1px solid rgba(141,218,217,.20);box-shadow:0 24px 60px rgba(0,0,0,.21)}
-    .project-art::after{content:"";position:absolute;width:195px;height:195px;transform:rotate(7deg);border:1px solid rgba(132,224,222,.23);border-radius:34px}
-    .project-emblem{position:absolute;z-index:2;font-weight:900;font-size:4.15rem;letter-spacing:-.08em;line-height:1.25;color:#b3f6e5;text-shadow:0 6px 33px rgba(93,226,206,.16)}
-    .project-emblem small{display:block;text-align:center;font-size:.55rem;letter-spacing:.33em;color:#8fbebd;font-weight:700;margin-top:2px}
-    .project + .project{margin-top:22px}
-    .expense-visual{position:absolute;z-index:2;width:124px;height:124px;display:grid;place-items:center;border-radius:28px;border:1px solid rgba(120,228,208,.32);background:linear-gradient(145deg,rgba(27,80,89,.92),rgba(12,39,54,.94));box-shadow:0 22px 50px rgba(0,0,0,.22)}
-    .expense-visual svg{width:70px;height:70px;fill:none;stroke:#a8f7e8;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-    .contact-panel{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:40px 44px;background:linear-gradient(95deg,rgba(17,51,63,.8),rgba(8,32,42,.85));border:1px solid var(--edge);border-radius:27px}
-    .contact-panel h2{font-size:clamp(1.65rem,3vw,2.45rem);margin:0 0 7px}.contact-panel p{color:var(--muted);margin:0;max-width:590px}
-    .email{overflow-wrap:anywhere;unicode-bidi:isolate;direction:ltr;font-weight:700;display:inline-flex;align-items:center;gap:10px}
-    .contact-panel .email{font-size:clamp(.73rem,1.1vw,.91rem)}
-    .site-footer{border-top:1px solid rgba(181,225,224,.13);padding:29px 0 34px;color:#95b2b9;font-size:.84rem}
-    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-    .footer-row a{text-decoration:none;color:#b9d2d5}.footer-row a:hover{color:var(--mint)}
-    .reveal{opacity:1;transform:none}
-    .js-motion .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}
-    .js-motion .reveal.visible{opacity:1;transform:none}
-    @media(max-width:980px){.nav{gap:16px}.hero{gap:10px;padding-block:78px 75px;min-height:570px}.hero h1{font-size:clamp(3rem,6.7vw,5rem)}.art-tile{min-width:125px}.principle{padding:25px}.project{gap:17px}}
-    @media(max-width:720px){.container{width:min(100% - 38px,590px)}.nav{min-height:69px;gap:10px;flex-wrap:wrap;padding-block:12px}.brand-name{font-size:1.1rem}.brand-mark{width:31px;height:31px;border-radius:11px}.nav-right{gap:10px}.nav-links{gap:13px}.nav-links a{font-size:.79rem}.language{min-width:78px;min-height:37px;padding:4px 8px}.hero{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0;padding-block:66px 54px}.hero h1{font-size:clamp(3.3rem,10.6vw,5rem);line-height:1.33}.hero-lede{font-size:1rem}.hero-side{max-width:420px;width:min(100%,420px);margin-inline:auto;margin-top:16px}.flow-scene{aspect-ratio:1.22}.art-tile.top{inset-block-start:6%}.art-tile.bottom{inset-block-end:7%}.art-caption{inset-block-end:0}.section{padding-block:66px}.principles{grid-template-columns:1fr;gap:12px}.principle{min-height:0;padding:24px}.p-symbol{margin-bottom:16px}.work{padding-top:66px}.project{grid-template-columns:1fr;padding:28px}.project-art{min-height:190px}.project-art::before{width:165px;height:165px;border-radius:26px}.project-art::after{width:145px;height:145px;border-radius:22px}.project-emblem{font-size:3.1rem}.contact-panel{flex-direction:column;align-items:stretch;padding:28px}.footer-row{align-items:start;flex-direction:column}}
-    @media(max-width:430px){.nav{justify-content:space-between}.nav-right{width:100%;justify-content:space-between}.nav-links{gap:17px}.hero{padding-block:54px 40px}.hero h1{font-size:clamp(2.9rem,12vw,3.8rem)}.hero-actions .btn{font-size:.86rem;padding-inline:17px}.art-tile{min-width:110px;padding:8px 10px}.art-tile strong{font-size:.75rem}.art-tile small{font-size:.53rem}.hero-side{margin-top:24px}.section h2{font-size:2rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.js-motion .reveal{opacity:1;transform:none}}
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: radial-gradient(ellipse 53% 19% at 18% 12%, rgba(24, 88, 100, .16), transparent 78%), var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-wrap: break-word;
+    }
+    ::selection { background: var(--mint); color: #061e1e; }
+    a { color: inherit; }
+    button { font: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--mint-light); outline-offset: 4px; }
+    .skip { position: absolute; inset-inline-start: 18px; top: -90px; z-index: 100; padding: 9px 15px; background: var(--mint); color: #062722; border-radius: 8px; }
+    .skip:focus { top: 12px; }
+    .container { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+
+    /* Quiet, reliable navigation. */
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(7, 23, 32, .94); border-bottom: 1px solid var(--edge); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; direction: ltr; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid rgba(131, 228, 208, .3); border-radius: 10px; background: rgba(131, 228, 208, .055); }
+    .brand-mark svg { width: 24px; height: 24px; stroke: var(--mint); fill: none; stroke-width: 2.8; stroke-linecap: round; }
+    .brand-name { font-size: 1.23rem; font-weight: 800; letter-spacing: -.035em; }
+    .brand-name span { color: var(--mint); }
+    .nav-right { display: flex; align-items: center; gap: 27px; }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: .93rem; font-weight: 600; padding-block: 9px; transition: color .2s; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--mint-light); }
+    .language { appearance: none; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 102px; min-height: 44px; padding: 7px 13px; color: var(--text); border: 1px solid var(--edge); border-radius: 10px; background: transparent; font-size: .89rem; font-weight: 700; cursor: pointer; transition: border-color .2s, background .2s; }
+    .language:hover { background: rgba(131, 228, 208, .07); border-color: var(--edge-strong); }
+    .language svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+
+    /* Hero typography carries the message; the flowing motif supports it. */
+    .hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: 45px; align-items: center; min-height: 560px; padding-block: 78px 94px; position: relative; }
+    .hero-copy { position: relative; z-index: 2; min-width: 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--mint); font-weight: 700; font-size: .85rem; margin: 0 0 24px; }
+    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mint); }
+    h1, h2, h3, p { margin-block-start: 0; }
+    .hero h1 { font-size: clamp(3.1rem, 5.4vw, 5.6rem); line-height: 1.32; letter-spacing: -.018em; font-weight: 800; margin: 0 0 24px; text-wrap: balance; }
+    .hero h1 .line { display: block; }
+    .hero h1 .accent { color: var(--mint-light); }
+    .hero-lede { color: var(--muted); max-width: 570px; font-size: clamp(1rem, 1.5vw, 1.14rem); line-height: 1.95; margin-bottom: 30px; text-wrap: pretty; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 20px; border-radius: 11px; border: 1px solid var(--edge-strong); background: transparent; color: var(--text); font-weight: 700; font-size: .94rem; line-height: 1.5; text-decoration: none; text-align: center; transition: background .2s, border-color .2s, transform .25s var(--ease); }
+    .btn:hover { background: rgba(190, 230, 231, .07); border-color: var(--mint); }
+    .btn-primary { background: var(--mint); color: #082b2a; border-color: var(--mint); }
+    .btn-primary:hover { background: var(--mint-light); border-color: var(--mint-light); color: #062623; }
+    .btn svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 2; fill: none; flex-shrink: 0; }
+    .hero-side { width: 100%; max-width: 455px; justify-self: center; position: relative; isolation: isolate; }
+    .flow-scene { position: relative; aspect-ratio: 1.1; display: grid; place-items: center; }
+    .flow-scene::before { content: ""; position: absolute; width: 75%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(51, 135, 139, .16), transparent 69%); pointer-events: none; }
+    .flow-scene::after { content: ""; position: absolute; inset: 16%; border: 1px solid rgba(123, 218, 212, .09); border-radius: 50%; pointer-events: none; }
+    .motion-art { width: 100%; height: 100%; overflow: visible; position: relative; z-index: 1; }
+    .motion-art .stream { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .motion-art .stream.a { stroke: url(#streamA); stroke-width: 14; }
+    .motion-art .stream.b { stroke: url(#streamB); stroke-width: 6; }
+    .motion-art .stream.c { stroke: rgba(130, 228, 225, .17); stroke-width: 1.5; stroke-dasharray: 4 11; }
+    .motion-art .point { fill: #d4fff3; }
+    .art-core { position: absolute; z-index: 2; width: 84px; height: 84px; display: grid; place-items: center; border-radius: 50%; color: var(--mint-light); border: 1px solid rgba(131, 228, 208, .3); background: #0b2531; font-size: 1.55rem; font-weight: 800; letter-spacing: -.025em; direction: ltr; }
+
+    /* Editorial rhythm rather than a grid of identical cards. */
+    .section { position: relative; padding-block: 78px; }
+    .section-divider { height: 1px; background: var(--edge); }
+    .section-kicker { color: var(--mint); font-size: .82rem; font-weight: 750; margin: 0 0 13px; }
+    .section h2 { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.5; letter-spacing: -.012em; font-weight: 800; margin: 0 0 14px; max-width: 790px; text-wrap: balance; }
+    .section .intro { color: var(--muted); max-width: 760px; font-size: 1.04rem; line-height: 1.95; margin: 0 0 34px; }
+    .principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+    .principle { min-width: 0; min-height: 0; padding: 25px 4px 6px; background: none; border-top: 1px solid var(--edge-strong); }
+    .p-symbol { display: grid; place-items: start; color: var(--mint); width: 29px; height: 29px; margin-bottom: 18px; }
+    .p-symbol svg { height: 25px; width: 25px; stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linejoin: round; stroke-linecap: round; }
+    .principle h3 { font-size: 1.19rem; margin: 0 0 9px; line-height: 1.5; font-weight: 750; }
+    .principle p { color: var(--muted); font-size: .96rem; line-height: 1.95; margin: 0; }
+
+    .work { padding-top: 80px; }
+    .project { border: 1px solid var(--edge); border-radius: var(--radius); background: var(--surface); padding: clamp(27px, 4.1vw, 44px); display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(220px, .65fr); align-items: center; gap: 25px; min-width: 0; }
+    .project + .project { margin-top: 18px; }
+    .project:nth-of-type(2) { background: #0b2431; }
+    .status { display: inline-block; padding: 4px 0; color: var(--soft); font-size: .83rem; font-weight: 650; margin-bottom: 16px; }
+    .project h3 { font-size: clamp(2rem, 3.8vw, 3.35rem); line-height: 1.35; letter-spacing: -.015em; margin: 0 0 16px; }
+    .project h3 .latin { font-size: .42em; color: var(--soft); font-weight: 700; letter-spacing: .025em; display: inline-block; direction: ltr; vertical-align: middle; }
+    .project-copy p { color: var(--muted); margin: 0 0 18px; max-width: 640px; line-height: 1.95; }
+    .chips { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin: 0 0 22px; }
+    .chip { font-size: .82rem; color: #c9dce0; padding: 4px 10px; border: 1px solid var(--edge); border-radius: 7px; background: rgba(224, 247, 244, .025); }
+    .project .btn { min-height: 46px; font-size: .9rem; }
+    .project-note { color: var(--soft) !important; font-size: .89rem !important; margin: 13px 0 0 !important; line-height: 1.8 !important; }
+    .project-art { position: relative; min-width: 0; min-height: 205px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; isolation: isolate; border-inline-start: 1px solid var(--edge); }
+    .project-art::before { content: ""; position: absolute; width: 70%; height: 1px; top: 18px; background: linear-gradient(90deg, transparent, rgba(131, 228, 208, .18), transparent); pointer-events: none; }
+    .art-index { color: var(--soft); font: 650 .69rem/1.4 system-ui, sans-serif; letter-spacing: .17em; direction: ltr; margin-bottom: 10px; }
+    .project-wordmark { color: #c8f5e9; font-size: clamp(2.1rem, 4vw, 3.8rem); font-weight: 800; line-height: 1.35; letter-spacing: 0; }
+    .project-wordmark small { display: block; color: var(--soft); font: 700 .72rem/1.5 system-ui, sans-serif; letter-spacing: .23em; direction: ltr; margin-top: 5px; }
+    .expense-art .project-wordmark { color: #d2eaf5; font-size: clamp(1.55rem, 2.9vw, 2.8rem); font-weight: 750; letter-spacing: -.03em; direction: ltr; }
+    .expense-art .project-wordmark small { font-size: .56em; letter-spacing: .12em; text-transform: uppercase; margin-top: 0; }
+    .expense-art::before { background: linear-gradient(90deg, transparent, rgba(177, 215, 233, .18), transparent); }
+    .art-rule { margin-top: 23px; display: block; width: 44px; height: 1px; background: var(--mint); opacity: .65; }
+    .expense-art .art-rule { background: var(--blue); }
+
+    /* Contact stays an invitation, not another giant decorative card. */
+    .contact-panel { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding: 35px 0 5px; border-top: 1px solid var(--edge-strong); }
+    .contact-panel h2 { font-size: clamp(1.85rem, 3vw, 2.45rem); margin: 0 0 6px; }
+    .contact-panel p { color: var(--muted); margin: 0; max-width: 580px; }
+    .email { direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; }
+    .contact-panel .email { font-size: clamp(.83rem, 1.15vw, .94rem); }
+    .site-footer { border-top: 1px solid var(--edge); padding: 28px 0 34px; color: var(--soft); font-size: .87rem; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
+    .footer-row a { text-decoration: none; color: var(--muted); }
+    .footer-row a:hover { color: var(--mint); }
+
+    /* Reveals should be optional and never hide content without JS. */
+    .reveal { opacity: 1; transform: none; }
+    .js-motion .reveal { opacity: 0; transform: translateY(12px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    .js-motion .reveal.visible { opacity: 1; transform: none; }
+    @media (hover:hover) and (pointer:fine) {
+      .btn:hover { transform: translateY(-1px); }
+    }
+    @media (max-width: 960px) {
+      .hero { gap: 20px; min-height: 490px; padding-block: 65px 72px; }
+      .hero h1 { font-size: clamp(2.8rem, 6vw, 4.9rem); }
+      .project { grid-template-columns: minmax(0, 1.2fr) minmax(180px, .8fr); }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 130px; }
+      .container { width: min(100% - 38px, 590px); }
+      .nav { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; row-gap: 0; align-items: center; padding-block: 12px 8px; min-height: 0; }
+      .brand { grid-column: 1; grid-row: 1; justify-self: start; }
+      .brand-name { font-size: 1.12rem; }
+      .brand-mark { width: 32px; height: 32px; }
+      .nav-right { display: contents; }
+      .language { grid-column: 2; grid-row: 1; min-height: 42px; min-width: 92px; padding: 6px 9px; font-size: .84rem; }
+      .nav-links { grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: space-between; gap: 12px; margin-top: 9px; padding-top: 6px; border-top: 1px solid rgba(173, 215, 222, .10); }
+      .nav-links a { font-size: .88rem; padding: 5px 0; }
+      .hero { display: flex; flex-direction: column; align-items: stretch; gap: 2px; min-height: 0; padding-block: 57px 60px; }
+      .hero h1 { font-size: clamp(2.65rem, 9vw, 4.4rem); line-height: 1.36; }
+      .hero-lede { font-size: 1rem; }
+      .hero-side { max-width: 370px; width: 100%; margin-inline: auto; }
+      .flow-scene { aspect-ratio: 1.36; }
+      .art-core { width: 69px; height: 69px; font-size: 1.3rem; }
+      .section { padding-block: 62px; }
+      .section h2 { font-size: clamp(1.85rem, 6.2vw, 2.6rem); }
+      .principles { grid-template-columns: 1fr; gap: 10px; }
+      .principle { padding: 19px 0 10px; }
+      .p-symbol { margin-bottom: 10px; }
+      .work { padding-top: 62px; }
+      .project { grid-template-columns: 1fr; gap: 10px; padding: 26px 23px 18px; }
+      .project-art { border-inline-start: 0; border-top: 1px solid var(--edge); min-height: 170px; margin-top: 4px; }
+      .project-art::before { width: 60%; }
+      .project-wordmark { font-size: 2.7rem; }
+      .expense-art .project-wordmark { font-size: 2.35rem; }
+      .contact-panel { flex-direction: column; align-items: flex-start; gap: 23px; padding-top: 28px; }
+      .contact-panel .email { max-width: 100%; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 400px) {
+      .container { width: calc(100% - 34px); }
+      .hero { padding-block: 48px 52px; }
+      .hero h1 { font-size: clamp(2.4rem, 9vw, 3.35rem); }
+      .hero-actions .btn { font-size: .89rem; padding-inline: 14px; }
+      .project { padding: 24px 20px 17px; }
+      .project h3 { font-size: 2.1rem; }
+      .project-note { font-size: .87rem !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .js-motion .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -139,7 +214,7 @@
           <a href="#work" data-i18n="navWork">أعمالنا</a>
           <a href="#contact" data-i18n="navContact">تواصل</a>
         </div>
-        <button id="lang-button" class="language" type="button" aria-label="Switch website language to English" title="Switch website language to English">
+        <button id="lang-button" class="language" type="button" aria-pressed="false" aria-label="Switch website language to English" title="Switch website language to English">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
           <span id="lang-button-text">English</span>
         </button>
@@ -154,13 +229,12 @@
           <h1 id="hero-heading"><span class="line" data-i18n="heroLine1">نصنع تجارب</span><span class="line accent" data-i18n="heroLine2">تستحق أن تُعاش</span></h1>
           <p class="hero-lede" data-i18n="heroLede">نؤمن أن التقنية الأجمل هي التي تبدو طبيعية في يدك. نصمم واجهات هادئة، وانتقالات تنساب بسلاسة، وتفاصيل تجعل كل تفاعل أقرب وأسهل.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#approach"><span data-i18n="heroCta">اكتشف فلسفتنا</span><svg class="btn-arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a class="btn" href="#work"><span data-i18n="heroSecondary">تعرّف على أعمالنا</span></a>
+            <a class="btn btn-primary" href="#work"><span data-i18n="heroCta">استكشف أعمالنا</span><svg class="btn-arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="#approach"><span data-i18n="heroSecondary">فلسفتنا</span></a>
           </div>
         </div>
         <div class="hero-side" aria-hidden="true">
           <div class="flow-scene">
-            <div class="orbit"></div><div class="orbit inner"></div>
             <svg class="motion-art" viewBox="0 0 500 500" fill="none" role="presentation">
               <defs>
                 <linearGradient id="streamA" x1="60" y1="360" x2="470" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#235367" stop-opacity=".03"/><stop offset=".28" stop-color="#4aa6b9" stop-opacity=".65"/><stop offset=".66" stop-color="#98f9db"/><stop offset="1" stop-color="#75dbdf" stop-opacity=".02"/></linearGradient>
@@ -172,9 +246,6 @@
               <circle class="point" cx="255" cy="246" r="5"/>
             </svg>
             <div class="art-core">RD</div>
-            <div class="art-tile top"><small>DESIGN PRINCIPLE</small><strong>Effortless by nature</strong></div>
-            <div class="art-tile bottom"><small>OUR DIRECTION</small><strong>Made to flow</strong></div>
-            <span class="art-caption">RIVULET / EXPERIENCE DESIGN</span>
           </div>
         </div>
       </section>
@@ -194,19 +265,19 @@
 
     <div class="container"><div class="section-divider" aria-hidden="true"></div></div>
     <section class="section work container" id="work" aria-labelledby="work-title">
-      <p class="section-kicker reveal" data-i18n="workLabel">من أفكارنا إلى تجارب حقيقية</p>
-      <h2 class="reveal" id="work-title" data-i18n="workTitle">نبدأ بما يحمل قيمة.</h2>
+      <p class="section-kicker reveal" data-i18n="workLabel">أعمالنا</p>
+      <h2 class="reveal" id="work-title" data-i18n="workTitle">مشاريع نبنيها بعناية.</h2>
       <p class="intro reveal" data-i18n="workIntro">كل تطبيق له قصته وهويته الخاصة، وتجمعها عناية واحدة بالتجربة.</p>
-      <article class="project reveal" id="subula">
+      <article class="project reveal" id="subula" aria-labelledby="subula-title">
         <div class="project-copy">
           <span class="status" data-i18n="status">قيد تجهيز الإصدار الأول</span>
-          <h3><span data-i18n="subulaName">سُبُلا</span> <span class="latin">SUBULA</span></h3>
+          <h3 id="subula-title"><span data-i18n="subulaName">سُبُلا</span> <span class="latin">SUBULA</span></h3>
           <p data-i18n="subulaDescription">سبلا تطبيق إسلامي يجمع القرآن الكريم والأذكار ومواقيت الصلاة والقبلة، مع أدوات للقراءة والعلامات والختمة والحفظ والتسميع. نُجهّز إصداره الأول للاختبار على Google Play.</p>
           <div class="chips"><span class="chip" data-i18n="chip1">القرآن الكريم</span><span class="chip" data-i18n="chip2">الأذكار</span><span class="chip" data-i18n="chip3">مواقيت الصلاة</span><span class="chip" data-i18n="chip4">التسميع</span></div>
           <a class="btn" href="/subula/privacy/" data-i18n="subulaPrivacy">قراءة سياسة خصوصية سبلا</a>
            <p class="project-note" data-i18n="subulaNote">سياسة الخصوصية متاحة للاطلاع. لم يُطرح التطبيق للتحميل العام بعد، وسيُضاف رابط المتجر عندما يصبح متاحًا للجمهور.</p>
         </div>
-        <div class="project-art" aria-hidden="true"><div class="project-emblem">سبلا<small>SUBULA</small></div></div>
+        <div class="project-art subula-art" aria-hidden="true"><span class="art-index">PROJECT / 01</span><div class="project-wordmark">سُبُلا<small>SUBULA</small></div><span class="art-rule"></span></div>
       </article>
       <article class="project reveal" id="expense-tracker" aria-labelledby="expense-tracker-title">
         <div class="project-copy">
@@ -217,7 +288,7 @@
           <a class="btn" href="/expense-tracker/privacy/" data-i18n="expensePrivacy">قراءة سياسة خصوصية Expense Tracker</a>
           <p class="project-note" data-i18n="expenseNote">سياسة الخصوصية متاحة الآن. التطبيق قيد التجهيز للاختبار ولم يُطرح للتنزيل العام بعد.</p>
         </div>
-        <div class="project-art" aria-hidden="true"><div class="expense-visual"><svg viewBox="0 0 80 80"><rect x="17" y="10" width="46" height="60" rx="8"/><path d="M27 24h26M27 36h26M27 48h12M49 48h4"/><path d="M29 60h22"/></svg></div></div>
+        <div class="project-art expense-art" aria-hidden="true"><span class="art-index">PROJECT / 02</span><div class="project-wordmark">Expense<small>TRACKER</small></div><span class="art-rule"></span></div>
       </article>
     </section>
 
@@ -242,13 +313,13 @@
           skip:'انتقل إلى المحتوى',navApproach:'فلسفتنا',navWork:'أعمالنا',navContact:'تواصل',eyebrow:'تطوير يضع الإنسان أولًا',
           heroLine1:'نصنع تجارب',heroLine2:'تستحق أن تُعاش',
           heroLede:'نؤمن أن التقنية الأجمل هي التي تبدو طبيعية في يدك. نصمم واجهات هادئة، وانتقالات تنساب بسلاسة، وتفاصيل تجعل كل تفاعل أقرب وأسهل.',
-          heroCta:'اكتشف فلسفتنا',heroSecondary:'تعرّف على أعمالنا',principleLabel:'فلسفة RIVULET DEV',
+          heroCta:'استكشف أعمالنا',heroSecondary:'فلسفتنا',principleLabel:'فلسفة RIVULET DEV',
           principleTitle:'الانسيابية ليست تأثيرًا بصريًا. إنها طريقة تفكير.',
           principleIntro:'لا نصنع الحركة لمجرد الإبهار؛ بل لأن لكل لحظة في التجربة وظيفة وإحساسًا. نريد للتطبيق أن يستجيب وكأنّه يفهم ما تتوقعه، قبل أن تفكر في الخطوة التالية.',
           p1Title:'انسيابية تشعر بها',p1Body:'تنقّل طبيعي واستجابة واضحة، دون تعقيد أو خطوات تقطع إيقاعك.',
           p2Title:'حركة لها معنى',p2Body:'انتقالات لطيفة تُرشد العين، وتؤكد نتيجة اللمسة، بدل أن تشتّت الانتباه.',
           p3Title:'عناية بأدق التفاصيل',p3Body:'من أول انطباع إلى آخر تفاعل؛ وضوح، واتساق، وراحة تجعل التجربة مألوفة.',
-          workLabel:'من أفكارنا إلى تجارب حقيقية',workTitle:'نبدأ بما يحمل قيمة.',workIntro:'كل تطبيق له قصته وهويته الخاصة، وتجمعها عناية واحدة بالتجربة.',
+          workLabel:'أعمالنا',workTitle:'مشاريع نبنيها بعناية.',workIntro:'كل تطبيق له قصته وهويته الخاصة، وتجمعها عناية واحدة بالتجربة.',
           status:'قيد تجهيز الإصدار الأول',subulaName:'سُبُلا',subulaDescription:'سبلا تطبيق إسلامي يجمع القرآن الكريم والأذكار ومواقيت الصلاة والقبلة، مع أدوات للقراءة والعلامات والختمة والحفظ والتسميع. نُجهّز إصداره الأول للاختبار على Google Play.',
           chip1:'القرآن الكريم',chip2:'الأذكار',chip3:'مواقيت الصلاة',chip4:'التسميع',
           subulaPrivacy:'قراءة سياسة خصوصية سبلا',
@@ -263,13 +334,13 @@
           skip:'Skip to content',navApproach:'Approach',navWork:'Our work',navContact:'Contact',eyebrow:'PEOPLE-FIRST DIGITAL CRAFT',
           heroLine1:'We craft experiences',heroLine2:'worth living.',
           heroLede:'Great technology should feel natural in your hands. We shape calm interfaces, seamless transitions, and thoughtful details that make every interaction feel effortless.',
-          heroCta:'Explore our approach',heroSecondary:'See our work',principleLabel:'THE RIVULET DEV PHILOSOPHY',
+          heroCta:'Explore our work',heroSecondary:'Our approach',principleLabel:'THE RIVULET DEV PHILOSOPHY',
           principleTitle:'Flow is not an effect. It is a way of thinking.',
           principleIntro:'Motion is not there to impress for its own sake. Every moment should guide, respond, and feel right, so the next step comes naturally.',
           p1Title:'Effortless flow',p1Body:'Intuitive navigation and clear feedback, without needless friction or interruption.',
           p2Title:'Motion with meaning',p2Body:'Gentle transitions guide the eye and acknowledge each action instead of demanding attention.',
           p3Title:'Care in every detail',p3Body:'From the first impression to the final tap: clarity, consistency, and a sense of ease.',
-          workLabel:'FROM IDEAS TO EXPERIENCES',workTitle:'Start with what matters.',workIntro:'Every product has its own story and identity. Thoughtful experiences connect them all.',
+          workLabel:'OUR WORK',workTitle:'Products in progress, built with care.',workIntro:'Every product has its own story and identity. Thoughtful experiences connect them all.',
           status:'Preparing the first release',subulaName:'سبلا',subulaDescription:'SUBULA brings together Quran reading, Adhkar, prayer times, and Qibla, alongside bookmarks, reading progress, Khatma plans, memorization, and optional recitation practice. Its first release is being prepared for Google Play testing.',
           chip1:'Quran',chip2:'Adhkar',chip3:'Prayer times',chip4:'Recitation practice',
           subulaPrivacy:'Read SUBULA privacy policy',
@@ -293,13 +364,25 @@
           if(Object.prototype.hasOwnProperty.call(copy,key)) el.textContent=copy[key];
         }
         buttonText.textContent=lang==='ar'?'English':'العربية';
+        button.setAttribute('aria-pressed',String(lang==='en'));
+        try { localStorage.setItem('rivulet-lang',lang); } catch (_) {}
+        for(const link of document.querySelectorAll('a[href$="/privacy/"]')){
+          const route=link.getAttribute('href').split('?')[0];
+          link.setAttribute('href',route+(lang==='en'?'?lang=en':''));
+        }
         button.setAttribute('aria-label',lang==='ar'?'Switch website language to English':'تغيير لغة الموقع إلى العربية');
         button.title=button.getAttribute('aria-label');
         document.querySelector('.nav').setAttribute('aria-label',lang==='ar'?'التنقل الرئيسي':'Main navigation');
         document.title=lang==='ar'?'Rivulet Dev — نصنع تجارب تستحق أن تُعاش':'Rivulet Dev — Experiences worth living';
         document.querySelector('meta[name="description"]').content=lang==='ar'?'Rivulet Dev — نصنع تجارب تستحق أن تُعاش. تصميم وتطوير تطبيقات رقمية تنساب ببساطة، وتبقى بتفاصيلها.':'Rivulet Dev — We craft experiences worth living. Intuitive software shaped by care and flow.';
       }
-      setLanguage('ar');
+      let preferredLanguage='ar';
+      try {
+        const requested=new URLSearchParams(location.search).get('lang');
+        const saved=localStorage.getItem('rivulet-lang');
+        preferredLanguage=(requested==='en'||requested==='ar')?requested:(saved==='en'?'en':'ar');
+      } catch (_) {}
+      setLanguage(preferredLanguage);
       button.addEventListener('click',()=>setLanguage(html.lang==='ar'?'en':'ar'));
       const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(!reduced && 'IntersectionObserver' in window){
