@@ -1,25 +1,36 @@
 # Rivulet Dev — Homepage V2
 
-Official site for Rivulet Dev, with a separate preview card for SUBULA.
+Official bilingual website for Rivulet Dev, featuring SUBULA (سبلا) as a pre-release Android application.
 
-## Replace the published page
+## Published pages and navigation
 
-1. Sign in to GitHub as **supportapplication56-spec**.
-2. Open https://github.com/supportapplication56-spec/supportapplication56-spec.github.io
-3. Click **index.html**, then click the pencil **Edit this file** icon.
-4. Replace the file's entire contents with the supplied `index.html` (or upload to the existing path through Git).
-5. Click **Commit changes** on the `main` branch.
-6. Check https://supportapplication56-spec.github.io/ after GitHub Pages finishes deploying. Refresh the page if the previous version is cached.
+- Homepage / projects: https://supportapplication56-spec.github.io/
+- SUBULA project card: https://supportapplication56-spec.github.io/#subula
+- Published Arabic/English SUBULA privacy policy: https://supportapplication56-spec.github.io/subula/privacy/
 
-**Important:** This only replaces the public developer homepage. It does not edit the SUBULA Flutter project, account verification, signing, Play Console, or the privacy policy.
+The SUBULA card links directly to its privacy policy. The privacy policy includes an Arabic/English return link to the SUBULA card. No Google Play download URL is advertised until one is genuinely available to the public.
 
 ## Features
 
 - Approved Arabic tagline: **نصنع تجارب تستحق أن تُعاش**.
-- Functional Arabic/English toggle: all major copy, page direction and metadata switch; no external translation API.
-- Responsive and accessible navigation, meaningful motion, reduced-motion respect.
-- Lightweight static one-file HTML with inline CSS, SVG, and JavaScript; no remote fonts/CDNs, cookies, analytics, or third-party libraries.
-- SUBULA shown as **pre-release**, with no invented store URL or privacy policy.
-- Active `mailto:` support email: `supportapplication56@gmail.com`.
+- Working Arabic/English language toggle on the homepage and privacy page.
+- Responsive navigation, accessible focus states, and reduced-motion support.
+- Lightweight HTML with inline CSS/JS, without an analytics or ad script.
+- SUBULA described accurately as preparing its first release for Google Play testing.
+- Support email: **supportapplication56@gmail.com**.
 
-The page intentionally has **no public privacy-policy URL** yet. Before adding one, finalize the app's owner identity, actual data flows, support retention, and real policy effective date. The older policy draft's embedded-YouTube description must be updated to reflect opening official channels externally.
+## Privacy policy status
+
+The SUBULA privacy page is already published in Arabic and English, with an effective date of **2 November 2026**. Its current content covers optional location, microphone/speech-provider fallback, local storage/backups, external audio and YouTube, support email, and retention.
+
+The policy is not a substitute for checking the final app data flows and the Google Play Data Safety declarations. Confirm these with the release engineering evidence and owner decisions before submitting the signed release. Update both languages and the revision date when actual processing practices materially change.
+
+## Publish these files
+
+Upload to the GitHub Pages repository `supportapplication56-spec/supportapplication56-spec.github.io` on the `main` branch, preserving the exact paths:
+
+- `index.html`
+- `subula/privacy/index.html`
+- `README.md`
+
+GitHub Pages deploys from `main` / repository root. These website edits do **not** change the separate SUBULA Flutter project, signing keys, or Play Console settings.
