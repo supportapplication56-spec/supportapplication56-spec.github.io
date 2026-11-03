@@ -106,6 +106,9 @@
     .project-art::after{content:"";position:absolute;width:195px;height:195px;transform:rotate(7deg);border:1px solid rgba(132,224,222,.23);border-radius:34px}
     .project-emblem{position:absolute;z-index:2;font-weight:900;font-size:4.15rem;letter-spacing:-.08em;line-height:1.25;color:#b3f6e5;text-shadow:0 6px 33px rgba(93,226,206,.16)}
     .project-emblem small{display:block;text-align:center;font-size:.55rem;letter-spacing:.33em;color:#8fbebd;font-weight:700;margin-top:2px}
+    .project + .project{margin-top:22px}
+    .expense-visual{position:absolute;z-index:2;width:124px;height:124px;display:grid;place-items:center;border-radius:28px;border:1px solid rgba(120,228,208,.32);background:linear-gradient(145deg,rgba(27,80,89,.92),rgba(12,39,54,.94));box-shadow:0 22px 50px rgba(0,0,0,.22)}
+    .expense-visual svg{width:70px;height:70px;fill:none;stroke:#a8f7e8;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
     .contact-panel{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:40px 44px;background:linear-gradient(95deg,rgba(17,51,63,.8),rgba(8,32,42,.85));border:1px solid var(--edge);border-radius:27px}
     .contact-panel h2{font-size:clamp(1.65rem,3vw,2.45rem);margin:0 0 7px}.contact-panel p{color:var(--muted);margin:0;max-width:590px}
     .email{overflow-wrap:anywhere;unicode-bidi:isolate;direction:ltr;font-weight:700;display:inline-flex;align-items:center;gap:10px}
@@ -205,6 +208,17 @@
         </div>
         <div class="project-art" aria-hidden="true"><div class="project-emblem">سبلا<small>SUBULA</small></div></div>
       </article>
+      <article class="project reveal" id="expense-tracker" aria-labelledby="expense-tracker-title">
+        <div class="project-copy">
+          <span class="status" data-i18n="expenseStatus">قيد تجهيز النسخة التجريبية</span>
+          <h3 id="expense-tracker-title">Expense Tracker</h3>
+          <p data-i18n="expenseDescription">تطبيق لتسجيل المصروفات وتنظيم الميزانية الشهرية، يعمل دون اتصال بالإنترنت ويحفظ سجلاتك على جهازك.</p>
+          <div class="chips"><span class="chip" data-i18n="expenseChip1">إدارة المصروفات</span><span class="chip" data-i18n="expenseChip2">الميزانية الشهرية</span><span class="chip" data-i18n="expenseChip3">حفظ محلي</span></div>
+          <a class="btn" href="/expense-tracker/privacy/" data-i18n="expensePrivacy">قراءة سياسة خصوصية Expense Tracker</a>
+          <p class="project-note" data-i18n="expenseNote">سياسة الخصوصية متاحة الآن. التطبيق قيد التجهيز للاختبار ولم يُطرح للتنزيل العام بعد.</p>
+        </div>
+        <div class="project-art" aria-hidden="true"><div class="expense-visual"><svg viewBox="0 0 80 80"><rect x="17" y="10" width="46" height="60" rx="8"/><path d="M27 24h26M27 36h26M27 48h12M49 48h4"/><path d="M29 60h22"/></svg></div></div>
+      </article>
     </section>
 
     <div class="container"><div class="section-divider" aria-hidden="true"></div></div>
@@ -239,6 +253,9 @@
           chip1:'القرآن الكريم',chip2:'الأذكار',chip3:'مواقيت الصلاة',chip4:'التسميع',
           subulaPrivacy:'قراءة سياسة خصوصية سبلا',
            subulaNote:'سياسة الخصوصية متاحة للاطلاع. لم يُطرح التطبيق للتحميل العام بعد، وسيُضاف رابط المتجر عندما يصبح متاحًا للجمهور.',
+          expenseStatus:'قيد تجهيز النسخة التجريبية',expenseDescription:'تطبيق لتسجيل المصروفات وتنظيم الميزانية الشهرية، يعمل دون اتصال بالإنترنت ويحفظ سجلاتك على جهازك.',
+          expenseChip1:'إدارة المصروفات',expenseChip2:'الميزانية الشهرية',expenseChip3:'حفظ محلي',expensePrivacy:'قراءة سياسة خصوصية Expense Tracker',
+          expenseNote:'سياسة الخصوصية متاحة الآن. التطبيق قيد التجهيز للاختبار ولم يُطرح للتنزيل العام بعد.',
           contactLabel:'نبدأ من محادثة',contactTitle:'لديك سؤال أو فكرة؟',contactDescription:'للدعم والاستفسارات المتعلقة بالتطبيقات أو الخصوصية، يسعدنا أن نسمع منك.',
           footer:'صُنعت بعناية، لتنساب بسلاسة.',footerContact:'التواصل والدعم'
         },
@@ -257,6 +274,9 @@
           chip1:'Quran',chip2:'Adhkar',chip3:'Prayer times',chip4:'Recitation practice',
           subulaPrivacy:'Read SUBULA privacy policy',
            subulaNote:'The privacy policy is available now. SUBULA is not yet publicly available to download; a public store link will be added when it is released.',
+          expenseStatus:'Preparing for testing',expenseDescription:'An offline personal expense and monthly-budget tracker that keeps your records on your device.',
+          expenseChip1:'Expense tracking',expenseChip2:'Monthly budgets',expenseChip3:'On-device storage',expensePrivacy:'Read Expense Tracker privacy policy',
+          expenseNote:'The privacy policy is available now. The app is being prepared for testing and is not yet publicly available for download.',
           contactLabel:'IT STARTS WITH A CONVERSATION',contactTitle:'A question or an idea?',contactDescription:'For app support and privacy questions, we would love to hear from you.',
           footer:'Crafted with care, designed to flow.',footerContact:'Contact & support'
         }
