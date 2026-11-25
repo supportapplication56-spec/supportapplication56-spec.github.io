@@ -138,8 +138,8 @@
         <span>Microphone audio is never recorded, saved, or uploaded to our servers.</span>
       </div>
       <div class="trust-item">
-        <strong>Zero Location Tracking</strong>
-        <span>Fajr times are computed offline from your manually chosen city.</span>
+        <strong>On-Device Location Only</strong>
+        <span>Optional coarse location computes Fajr times locally — never uploaded or tracked.</span>
       </div>
       <div class="trust-item">
         <strong>Zero Ads Forever</strong>
@@ -157,22 +157,27 @@
       <h3>1. البيانات التي نجمعها</h3>
       <p><strong>لا نجمع أي بيانات شخصية إطلاقًا.</strong> كافة بياناتك داخل التطبيق — مثل سجل المراجعة المتباعدة، خريطة الأخطاء، خطط الحفظ، والمدينة المختارة لحساب وقت الفجر — تُحفظ محليًا على جهازك فقط ولا تغادر جهازك أبدًا.</p>
 
-      <h3>2. إذن الميكروفون (التسميع الصوتي)</h3>
+      <h3>2. إذن الميكروفون ومحركا التسميع الصوتي (بما فيها حزمة Tarteel الأوفلاين)</h3>
       <ul>
         <li>يُطلب إذن الميكروفون (<code>RECORD_AUDIO</code>) فقط عند اختيارك تفعيل ميزة <strong>التسميع الصوتي</strong>.</li>
-        <li>لا يقوم التطبيق بتسجيل صوتك أو حفظ أي ملفات صوتية أو رفعها إلى أي خادم خاص بنا.</li>
-        <li>تعتمد ميزة التسميع الصوتي على محرك التعرف الصوتي المدمج في نظام التشغيل لديك (Android SpeechRecognizer / Apple Speech Framework). قد يعالج نظام التشغيل الصوت محليًا أو عبر مزود خدمة الصوت المختار في إعدادات جهازك وفقًا لسياسة خصوصية نظام التشغيل.</li>
+        <li>لا يقوم التطبيق بتسجيل صوتك أو حفظ أي ملفات صوتية أو رفعها إلى أي خادم خاص بنا مطلقًا.</li>
+        <li><strong>محرك Tarteel القرآني الأوفلاين (اختياري):</strong> عند قيامك اختياريًا بتحميل حزمة Tarteel المفتوحة المصدر (Apache 2.0)، تتم معالجة صوتك <strong>100% محليًا داخل ذاكرة هاتفك عبر محرك sherpa-onnx دون أي اتصال بالإنترنت</strong>، وتُحذف العينات الصوتية من الذاكرة المؤقتة فور انتهاء المطابقة. يمكنك حذف الحزمة في أي وقت من الإعدادات.</li>
+        <li><strong>محرك صوت نظام التشغيل (الافتراضي الخفيف):</strong> عند عدم تحميل حزمة Tarteel، يعتمد التسميع الصوتي على محرك نظام التشغيل (Android SpeechRecognizer / Apple Speech Framework) وفق إعدادات خصوصية جهازك.</li>
         <li>يمكنك استخدام التطبيق كاملًا بوضع <strong>التسميع الصامت باللمس</strong> دون منح إذن الميكروفون نهائيًا.</li>
       </ul>
 
       <h3>3. إذن الإشعارات المحلية (تذكير الفجر والمراجعة)</h3>
       <p>يُستخدم إذن الإشعارات (<code>POST_NOTIFICATIONS</code>) فقط لجدولة تنبيهات محلية على جهازك لتذكيرك بصلاة الفجر أو وِرد المراجعة اليومي متى قمت بتفعيلها يدويًا، ويمكنك إيقافها في أي وقت.</p>
 
-      <h3>4. الموقع الجغرافي</h3>
-      <p><strong>لا يطلب التطبيق إذن الموقع الجغرافي (GPS)</strong>؛ حيث تُحسب مواقيت الصلاة ووقت الفجر فلكيًا بدون إنترنت بناءً على المدينة التي تختارها يدويًا من القائمة المضمنة.</p>
+      <h3>4. إذن الموقع الجغرافي التقريبي الاختياري (مواقيت الصلاة)</h3>
+      <ul>
+        <li>يُطلب إذن الموقع التقريبي أثناء الاستخدام فقط (<code>ACCESS_COARSE_LOCATION</code>) <strong>فقط عند ضغطك الاختياري على زر «تحديد منطقتي»</strong> لحساب مواقيت الصلاة ووقت الفجر لمنطقتك.</li>
+        <li>تُعالج الإحداثيات التقريبية <strong>محليًا بالكامل على جهازك</strong> عبر معادلات فلكية أوفلاين (مكتبة <em>Adhan</em>) ولا تُرسل أو تُشارك مع أي خادم أو طرف ثالث مطلقًا، ولا يُستخدم الموقع في الخلفية أبدًا.</li>
+        <li>يمكنك دائمًا استخدام التطبيق كاملًا باختيار مدينتك يدويًا دون منح إذن الموقع نهائيًا.</li>
+      </ul>
 
-      <h3>5. المشاركة والخطط المشتركة</h3>
-      <p>تعمل ميزة «حلقات الحفظ المشتركة» عبر رموز نصية مشفرة محليًا (<code>WA1-...</code>) تشاركها أنت باختيارك عبر تطبيقات المراسلة على جهازك دون أي خادم وسيط.</p>
+      <h3>5. المشاركة والحلقات الجماعية وإذن الإنترنت والتحميل الاختياري</h3>
+      <p>تعمل «الحلقات الجماعية» و«الخطط المشتركة» عبر رموز نصية مشفرة محليًا (<code>WC1-...</code> و<code>WP1-...</code> و<code>WA1-...</code>) تشاركها أنت باختيارك عبر تطبيقات المراسلة دون أي خادم وسيط. ويُستخدم إذن الإنترنت (<code>INTERNET</code>) اختياريًا فقط عند: (1) طلبك تحميل حزمة Tarteel القرآنية الأوفلاين من مستودعات GitHub Releases أو Hugging Face، أو (2) فتح الروابط القانونية، أو (3) اعتماد محرك صوت النظام على الاتصال.</p>
 
       <h3>6. خصوصية الأطفال وحذف البيانات</h3>
       <p>بما أن التطبيق لا يجمع أي بيانات شخصية من أي فئة عمرية فهو آمن لجميع الأعمار. يمكنك حذف جميع بياناتك المحلية بالكامل بضغطة زر من داخل التطبيق عبر: <strong>الإعدادات ← مسح كافة بيانات الحفظ المحلية</strong>، أو بإلغاء تثبيت التطبيق.</p>
@@ -191,22 +196,27 @@
       <h3>1. Information We Collect</h3>
       <p><strong>We do not collect, store, or transmit any personal data.</strong> All app state — including Spaced Repetition review cards, Mistake Heatmap entries, memorization challenges, preferences, and selected city — stays strictly on your device using local OS storage.</p>
 
-      <h3>2. Microphone & Speech Recognition Permission</h3>
+      <h3>2. Microphone &amp; Speech Recognition (Including Optional Offline Tarteel Pack)</h3>
       <ul>
         <li>Microphone permission (<code>RECORD_AUDIO</code>) is optional and requested only if you activate <strong>Voice Recitation Mode</strong>.</li>
         <li>WithaqAyat never records, archives, or uploads audio files to any developer server.</li>
-        <li>Live speech-to-text transcription is delegated solely to your device's operating system speech recognition engine (Android SpeechRecognizer / iOS Speech Framework), governed by your OS speech privacy settings.</li>
+        <li><strong>Optional Offline Tarteel Pack:</strong> If you optionally download the open-source Tarteel Whisper ONNX pack (Apache 2.0), audio is processed <strong>100% locally in-memory on your device via sherpa-onnx with zero network activity</strong> and discarded immediately after matching. You can delete the pack anytime in Settings.</li>
+        <li><strong>Built-in OS Speech Recognizer:</strong> If no offline pack is installed, live transcription uses your device's operating system speech engine (Android SpeechRecognizer / iOS Speech Framework), governed by your OS speech privacy settings.</li>
         <li>You may use the entire app via <strong>Silent Tap-to-Reveal Mode</strong> without ever granting microphone access.</li>
       </ul>
 
       <h3>3. Local Notifications</h3>
       <p>Optional notification permission (<code>POST_NOTIFICATIONS</code>) is used exclusively to deliver offline local reminders for Fajr and daily Quran review when enabled by you.</p>
 
-      <h3>4. No Location Permission</h3>
-      <p>WithaqAyat does <strong>not</strong> request GPS or location permissions. Astronomical Fajr and prayer times are computed 100% offline from a city you select manually.</p>
+      <h3>4. Optional Foreground-Only Coarse Location (Prayer Times)</h3>
+      <ul>
+        <li>Approximate foreground location permission (<code>ACCESS_COARSE_LOCATION</code>) is strictly optional and requested <strong>only when you explicitly tap "Detect My Area"</strong>.</li>
+        <li>Your approximate coordinates are used <strong>exclusively on-device</strong> for offline astronomical Fajr and prayer time calculation (via <em>Adhan</em>) and are <strong>never transmitted, logged, or shared off-device</strong>. Background location is never requested.</li>
+        <li>You can always select a city manually without granting location access.</li>
+      </ul>
 
-      <h3>5. Serverless Shared Plans & External Links</h3>
-      <p>Shared memorization plans encode only plan metadata (Surah, verse range, daily count, start date) into a compact text code (<code>WA1-...</code>) that you optionally share via your OS share sheet. Opening external attribution or policy links launches your device browser.</p>
+      <h3>5. Serverless Circles, Optional Model Downloads &amp; Internet Permission</h3>
+      <p>Multi-member circles and shared plans encode compact text codes (<code>WC1-...</code>, <code>WP1-...</code>, <code>WA1-...</code>) shared strictly via your OS share sheet without any backend server. The <code>INTERNET</code> permission is used solely when: (1) you explicitly download the optional offline Tarteel ONNX voice pack from GitHub Releases or Hugging Face, (2) you open external attribution/policy URLs, or (3) your OS speech recognizer requires connectivity.</p>
 
       <h3>6. Children's Privacy & Data Deletion (GDPR / CCPA / Google Play)</h3>
       <p>Because zero personal data is collected or transmitted, the app complies fully with GDPR, CCPA, COPPA, and Google Play Families/Data Safety standards. You retain full control and can wipe all local app data anytime via <strong>Settings → Clear All Local Memorization Data</strong> or by uninstalling the app.</p>
