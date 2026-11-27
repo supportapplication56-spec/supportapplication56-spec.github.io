@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WithaqAyat (وِثَاقُ الآي) Privacy Policy — Offline-First Quran Memorization & Recitation App. Zero Cloud, Zero Ads, Zero Tracking." />
-  <title>WithaqAyat — Privacy Policy | سياسة الخصوصية</title>
+  <meta name="description" content="WithaqAyat (وِثَاقُ الآي) Privacy Policy & FAQ — 100% Free, Ad-Free, Offline-First Quran Memorization & Recitation App. Zero Cloud, Zero Tracking." />
+  <title>WithaqAyat — Privacy Policy &amp; FAQ | سياسة الخصوصية والأسئلة الشائعة</title>
   <style>
     :root {
       --bg: #fbf7ee;
@@ -16,6 +16,8 @@
       --accent: #0f5d46;
       --accent-soft: #d9f2e8;
       --accent-dark: #093b2c;
+      --gold-bg: #fdf5e4;
+      --gold-border: #d9b468;
       --hero-1: #0b241d;
       --hero-2: #0f4736;
       --hero-3: #14634b;
@@ -31,6 +33,8 @@
         --accent: #34b38a;
         --accent-soft: #133326;
         --accent-dark: #a7f3d0;
+        --gold-bg: #231e12;
+        --gold-border: #9a7b3b;
       }
     }
     * { box-sizing: border-box; }
@@ -41,7 +45,7 @@
       color: var(--text);
       line-height: 1.75;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 24px 18px 64px; }
+    .container { max-width: 920px; margin: 0 auto; padding: 24px 18px 64px; }
     .hero {
       background: linear-gradient(135deg, var(--hero-1), var(--hero-2), var(--hero-3));
       color: #fff;
@@ -59,7 +63,7 @@
       font-weight: 600;
       margin-bottom: 12px;
     }
-    .hero h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; }
+    .hero h1 { margin: 0 0 8px; font-size: 27px; line-height: 1.3; }
     .hero p { margin: 0; color: rgba(255, 255, 255, 0.86); font-size: 15px; }
     .lang-nav {
       display: flex;
@@ -103,8 +107,56 @@
     .section h3 { margin: 20px 0 8px; font-size: 16.5px; }
     .section ul { padding-inline-start: 22px; }
     .section li { margin-bottom: 6px; }
+    .notice-box {
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 16px 0;
+    }
+    .notice-box strong { display: block; margin-bottom: 4px; }
+    .faq-list { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+    details.faq-item {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    details.faq-item summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 15.5px;
+      color: var(--text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: "+";
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    details.faq-item[open] summary::after { content: "−"; }
+    details.faq-item p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.75;
+    }
     .rtl { direction: rtl; text-align: right; }
+    .ltr { direction: ltr; text-align: left; }
     a { color: var(--accent); }
+    code {
+      background: var(--surface-alt);
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
     footer {
       text-align: center;
       color: var(--muted);
@@ -117,15 +169,16 @@
   <div class="container">
     <header class="hero">
       <div class="badge">Local-First • Zero Cloud • Zero Ads • Zero Tracking</div>
-      <h1>WithaqAyat (وِثَاقُ الآي) — Privacy Policy</h1>
-      <p>Effective Date: November 24, 2026 • Package ID: <code>io.github.supportapplication56.withaq_ayat</code></p>
+      <h1>WithaqAyat (وِثَاقُ الآي) — Privacy Policy &amp; FAQ</h1>
+      <p>Effective Date: November 26, 2026 • Package ID: <code>io.github.supportapplication56.withaq_ayat</code></p>
     </header>
 
     <nav class="lang-nav">
-      <a href="#arabic">العربية (النسخة العربية)</a>
-      <a href="#english">English Version</a>
-      <a href="../terms/">Terms of Use | شروط الاستخدام</a>
-      <a href="../">Home | الرئيسية</a>
+      <a href="#arabic">سياسة الخصوصية (العربية)</a>
+      <a href="#faq">الأسئلة الشائعة (FAQ)</a>
+      <a href="#english">English Policy</a>
+      <a href="../terms/">شروط الاستخدام | Terms</a>
+      <a href="../">الرئيسية | Home</a>
     </nav>
 
     <div class="trust-grid">
@@ -135,39 +188,44 @@
       </div>
       <div class="trust-item">
         <strong>Zero Voice Storage</strong>
-        <span>Microphone audio is never recorded, saved, or uploaded to our servers.</span>
+        <span>Microphone audio is never recorded, archived, or uploaded to our servers.</span>
       </div>
       <div class="trust-item">
         <strong>On-Device Location Only</strong>
         <span>Optional coarse location computes Fajr times locally — never uploaded or tracked.</span>
       </div>
       <div class="trust-item">
-        <strong>Zero Ads Forever</strong>
-        <span>No advertising networks, no trackers, no third-party data brokers.</span>
+        <strong>100% Free Forever</strong>
+        <span>Zero ads, zero subscriptions, zero third-party data brokers.</span>
       </div>
     </div>
 
     <section id="arabic" class="section rtl">
       <h2>سياسة الخصوصية — تطبيق «وِثَاقُ الآي»</h2>
       <p>
-        يُصمَّم تطبيق <strong>وِثَاقُ الآي (WithaqAyat)</strong> على مبدأ الخصوصية المطلقة والعمل المحلي الكامل (<strong>Local-First / Offline-First</strong>).
+        يُصمَّم تطبيق <strong>وِثَاقُ الآي (WithaqAyat)</strong> بوصفه صدقةً جارية مجانية بالكامل على مبدأ الخصوصية المطلقة والعمل المحلي الكامل (<strong>Local-First / Offline-First</strong>).
         نحن لا نمتلك خوادم تجمع بياناتك، ولا نطلب إنشاء حساب، ولا نعرض إعلانات، ولا نستخدم أي أدوات تتبّع أو تحليلات خارجية.
       </p>
 
       <h3>1. البيانات التي نجمعها</h3>
-      <p><strong>لا نجمع أي بيانات شخصية إطلاقًا.</strong> كافة بياناتك داخل التطبيق — مثل سجل المراجعة المتباعدة، خريطة الأخطاء، خطط الحفظ، والمدينة المختارة لحساب وقت الفجر — تُحفظ محليًا على جهازك فقط ولا تغادر جهازك أبدًا.</p>
+      <p><strong>لا نجمع أي بيانات شخصية إطلاقًا.</strong> كافة بياناتك داخل التطبيق — مثل سجل محفوظاتك، بطاقات التكرار المتباعد، خريطة الأخطاء، حلقات الصحبة، مواعيد التذكير المخصّصة، والمدينة المختارة لحساب مواقيت الصلاة — تُحفظ محليًا على جهازك فقط ولا تغادر جهازك أبدًا.</p>
 
-      <h3>2. إذن الميكروفون ومحركا التسميع الصوتي (بما فيها حزمة Tarteel الأوفلاين)</h3>
+      <h3>2. إذن الميكروفون ومحركا التسميع الصوتي</h3>
       <ul>
-        <li>يُطلب إذن الميكروفون (<code>RECORD_AUDIO</code>) فقط عند اختيارك تفعيل ميزة <strong>التسميع الصوتي</strong>.</li>
+        <li>يُطلب إذن الميكروفون (<code>RECORD_AUDIO</code>) فقط عند اختيارك تفعيل ميزة <strong>التسميع الصوتي</strong>، ويتوقّف الاستماع تلقائيًا عند مغادرتك للتطبيق أو عند الصمت لفترة وجيزة.</li>
         <li>لا يقوم التطبيق بتسجيل صوتك أو حفظ أي ملفات صوتية أو رفعها إلى أي خادم خاص بنا مطلقًا.</li>
-        <li><strong>محرك Tarteel القرآني الأوفلاين (اختياري):</strong> عند قيامك اختياريًا بتحميل حزمة Tarteel المفتوحة المصدر (Apache 2.0)، تتم معالجة صوتك <strong>100% محليًا داخل ذاكرة هاتفك عبر محرك sherpa-onnx دون أي اتصال بالإنترنت</strong>، وتُحذف العينات الصوتية من الذاكرة المؤقتة فور انتهاء المطابقة. يمكنك حذف الحزمة في أي وقت من الإعدادات.</li>
-        <li><strong>محرك صوت نظام التشغيل (الافتراضي الخفيف):</strong> عند عدم تحميل حزمة Tarteel، يعتمد التسميع الصوتي على محرك نظام التشغيل (Android SpeechRecognizer / Apple Speech Framework) وفق إعدادات خصوصية جهازك.</li>
-        <li>يمكنك استخدام التطبيق كاملًا بوضع <strong>التسميع الصامت باللمس</strong> دون منح إذن الميكروفون نهائيًا.</li>
+        <li><strong>المحرك القرآني الفوري الأوفلاين (FastConformer-Quran — اختياري ~83 MB):</strong> عند قيامك اختياريًا بتحميل هذه الحزمة المفتوحة المصدر (<code>CC-BY-4.0</code>)، تتم معالجة صوتك <strong>100% محليًا داخل ذاكرة هاتفك عبر محرك <code>sherpa-onnx</code> دون أي اتصال بالإنترنت</strong>، وتُحذف العينات الصوتية من الذاكرة المؤقتة فور انتهاء المطابقة. يمكنك حذف الحزمة في أي وقت من الإعدادات.</li>
+        <li><strong>محرك التسميع الفوري عبر الجهاز (0 MB — احتياطي):</strong> عند عدم تحميل المحرك القرآني الأوفلاين، يعتمد التسميع الصوتي على محرك التعرّف الصوتي المدمج في نظام التشغيل (Android SpeechRecognizer / Apple Speech Framework) وفق سياسة وإعدادات خصوصية نظام جهازك (قد يعمل بالإنترنت أو بحزمة اللغة العربية المثبّتة في جهازك).</li>
+        <li>يمكنك استخدام التطبيق كاملًا بوضع <strong>القراءة</strong> و<strong>التسميع الصامت باللمس</strong> دون منح إذن الميكروفون نهائيًا.</li>
       </ul>
 
-      <h3>3. إذن الإشعارات المحلية (تذكير الفجر والمراجعة)</h3>
-      <p>يُستخدم إذن الإشعارات (<code>POST_NOTIFICATIONS</code>) فقط لجدولة تنبيهات محلية على جهازك لتذكيرك بصلاة الفجر أو وِرد المراجعة اليومي متى قمت بتفعيلها يدويًا، ويمكنك إيقافها في أي وقت.</p>
+      <div class="notice-box">
+        <strong>تنويه شرعي وإخلاء مسؤولية حول التسميع الصوتي:</strong>
+        جميع محركات التسميع الصوتي في التطبيق (سواء المحرك القرآني الأوفلاين أو محرك الجهاز عبر الإنترنت أو بدونه) هي أدوات تقنية مساعدة لتسهيل الحفظ وترتيب الآيات فقط، ولا تُغني إطلاقًا عن التلقي والمشافهة والعرض على شيخٍ أو معلّمٍ متقن لتصحيح كافة الأخطاء وضبط أحكام التجويد ومخارج الحروف والحركات وغريب القرآن. لمزيد من التفاصيل راجع <a href="../terms/#arabic">شروط الاستخدام وإخلاء المسؤولية</a>.
+      </div>
+
+      <h3>3. إذن الإشعارات المحلية (تذكير الفجر والمواعيد المخصّصة)</h3>
+      <p>يُستخدم إذن الإشعارات (<code>POST_NOTIFICATIONS</code>) فقط لجدولة تنبيهات محلية على جهازك لتذكيرك بوقت الفجر (قبل الأذان أو عنده أو بعده) ومواعيد الحفظ والمراجعة التي تنشئها وتسميها بنفسك، ولا تمرّ هذه التنبيهات عبر أي خادم إشعارات خارجي، ويمكنك تعديلها أو حذفها في أي وقت.</p>
 
       <h3>4. إذن الموقع الجغرافي التقريبي الاختياري (مواقيت الصلاة)</h3>
       <ul>
@@ -176,57 +234,123 @@
         <li>يمكنك دائمًا استخدام التطبيق كاملًا باختيار مدينتك يدويًا دون منح إذن الموقع نهائيًا.</li>
       </ul>
 
-      <h3>5. المشاركة والحلقات الجماعية وإذن الإنترنت والتحميل الاختياري</h3>
-      <p>تعمل «الحلقات الجماعية» و«الخطط المشتركة» عبر رموز نصية مشفرة محليًا (<code>WC1-...</code> و<code>WP1-...</code> و<code>WA1-...</code>) تشاركها أنت باختيارك عبر تطبيقات المراسلة دون أي خادم وسيط. ويُستخدم إذن الإنترنت (<code>INTERNET</code>) اختياريًا فقط عند: (1) طلبك تحميل حزمة Tarteel القرآنية الأوفلاين من مستودعات GitHub Releases أو Hugging Face، أو (2) فتح الروابط القانونية، أو (3) اعتماد محرك صوت النظام على الاتصال.</p>
+      <h3>5. حلقات الصحبة بلا خوادم وإذن الإنترنت والتحميل الاختياري</h3>
+      <p>تعمل «حلقات الصحبة» (أصدقاء / عائلة / معلّم وطلاب) و«الخطط الموحّدة» عبر رموز نصية مشفّرة محليًا (<code>WC1-...</code> و<code>WP1-...</code> و<code>WA1-...</code>) تشاركها أنت باختيارك عبر تطبيقات المراسلة دون أي خادم وسيط أو حسابات. ويُستخدم إذن الإنترنت (<code>INTERNET</code>) اختياريًا فقط عند: (1) طلبك تحميل حزمة المحرك القرآني الأوفلاين (<code>FastConformer</code>) من GitHub Releases أو Hugging Face، أو (2) فتح الروابط القانونية، أو (3) استخدام محرك صوت نظام التشغيل إذا كان يعتمد على الاتصال.</p>
 
-      <h3>6. خصوصية الأطفال وحذف البيانات</h3>
-      <p>بما أن التطبيق لا يجمع أي بيانات شخصية من أي فئة عمرية فهو آمن لجميع الأعمار. يمكنك حذف جميع بياناتك المحلية بالكامل بضغطة زر من داخل التطبيق عبر: <strong>الإعدادات ← مسح كافة بيانات الحفظ المحلية</strong>، أو بإلغاء تثبيت التطبيق.</p>
+      <h3>6. خصوصية الأطفال وحذف البيانات بالكامل</h3>
+      <p>بما أن التطبيق لا يجمع أي بيانات شخصية من أي فئة عمرية فهو آمن تمامًا لجميع الأعمار والأسرة والأطفال. يمكنك حذف جميع بياناتك المحلية بالكامل بضغطة زر من داخل التطبيق عبر: <strong>الإعدادات ← مسح بيانات الحفظ المحلية</strong>، أو بإلغاء تثبيت التطبيق.</p>
 
       <h3>7. التواصل معنا</h3>
-      <p>لأي استفسار حول الخصوصية أو حقوق النشر، تواصل معنا عبر البريد الإلكتروني: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
+      <p>لأي استفسار حول الخصوصية أو حقوق النشر أو الإبلاغ عن ملاحظة: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
     </section>
 
-    <section id="english" class="section">
+    <section id="english" class="section ltr">
       <h2>Privacy Policy — WithaqAyat</h2>
       <p>
-        <strong>WithaqAyat (وِثَاقُ الآي)</strong> is engineered as a <strong>Local-First, Offline-First</strong> Quran memorization application.
-        We operate no backend servers, require no user accounts, display no advertisements, and embed zero analytics or tracking SDKs.
+        <strong>WithaqAyat (وِثَاقُ الآي)</strong> is engineered as a permanently free, ad-free, <strong>Local-First, Offline-First</strong> Quran memorization application.
+        We operate zero backend servers, require zero accounts, display zero advertisements, and embed zero analytics or tracking SDKs.
       </p>
 
       <h3>1. Information We Collect</h3>
-      <p><strong>We do not collect, store, or transmit any personal data.</strong> All app state — including Spaced Repetition review cards, Mistake Heatmap entries, memorization challenges, preferences, and selected city — stays strictly on your device using local OS storage.</p>
+      <p><strong>We do not collect, store, or transmit any personal data.</strong> All app state — including your memorized Surahs list, Spaced Repetition cards, Mistake Heatmap entries, Hifz Circles, custom daily reminders, and selected city — stays strictly on your device using local storage.</p>
 
-      <h3>2. Microphone &amp; Speech Recognition (Including Optional Offline Tarteel Pack)</h3>
+      <h3>2. Microphone &amp; Speech Recognition</h3>
       <ul>
-        <li>Microphone permission (<code>RECORD_AUDIO</code>) is optional and requested only if you activate <strong>Voice Recitation Mode</strong>.</li>
+        <li>Microphone permission (<code>RECORD_AUDIO</code>) is optional and requested only if you activate <strong>Voice Recitation Mode</strong>. Listening automatically stops when you leave the app or after a brief silence.</li>
         <li>WithaqAyat never records, archives, or uploads audio files to any developer server.</li>
-        <li><strong>Optional Offline Tarteel Pack:</strong> If you optionally download the open-source Tarteel Whisper ONNX pack (Apache 2.0), audio is processed <strong>100% locally in-memory on your device via sherpa-onnx with zero network activity</strong> and discarded immediately after matching. You can delete the pack anytime in Settings.</li>
-        <li><strong>Built-in OS Speech Recognizer:</strong> If no offline pack is installed, live transcription uses your device's operating system speech engine (Android SpeechRecognizer / iOS Speech Framework), governed by your OS speech privacy settings.</li>
-        <li>You may use the entire app via <strong>Silent Tap-to-Reveal Mode</strong> without ever granting microphone access.</li>
+        <li><strong>Optional Offline Quran Engine (FastConformer-Quran, ~83 MB):</strong> If you optionally download the open-source FastConformer-Quran ONNX pack (<code>CC-BY-4.0</code>), audio is processed <strong>100% locally in-memory on your device via <code>sherpa-onnx</code> with zero network traffic</strong> and discarded immediately after matching. You can delete the pack anytime in Settings.</li>
+        <li><strong>Built-in Device Speech Engine (0 MB fallback):</strong> If no offline pack is installed, live transcription uses your device's OS speech recognizer (Android SpeechRecognizer / Apple Speech Framework), governed by your OS speech privacy settings.</li>
+        <li>You may use the entire app via <strong>Read Mode</strong> and <strong>Silent Tap-to-Reveal Mode</strong> without ever granting microphone access.</li>
       </ul>
 
-      <h3>3. Local Notifications</h3>
-      <p>Optional notification permission (<code>POST_NOTIFICATIONS</code>) is used exclusively to deliver offline local reminders for Fajr and daily Quran review when enabled by you.</p>
+      <div class="notice-box">
+        <strong>Important Educational &amp; Scholarly Disclaimer:</strong>
+        All voice recitation engines (both offline FastConformer and device/online speech) are strictly self-study memorization aids and NEVER replace a qualified Sheikh or Quran teacher for verifying Tajweed, Makharij, diacritics (Harakat), or rare Quranic words. See our <a href="../terms/#english">Terms of Use &amp; Full Liability Waiver</a>.
+      </div>
+
+      <h3>3. Local Notifications (Fajr &amp; Custom Reminders)</h3>
+      <p>Optional notification permission (<code>POST_NOTIFICATIONS</code>) is used exclusively to schedule local on-device reminders for Fajr and your unlimited user-created memorization/review reminders. No push-notification server is used.</p>
 
       <h3>4. Optional Foreground-Only Coarse Location (Prayer Times)</h3>
       <ul>
         <li>Approximate foreground location permission (<code>ACCESS_COARSE_LOCATION</code>) is strictly optional and requested <strong>only when you explicitly tap "Detect My Area"</strong>.</li>
-        <li>Your approximate coordinates are used <strong>exclusively on-device</strong> for offline astronomical Fajr and prayer time calculation (via <em>Adhan</em>) and are <strong>never transmitted, logged, or shared off-device</strong>. Background location is never requested.</li>
-        <li>You can always select a city manually without granting location access.</li>
+        <li>Your approximate coordinates are used <strong>exclusively on-device</strong> for offline astronomical prayer-time calculation (via <em>Adhan</em>) and are <strong>never transmitted, logged, or shared off-device</strong>. Background location is never requested.</li>
+        <li>You can always pick a city manually without granting location access.</li>
       </ul>
 
       <h3>5. Serverless Circles, Optional Model Downloads &amp; Internet Permission</h3>
-      <p>Multi-member circles and shared plans encode compact text codes (<code>WC1-...</code>, <code>WP1-...</code>, <code>WA1-...</code>) shared strictly via your OS share sheet without any backend server. The <code>INTERNET</code> permission is used solely when: (1) you explicitly download the optional offline Tarteel ONNX voice pack from GitHub Releases or Hugging Face, (2) you open external attribution/policy URLs, or (3) your OS speech recognizer requires connectivity.</p>
+      <p>Friends, Family, and Teacher-Students circles encode compact text payloads (<code>WC1-...</code>, <code>WP1-...</code>, <code>WA1-...</code>) shared strictly via your OS share sheet without any backend server. The <code>INTERNET</code> permission is used solely when: (1) you explicitly download the optional offline FastConformer ONNX pack from GitHub Releases or Hugging Face, (2) you open external policy/attribution URLs, or (3) your OS speech engine relies on connectivity.</p>
 
-      <h3>6. Children's Privacy & Data Deletion (GDPR / CCPA / Google Play)</h3>
-      <p>Because zero personal data is collected or transmitted, the app complies fully with GDPR, CCPA, COPPA, and Google Play Families/Data Safety standards. You retain full control and can wipe all local app data anytime via <strong>Settings → Clear All Local Memorization Data</strong> or by uninstalling the app.</p>
+      <h3>6. Children's Privacy &amp; Data Deletion (GDPR / CCPA / Google Play)</h3>
+      <p>Because zero personal data is collected or transmitted, WithaqAyat is safe for all ages and complies fully with GDPR, CCPA, COPPA, and Google Play Data Safety standards. Delete all local data anytime via <strong>Settings → Clear Local Memorization Data</strong> or by uninstalling the app.</p>
 
       <h3>7. Contact</h3>
       <p>Questions or legal inquiries: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
     </section>
 
+    <section id="faq" class="section rtl">
+      <h2>الأسئلة الشائعة (FAQ)</h2>
+      <p>إجابات سريعة وواضحة على أكثر الأسئلة تكرارًا حول استخدام تطبيق «وِثَاقُ الآي»:</p>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>1. هل تطبيق «وِثَاقُ الآي» مجاني بالكامل؟ وهل ستظهر فيه إعلانات أو اشتراكات لاحقًا؟</summary>
+          <p>نعم، التطبيق مجاني 100% وخالٍ تمامًا من الإعلانات والاشتراكات المدفوعة والمشتريات الداخلية، وقد بُني بوصفه صدقة جارية لوجه الله تعالى بحيث يعمل محليًا على جهازك دون خوادم مكلفة حتى لا يتوقف بإذن الله مع مرور السنوات.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>2. هل يُغني التسميع الصوتي (سواء بالإنترنت أو أوفلاين) عن العرض على شيخٍ أو معلّم؟</summary>
+          <p>لا أبدًا. جميع محركات التسميع الصوتي — سواء المحرك القرآني الأوفلاين (FastConformer) أو محرك الجهاز عبر الإنترنت أو بدونه — هي أدوات مساعدة لتسهيل الحفظ الذاتي والتأكد من تذكّر الكلمات وترتيب الآيات فقط. ولا يمكن لأي محرك آلي أن يُغني عن التلقي والمشافهة على أيدي المشايخ والمعلّمين المتقنين لتصحيح كافة الأخطاء، وضبط أحكام التجويد ومخارج الحروف والمدود والحركات (الفتحة والكسرة والضمة والسكون) وغريب القرآن. ويُخلي التطبيق ومطوروه مسؤوليتهم الكاملة عن أي خطأ قرائي أو تجويدي لا يرصده المحرك الآلي.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>3. هل يُسجَّل صوتي أو يُحفظ على هاتفي أو يُرفع إلى خوادمكم؟</summary>
+          <p>لا مطلقًا. التطبيق لا يسجّل صوتك ولا يحفظ أي مقاطع صوتية ولا يملك خوادم لاستقبالها. وعند استخدام المحرك القرآني الأوفلاين (FastConformer) تتم المعالجة بالكامل داخل ذاكرة الهاتف المؤقتة في وضع الطيران وتُمسح فورًا بعد مطابقة الكلمة. أما عند استخدام محرك الجهاز الافتراضي فيُعالج الصوت عبر خدمة نظام التشغيل لديك حسب إعدادات جهازك.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>4. لماذا يطلب المحرك القرآني الأوفلاين تحميل ~83 ميجابايت مرة واحدة؟</summary>
+          <p>لأن ملف نموذج الذكاء الاصطناعي القرآني المتخصص (FastConformer-Quran) يُخزّن على جهازك مرة واحدة فقط (حوالي 83 ميجابايت) حتى تتمكن من التسميع الصوتي الحي الفوري بلا تقطيع وبلا إنترنت نهائيًا مدى الحياة، مع إمكانية استكمال التحميل في الخلفية أو حذف الحزمة في أي وقت من الإعدادات.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>5. كيف تعمل «حلقات الصحبة» (أصدقاء / عائلة / معلّم وطلاب) بدون حسابات؟ وما معنى الرموز أسفل الرسالة؟</summary>
+          <p>صُممت الحلقات للعمل بلا خوادم وبلا تسجيل دخول عبر رسائل واتساب أو تيليجرام العادية:<br />
+          • <strong>لمنشئ الحلقة:</strong> افتح تبويب «الصحبة» ← «إنشاء حلقة» ← اختر النوع (أصدقاء أو عائلة لحفظ حر لكل شخص، أو معلّم وطلاب لتحديد سورة وآيات كواجب ومتابعة الدقة) ← أرسل رسالة الدعوة الجاهزة في مجموعتكم.<br />
+          • <strong>لمن وصلته الدعوة:</strong> انسخ رسالة الدعوة كاملة كما هي ← افتح «الصحبة» ← «الانضمام لحلقة» ← اضغط زر «لصق» ← اكتب اسمك واضغط «انضمام ومشاركة» وأرسل رسالة انضمامك في المجموعة.<br />
+          • <strong>التحديث اليومي:</strong> كلما أرسل الأعضاء أو الطلاب رسائل إنجازهم في المجموعة، انسخ رسائلهم واضغط «تحديث» داخل بطاقة الحلقة ← «لصق» ليتحدّث الجميع تلقائيًا.<br />
+          • <strong>معنى الحروف الإنجليزية (WC1 / WP1):</strong> هي «رمز ربط تلقائي» مضغوط يقرؤه التطبيق وحده ليتعرّف على الحلقة وإنجاز الأعضاء دون الحاجة لخادم؛ لا تعدّله، فقط انسخ الرسالة كاملة.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>6. كيف أضبط أكثر من موعد تذكير يومي (مثل حفظ جديد، مراجعة يومية، مراجعة شاملة)؟</summary>
+          <p>من تبويب <strong>«الصحبة»</strong> مرّر لأسفل إلى بطاقة <strong>«مواعيد الحفظ والمراجعة»</strong> واضغط <strong>«إضافة موعد»</strong>. يمكنك إنشاء العدد الذي تشاء من المواعيد، وتسمية كل موعد بالاسم الذي يناسبك (مثل: حفظ جديد، مراجعة يومية، مراجعة شاملة)، واختيار الوقت الدقيق لكل موعد، أو تعديلها وإيقافها وحذفها بحرية في أي وقت. كما يمكنك ضبط منبّه الفجر قبل الأذان أو عنده أو بعده.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>7. أين أجد «سجل محفوظاتي» للاختبار في السور التي أحفظها فقط؟</summary>
+          <p>افتح تبويب <strong>«المراجعة»</strong> واضغط على بطاقة <strong>«سجل محفوظاتي»</strong> لتحديد السور أو الأجزاء التي تحفظها (مع اختصارات سريعة لجزء عمّ وتبارك وقد سمع). بعدها عند فتح اختبار <strong>«أكمل من هنا»</strong> يمكنك اختيار الاختبار من «محفوظاتي» فقط أو من «كامل المصحف».</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>8. لماذا قد يختلف وقت أذان الفجر أو الصلاة بدقيقة أو دقيقتين عن المسجد القريب؟</summary>
+          <p>يحسب التطبيق المواقيت فلكيًا أوفلاين وفق الهيئات المعتمدة (أم القرى، رابطة العالم الإسلامي، الهيئة المصرية وغيرها)، وقد يحدث فرق دقيقة أو دقيقتين حسب الارتفاع أو التقويم الرسمي المحلي. يمكنك الضغط على <strong>«ضبط المذهب والدقائق»</strong> في بطاقة الفجر لاختيار الهيئة والمذهب وتعديل الفجر أو المغرب يدويًا بالدقائق، مع الالتزام دائمًا بأذان المسجد وتقويم الأوقاف المحلي للاحتياط في الصلاة والصيام.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>9. من أين أتى نص القرآن الكريم والتفسير الميسّر؟ وكيف أتأكد من سلامتهما؟</summary>
+          <p>نص القرآن الكريم وخط الرسم العثماني منقولان حرفيًا دون أي تعديل من <strong>مجمع الملك فهد لطباعة المصحف الشريف (KFGQPC HAFS Uthmanic Script v22)</strong> برواية حفص عن عاصم، وكذلك <strong>التفسير الميسّر</strong> من مجمع الملك فهد، مع فحص آلي متكامل ببصمة <code>SHA-256</code> داخل التطبيق يمكنك التحقق منه في أي وقت من: <strong>الإعدادات ← المصادر الشرعية وحقوق النشر</strong>.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>10. كيف أحذف جميع بياناتي المحلية أو أتواصل معكم لاقتراح تحسين أو الإبلاغ عن مشكلة؟</summary>
+          <p>لحذف كافة بياناتك المحلية بالكامل، افتح <strong>الإعدادات ← مسح بيانات الحفظ المحلية</strong> أو ألغِ تثبيت التطبيق. ولأي اقتراح أو استفسار أو إبلاغ عن خطأ في العرض على جهازك، يسعدنا تواصلك عبر البريد الرسمي: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+        </details>
+      </div>
+    </section>
+
     <footer>
-      <p>© 2026 WithaqAyat (وِثَاقُ الآي) • <a href="../terms/">Terms of Use &amp; Attributions</a></p>
+      <p>© 2026 WithaqAyat (وِثَاقُ الآي) • <a href="../terms/">شروط الاستخدام والمصادر | Terms of Use</a> • <a href="#faq">الأسئلة الشائعة (FAQ)</a></p>
     </footer>
   </div>
 </body>
