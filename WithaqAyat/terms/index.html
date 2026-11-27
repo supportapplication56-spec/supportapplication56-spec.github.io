@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WithaqAyat (وِثَاقُ الآي) Terms of Use, Sacred Text Integrity & Open-License Attributions." />
-  <title>WithaqAyat — Terms &amp; Attributions | شروط الاستخدام والمصادر</title>
+  <meta name="description" content="WithaqAyat (وِثَاقُ الآي) Terms of Use, Scholarly &amp; Technical Liability Waiver, Sacred Text Integrity &amp; Open-License Attributions." />
+  <title>WithaqAyat — Terms &amp; Attributions | شروط الاستخدام وإخلاء المسؤولية</title>
   <style>
     :root {
       --bg: #fbf7ee;
       --surface: #fffdf9;
+      --surface-alt: #f3ecdc;
       --border: #e5dcc7;
       --text: #1a221e;
       --muted: #5a6860;
       --accent: #0f5d46;
+      --gold-bg: #fdf5e4;
+      --gold-border: #d9b468;
       --hero-1: #0b241d;
       --hero-2: #0f4736;
       --hero-3: #14634b;
@@ -21,10 +24,13 @@
       :root {
         --bg: #0b1412;
         --surface: #12201c;
+        --surface-alt: #1a2e28;
         --border: #253f37;
         --text: #f0f5f2;
         --muted: #9cb3a9;
         --accent: #34b38a;
+        --gold-bg: #231e12;
+        --gold-border: #9a7b3b;
       }
     }
     * { box-sizing: border-box; }
@@ -33,9 +39,9 @@
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.75;
+      line-height: 1.78;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 24px 18px 64px; }
+    .container { max-width: 920px; margin: 0 auto; padding: 24px 18px 64px; }
     .hero {
       background: linear-gradient(135deg, var(--hero-1), var(--hero-2), var(--hero-3));
       color: #fff;
@@ -43,7 +49,7 @@
       padding: 32px 28px;
       margin-bottom: 22px;
     }
-    .hero h1 { margin: 0 0 8px; font-size: 28px; }
+    .hero h1 { margin: 0 0 8px; font-size: 27px; line-height: 1.3; }
     .hero p { margin: 0; color: rgba(255, 255, 255, 0.85); font-size: 15px; }
     .nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 22px; }
     .nav a {
@@ -56,6 +62,7 @@
       font-size: 13px;
       font-weight: 600;
     }
+    .nav a:hover { border-color: var(--accent); color: var(--accent); }
     .section {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -64,9 +71,26 @@
       margin-bottom: 22px;
     }
     .section h2 { margin-top: 0; color: var(--accent); font-size: 22px; }
-    .section h3 { margin: 18px 0 8px; font-size: 16.5px; }
+    .section h3 { margin: 20px 0 8px; font-size: 16.5px; }
+    .section ul { padding-inline-start: 22px; }
+    .section li { margin-bottom: 7px; }
+    .waiver-box {
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+    }
+    .waiver-box strong { display: block; margin-bottom: 6px; font-size: 15.5px; }
     .rtl { direction: rtl; text-align: right; }
+    .ltr { direction: ltr; text-align: left; }
     a { color: var(--accent); }
+    code {
+      background: var(--surface-alt);
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
     footer { text-align: center; color: var(--muted); font-size: 13.5px; margin-top: 24px; }
   </style>
 </head>
@@ -74,76 +98,101 @@
   <div class="container">
     <header class="hero">
       <h1>WithaqAyat (وِثَاقُ الآي) — Terms of Use &amp; Attributions</h1>
-      <p>Effective Date: November 24, 2026 • Free, Ad-Free, Open-Attributed Islamic Utility</p>
+      <p>Effective Date: November 26, 2026 • Free, Ad-Free, Open-Attributed Islamic Utility</p>
     </header>
 
     <nav class="nav">
-      <a href="#arabic">العربية</a>
-      <a href="#english">English</a>
-      <a href="../privacy/">Privacy Policy | سياسة الخصوصية</a>
-      <a href="../">Home | الرئيسية</a>
+      <a href="#arabic">العربية (شروط الاستخدام)</a>
+      <a href="#english">English Terms</a>
+      <a href="../privacy/">سياسة الخصوصية | Privacy Policy</a>
+      <a href="../privacy/#faq">الأسئلة الشائعة (FAQ)</a>
+      <a href="../">الرئيسية | Home</a>
     </nav>
 
     <section id="arabic" class="section rtl">
-      <h2>شروط الاستخدام والمصادر الشرعية وحقوق النشر</h2>
+      <h2>شروط الاستخدام وإخلاء المسؤولية والمصادر الشرعية</h2>
 
       <h3>1. طبيعة التطبيق والغرض منه</h3>
-      <p>تطبيق <strong>وِثَاقُ الآي (WithaqAyat)</strong> هو أداة تعليمية مجانية تمامًا وخالية من الإعلانات لمساعدة المسلمين على حفظ القرآن الكريم ومراجعته وتذكّر مواقيت الفجر.</p>
+      <p>تطبيق <strong>وِثَاقُ الآي (WithaqAyat)</strong> هو أداة تعليمية ومساعدة ذاتية مجانية تمامًا وخالية من الإعلانات والاشتراكات (صدقة جارية لوجه الله تعالى)، تهدف إلى تسهيل حفظ القرآن الكريم ومراجعته وتنظيم مواعيد الوِرد اليومي ومواقيت الفجر. وباستخدامك للتطبيق فإنك تقرّ وتوافق على الشروط وإخلاء المسؤولية المبيّنة أدناه.</p>
 
-      <h3>2. المصادر المعتمدة وحقوق الملكية الفكرية</h3>
+      <h3>2. المصادر الشرعية المعتمدة وحقوق الملكية الفكرية</h3>
       <ul>
-        <li><strong>نص القرآن الكريم (الرسم العثماني — رواية حفص عن عاصم):</strong> منقول حرفيًا دون أي تعديل من <a href="https://tanzil.net" target="_blank" rel="noopener">مشروع تنزيل (Tanzil Project — tanzil.net)</a> وفق ترخيص <strong>Creative Commons Attribution 3.0 (CC BY 3.0)</strong>، ومُتحقَّق منه آليًا ببصمة SHA-256.</li>
-        <li><strong>بيانات السور والصفحات والأجزاء (مصحف المدينة — 604 صفحات):</strong> من <a href="https://tanzil.net" target="_blank" rel="noopener">مشروع تنزيل (Tanzil Metadata)</a> بترخيص CC BY 3.0.</li>
+        <li><strong>نص القرآن الكريم وخط الرسم العثماني (رواية حفص عن عاصم):</strong> منقول وموزّع حرفيًا دون أي تعديل من <a href="https://fonts.qurancomplex.gov.sa" target="_blank" rel="noopener">مجمع الملك فهد لطباعة المصحف الشريف (KFGQPC HAFS Uthmanic Script v22)</a>، ومُتحقَّق من سلامة ملفاته آليًا عند البناء وعند التشغيل ببصمة <code>SHA-256</code>.</li>
+        <li><strong>فهرسة السور والمعلومات الوصفية:</strong> من <a href="https://tanzil.net" target="_blank" rel="noopener">مشروع تنزيل (Tanzil Metadata)</a> بترخيص Creative Commons Attribution 3.0 (<code>CC BY 3.0</code>).</li>
         <li><strong>التفسير الميسّر:</strong> منقول حرفيًا دون أي تعديل عن <strong>مجمع الملك فهد لطباعة المصحف الشريف</strong> (ملف <code>ar.muyassar</code> عبر Tanzil.net).</li>
-        <li><strong>الخطوط المستخدمة:</strong> خط <em>Amiri Quran</em> وخط <em>IBM Plex Sans Arabic</em> بموجب ترخيص <strong>SIL Open Font License 1.1</strong>.</li>
-        <li><strong>نماذج التسميع القرآني الأوفلاين (اختيارية):</strong> نماذج <em>tarteel-ai/whisper-tiny-ar-quran</em> و<em>tarteel-ai/whisper-base-ar-quran</em> من فريق <strong>Tarteel AI</strong> بترخيص <strong>Apache 2.0</strong> (مبنية على OpenAI Whisper بترخيص MIT)، ومصدّرة بصيغة ONNX int8 عبر <em>Synthesium/quran-whisper-sherpa-onnx</em>، وتعمل محليًا عبر مكتبة <strong>k2-fsa/sherpa-onnx</strong> بترخيص <strong>Apache 2.0</strong>.</li>
-        <li><strong>حساب مواقيت الفجر والصلاة:</strong> يتم محليًا عبر مكتبة <em>Adhan</em> (Batoul Apps — ترخيص MIT) وفق معايير الهيئات الإسلامية المعتمدة، سواء عبر اختيار المدينة يدويًا أو عبر الموقع التقريبي الاختياري المحفوظ محليًا على جهازك فقط.</li>
+        <li><strong>الخطوط المستخدمة:</strong> خط <em>KFGQPC HAFS Uthmanic Script v22</em> (مجمع الملك فهد لطباعة المصحف الشريف — غير معدّل)، وخطا <em>Amiri Quran</em> و<em>IBM Plex Sans Arabic</em> بموجب ترخيص <strong>SIL Open Font License 1.1</strong>.</li>
+        <li><strong>محرك التسميع القرآني الأوفلاين (اختياري):</strong> نموذج <em>FastConformer-Quran</em> (عبر <code>mohammed/fastconformer-quran-ar</code> و<code>TheGreatQuran/QuranKarim-SpeechToText-onnxModel</code> المبني على NVIDIA NeMo ومجموعة <code>tarteel-ai/everyayah</code> بترخيص <strong>CC-BY-4.0</strong>)، ويعمل محليًا 100% على جهازك عبر مكتبة <strong>k2-fsa/sherpa-onnx</strong> بترخيص <strong>Apache 2.0</strong>.</li>
+        <li><strong>حساب مواقيت الفجر والصلاة:</strong> يتم محليًا على جهازك عبر مكتبة <em>Adhan</em> (Batoul Apps — ترخيص MIT) وفق معايير الهيئات الإسلامية المعتمدة، سواء باختيار المدينة يدويًا أو عبر الموقع التقريبي الاختياري المحلي فقط.</li>
       </ul>
 
-      <h3>3. تنويه شرعي وعلمي حول التسميع الصوتي ومواقيت الصلاة</h3>
+      <h3>3. تنويه شرعي وعلمي هام حول التسميع الصوتي (بجميع محركاته) ومواقيت الصلاة</h3>
+      <div class="waiver-box">
+        <strong>أولًا — التسميع الصوتي أداة مساعدة فقط ولا يُغني عن الشيخ أو المعلّم:</strong>
+        <ul>
+          <li>جميع محركات التسميع الصوتي المتاحة في التطبيق — سواء <strong>المحرك القرآني الأوفلاين (FastConformer)</strong> أو <strong>محرك التعرّف الصوتي عبر الجهاز (بالإنترنت أو بدونه)</strong> — هي <strong>أدوات تقنية مساعدة لتسهيل الحفظ الذاتي والتأكد من تسلسل الكلمات والآيات فقط</strong>.</li>
+          <li><strong>لا يجوز الاعتماد على أي محرك صوتي آلي لتصحيح التلاوة أو إجازتها أو إثبات إتقانها؛</strong> إذ قد يغفل المحرك الآلي عن أخطاء في <strong>الحركات (الفتحة والكسرة والضمة والسكون)، والشدّات، ومخارج الحروف، وصفاتها، وأحكام التجويد، والمدود، والغنة، والوقف والابتداء، وغريب القرآن</strong>، أو قد يتأثر بضوضاء المحيط وجودة الميكروفون.</li>
+          <li><strong>يجب على كل حافظ وقارئ مراجعة حفظه وعرض تلاوته مشافهةً على شيخٍ أو معلّمٍ متقن</strong> من أهل الاختصاص لتصحيح كافة الأخطاء وضبط التلاوة الصحيحة كما أُنزلت.</li>
+          <li>لا يقوم المحرك الصوتي مطلقًا بتعديل حرف أو حركة واحدة من نص المصحف الرسمي المعروض على الشاشة.</li>
+        </ul>
+      </div>
+      <ul>
+        <li><strong>ثانيًا — مواقيت الصلاة والصيام والتذكيرات:</strong> تُحسب مواقيت الصلاة فلكيًا محليًا وفق التقاويم الرسمية المعتمدة (أم القرى، الهيئة المصرية، رابطة العالم الإسلامي وغيرها)، وقد تختلف بدقيقة أو دقيقتين حسب الارتفاع أو التقويم الرسمي المحلي؛ كما أن التنبيهات المحلية تعتمد على سياسات توفير البطارية في نظام التشغيل. لذا <strong>يجب الرجوع دائمًا إلى الأذان المحلي وتقويم وزارة الأوقاف في بلدك للاحتياط في عبادات الصيام والصلوات المفروضة</strong>، ويمكنك تعديل الهيئة والمذهب والدقائق يدويًا من داخل التطبيق.</li>
+        <li><strong>ثالثًا — حلقات الصحبة (أصدقاء / عائلة / معلّم وطلاب):</strong> تتم مشاركة رسائل الدعوة والتقارير اختياريًا من قِبل المستخدمين عبر تطبيقات المراسلة الخارجية دون تدخّل أو إشراف من مطوري التطبيق، ويتحمّل كل مستخدم مسؤولية ما يشاركه ومن يشاركه معه.</li>
+      </ul>
+
+      <h3>4. إخلاء المسؤولية القانونية والشرعية الكامل</h3>
       <p>
-        • <strong>التسميع الصوتي:</strong> يهدف لمساعدتك في <strong>التحقق من الحفظ اللفظي وترتيب الكلمات والآيات</strong> فقط (سواء بمحرك الهاتف أو بحزمة Tarteel الأوفلاين)، ولا يُعدّ بديلًا عن التلقي والمشافهة على أيدي المشايخ والمعلّمين المتقنين لضبط أحكام التجويد ومخارج الحروف والحركات الدقيقة. ولا يغيّر المحرك الصوتي حرفًا واحدًا من نص المصحف الرسمي المعروض.<br />
-        • <strong>مواقيت الصلاة والصيام:</strong> تُحسب المواقيت فلكيًا محليًا وفق التقاويم الرسمية المعتمدة (أم القرى، الهيئة المصرية، رابطة العالم الإسلامي وغيرها)، وقد تختلف بدقيقة أو دقيقتين حسب التضاريس أو التقويم الرسمي المحلي؛ لذا يُنصح بالرجوع للأذان المحلي وتقويم وزارة الأوقاف في بلدك للاحتياط في عبادات الصيام والصلوات، ويمكنك ضبط طريقة الحساب والمذهب والتعديل اليدوي بالدقائق من داخل التطبيق.
+        يُقدَّم تطبيق «وِثَاقُ الآي» وجميع أدواته (بما في ذلك محركات التسميع الصوتي الأوفلاين والأونلاين، وحاسبة مواقيت الصلاة، والتذكيرات المحلية، وحلقات الصحبة) <strong>«كما هو» (AS IS) وبحسب ما هو متاح (AS AVAILABLE)</strong> لوجه الخير والنفع العام، دون أي ضمانات صريحة أو ضمنية بالدقة التامة أو الكمال أو الخلو من الأخطاء التقنية.
+        <strong>ويُخلي التطبيق ومطوروه والقائمون عليه مسؤوليتهم الشرعية والقانونية الكاملة</strong> عن أي خطأ قرائي أو تجويدي أو تشكيلي لم يكتشفه المحرك الصوتي، أو أي تأخير في إشعار، أو أي فرق في مواقيت الصلاة، أو أي أضرار مباشرة أو غير مباشرة ناتجة عن استخدام التطبيق أو الاعتماد عليه منفردًا دون مراجعة أهل العلم والاختصاص.
+        وفي حال ملاحظة أي خلل عرضي في الخط أو التشكيل أو العرض على جهاز معيّن، نرجو إبلاغنا فورًا عبر البريد الإلكتروني لتحديثه ومعالجته بإذن الله.
       </p>
 
-      <h3>4. إخلاء المسؤولية</h3>
-      <p>يُقدَّم التطبيق «كما هو» (AS IS) لوجه الخير والنفع العام دون ضمانات ضمنية. في حال ملاحظة أي خلل عرضي في الخط أو العرض على جهاز معيّن، نرجو إبلاغنا فورًا عبر البريد الإلكتروني لتحديثه.</p>
-
       <h3>5. التواصل</h3>
-      <p>البريد الرسمي للدعم وحقوق النشر: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
+      <p>البريد الرسمي للدعم وحقوق النشر والإبلاغ عن الملاحظات: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
     </section>
 
-    <section id="english" class="section">
-      <h2>Terms of Use &amp; Copyright Attributions</h2>
+    <section id="english" class="section ltr">
+      <h2>Terms of Use, Liability Waiver &amp; Attributions</h2>
 
       <h3>1. Purpose &amp; Free Access</h3>
-      <p><strong>WithaqAyat</strong> is provided completely free of charge and without advertisements as an educational memorization companion for the Holy Quran.</p>
+      <p><strong>WithaqAyat</strong> is provided completely free of charge and without advertisements as a charitable self-study memorization companion for the Holy Quran. By using this app, you acknowledge and agree to the terms and liability disclaimers below.</p>
 
       <h3>2. Verified Sources &amp; Open Licenses</h3>
       <ul>
-        <li><strong>Holy Quran Uthmani Text (Hafs 'an Asim):</strong> Verbatim, unmodified text from the <a href="https://tanzil.net" target="_blank" rel="noopener">Tanzil Project (tanzil.net)</a>, licensed under <strong>Creative Commons Attribution 3.0 (CC BY 3.0)</strong>, verified at build and runtime via SHA-256 digest checks.</li>
-        <li><strong>Surah, Juz, and 604-Page Madinah Mushaf Metadata:</strong> Provided by <a href="https://tanzil.net" target="_blank" rel="noopener">Tanzil.net</a> (CC BY 3.0).</li>
+        <li><strong>Holy Quran Uthmani Text &amp; Typography (Hafs 'an Asim):</strong> Verbatim, unmodified text and typeface from the <a href="https://fonts.qurancomplex.gov.sa" target="_blank" rel="noopener">King Fahd Glorious Quran Printing Complex (KFGQPC HAFS Uthmanic Script v22)</a>, verified automatically at build and runtime via <code>SHA-256</code> integrity checks.</li>
+        <li><strong>Surah Metadata:</strong> Provided by <a href="https://tanzil.net" target="_blank" rel="noopener">Tanzil.net</a> (<code>CC BY 3.0</code>).</li>
         <li><strong>Al-Muyassar Tafsir (التفسير الميسّر):</strong> Verbatim unmodified Arabic text by the <strong>King Fahd Glorious Quran Printing Complex</strong> (sourced via Tanzil.net <code>ar.muyassar</code>).</li>
-        <li><strong>Typography:</strong> <em>Amiri Quran</em> and <em>IBM Plex Sans Arabic</em>, licensed under the <strong>SIL Open Font License 1.1</strong>.</li>
-        <li><strong>Optional Offline Quran Voice Packs:</strong> <em>tarteel-ai/whisper-tiny-ar-quran</em> and <em>tarteel-ai/whisper-base-ar-quran</em> by <strong>Tarteel AI</strong> (<strong>Apache 2.0</strong>, fine-tuned on OpenAI Whisper MIT), exported to int8 ONNX via <em>Synthesium/quran-whisper-sherpa-onnx</em> and executed strictly on-device via <strong>k2-fsa/sherpa-onnx</strong> (<strong>Apache 2.0</strong>).</li>
+        <li><strong>Additional Open Fonts:</strong> <em>Amiri Quran</em> and <em>IBM Plex Sans Arabic</em>, licensed under the <strong>SIL Open Font License 1.1</strong>.</li>
+        <li><strong>Optional Offline Quran Voice Engine:</strong> <em>FastConformer-Quran</em> (via <code>mohammed/fastconformer-quran-ar</code> &amp; <code>TheGreatQuran/QuranKarim-SpeechToText-onnxModel</code>, based on NVIDIA NeMo &amp; <code>tarteel-ai/everyayah</code> under <strong>CC-BY-4.0</strong>), executed strictly on-device via <strong>k2-fsa/sherpa-onnx</strong> (<strong>Apache 2.0</strong>).</li>
         <li><strong>Astronomical Prayer Calculation:</strong> Offline on-device calculation powered by open-source <em>Adhan</em> (Batoul Apps — MIT License), using either your manually selected city or optional local-only approximate coordinates.</li>
       </ul>
 
-      <h3>3. Educational Voice &amp; Prayer Time Disclaimers</h3>
-      <p>
-        • <strong>Voice Recitation:</strong> On-device voice matching (via OS Speech or the optional Tarteel ONNX pack) assists solely with word-level recall and sequence checking. Displayed Quranic text always comes verbatim from Tanzil.net. Speech recognition does not certify or replace qualified human instruction for Tajweed rules, Makharij, and precise diacritics.<br />
-        • <strong>Prayer &amp; Fasting Times:</strong> Prayer times are astronomically calculated on-device according to recognized Islamic authorities and may differ by 1–2 minutes from local mosque announcements or official regional calendars due to elevation or local conventions. Always observe your local Adhan and official Awqaf calendar for fasting and obligatory prayers; manual minute offsets and madhab settings are provided in-app.
-      </p>
+      <h3>3. Mandatory Scholarly &amp; Technical Disclaimers</h3>
+      <div class="waiver-box">
+        <strong>Voice Recitation Engines Are Self-Study Aids Only — Not a Replacement for a Qualified Teacher:</strong>
+        <ul>
+          <li>All speech recognition engines in WithaqAyat — both the <strong>optional offline FastConformer-Quran engine</strong> and the <strong>device/online OS speech recognizer</strong> — are strictly automated memorization aids designed solely to help check word recall and verse sequence.</li>
+          <li>Automated speech engines <strong>cannot certify Quranic recitation</strong> and may miss errors in <strong>Tajweed rules, Makharij (articulation points), Madd, Harakat (vowel diacritics), Shaddah, Waqf/Ibtida, or rare Quranic words</strong>.</li>
+          <li><strong>Users MUST recite to and verify their memorization with a qualified Sheikh or certified Quran teacher</strong> to correct all recitation and Tajweed errors. Displayed Quranic text always comes verbatim from the King Fahd Glorious Quran Printing Complex (KFGQPC).</li>
+        </ul>
+      </div>
+      <ul>
+        <li><strong>Prayer &amp; Fasting Times &amp; Local Reminders:</strong> Prayer times are astronomically calculated on-device and may differ by 1–2 minutes from local mosque announcements or official Awqaf calendars due to elevation or regional conventions. Local notifications also depend on OS battery optimization rules. Always follow your local Adhan and official Awqaf calendar for fasting and obligatory prayers.</li>
+      </ul>
 
-      <h3>4. Disclaimer of Warranty</h3>
-      <p>This software is provided "AS IS" without warranty of any kind. Please report any rendering or display issues immediately so they can be addressed promptly.</p>
+      <h3>4. Full Disclaimer of Warranties &amp; Limitation of Liability</h3>
+      <p>
+        This software and all its features are provided <strong>"AS IS" and "AS AVAILABLE"</strong> without warranty of any kind, express or implied.
+        To the fullest extent permitted by law, the developers and maintainers of WithaqAyat <strong>expressly disclaim all religious, educational, and legal liability</strong> for any undetected recitation, Tajweed, or diacritic mistakes, delayed local reminders, prayer-time variations, or any direct or indirect damages arising from use of or reliance upon the application without qualified human instruction.
+        Please report any rendering or display issue immediately so it can be resolved promptly.
+      </p>
 
       <h3>5. Contact</h3>
       <p>Support &amp; IP inquiries: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
     </section>
 
     <footer>
-      <p>© 2026 WithaqAyat (وِثَاقُ الآي) • <a href="../privacy/">Privacy Policy</a></p>
+      <p>© 2026 WithaqAyat (وِثَاقُ الآي) • <a href="../privacy/">سياسة الخصوصية والأسئلة الشائعة | Privacy Policy &amp; FAQ</a></p>
     </footer>
   </div>
 </body>
