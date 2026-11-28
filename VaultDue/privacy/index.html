@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="VaultDue Privacy Policy — Local-First Hardware-Encrypted Vault for Subscriptions, Warranties &amp; Critical Documents. Zero Cloud, Zero Ads, Zero Tracking." />
-  <title>VaultDue — Privacy Policy | سياسة الخصوصية</title>
+  <title>VaultDue — Privacy Policy</title>
   <style>
     :root {
-      --bg: #f5f7fb;
+      --bg: #f6f8fa;
       --surface: #ffffff;
-      --surface-alt: #eef2f7;
-      --border: #dce4ef;
-      --text: #0f172a;
-      --muted: #475569;
+      --surface-alt: #edf2f7;
+      --border: #d9e2ec;
+      --text: #0b1220;
+      --muted: #4b5c73;
       --accent: #059669;
+      --accent-hover: #047857;
       --accent-soft: #d1fae5;
       --accent-dark: #064e3b;
       --hero-1: #0b1324;
-      --hero-2: #13223d;
+      --hero-2: #0f2438;
       --hero-3: #064e3b;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #080d18;
-        --surface: #11192a;
+        --bg: #0b1220;
+        --surface: #131c2e;
         --surface-alt: #1b273d;
         --border: #25344f;
         --text: #f1f5f9;
         --muted: #94a3b8;
         --accent: #10b981;
+        --accent-hover: #34d399;
         --accent-soft: #064e3b;
         --accent-dark: #a7f3d0;
       }
@@ -39,15 +41,84 @@
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.72;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 24px 18px 64px; }
+    [dir="rtl"] body, [dir="rtl"] {
+      font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", Arial, sans-serif;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .lang-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .lang-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .lang-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 22px 18px 64px;
+    }
+    .lang-pane { display: none; }
+    .lang-pane.active { display: block; }
     .hero {
       background: linear-gradient(135deg, var(--hero-1), var(--hero-2), var(--hero-3));
-      color: #fff;
+      color: #ffffff;
       border-radius: 22px;
-      padding: 32px 28px;
-      margin-bottom: 22px;
+      padding: 30px 26px;
+      margin-bottom: 20px;
     }
     .badge {
       display: inline-block;
@@ -59,57 +130,79 @@
       font-weight: 600;
       margin-bottom: 12px;
     }
-    .hero h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.25; }
-    .hero p { margin: 0; color: rgba(255, 255, 255, 0.85); font-size: 15px; }
-    .lang-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 18px 0 22px;
-    }
-    .lang-nav a {
-      text-decoration: none;
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 8px 14px;
-      border-radius: 999px;
+    .hero h1 { margin: 0 0 8px; font-size: 27px; line-height: 1.28; }
+    .hero p { margin: 0; color: rgba(255, 255, 255, 0.86); font-size: 14.5px; }
+    .hero code {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 6px;
       font-size: 13px;
-      font-weight: 600;
+      direction: ltr;
+      unicode-bidi: isolate;
     }
-    .lang-nav a:hover { border-color: var(--accent); color: var(--accent); }
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
       gap: 12px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .trust-tile {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 16px;
+      padding: 15px 16px;
     }
-    .trust-tile strong { display: block; color: var(--accent); font-size: 15px; margin-bottom: 4px; }
-    .trust-tile span { font-size: 13px; color: var(--muted); }
+    .trust-tile strong {
+      display: block;
+      color: var(--accent);
+      font-size: 14.5px;
+      margin-bottom: 4px;
+    }
+    .trust-tile span {
+      font-size: 13px;
+      color: var(--muted);
+    }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 28px;
-      margin-bottom: 24px;
+      padding: 26px 24px;
+      margin-bottom: 22px;
     }
-    h2 { margin-top: 26px; margin-bottom: 10px; font-size: 19px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-    h2:first-of-type { margin-top: 12px; }
-    h3 { font-size: 16px; margin-top: 18px; }
+    .meta {
+      color: var(--muted);
+      font-size: 13.5px;
+      margin-top: 0;
+    }
+    .callout {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 14.5px;
+    }
+    h2 {
+      margin-top: 26px;
+      margin-bottom: 10px;
+      font-size: 18.5px;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
     p, li { font-size: 15px; color: var(--text); }
-    .muted { color: var(--muted); font-size: 13.5px; }
+    ul { padding-inline-start: 22px; }
+    li { margin-bottom: 6px; }
     code {
       background: var(--surface-alt);
       padding: 2px 6px;
       border-radius: 6px;
       font-size: 13px;
+      direction: ltr;
+      unicode-bidi: isolate;
     }
+    .table-wrap { overflow-x: auto; }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -123,255 +216,533 @@
       vertical-align: top;
     }
     th { background: var(--surface-alt); font-weight: 700; }
-    .callout {
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      border-radius: 14px;
-      padding: 14px 16px;
-      margin: 16px 0;
-      font-size: 14.5px;
+    a { color: var(--accent); font-weight: 600; }
+    footer {
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 28px;
     }
-    a { color: var(--accent); }
-    [dir="rtl"] { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
-    footer { text-align: center; font-size: 13px; color: var(--muted); margin-top: 32px; }
+    @media (max-width: 560px) {
+      .hero { padding: 22px 18px; }
+      .hero h1 { font-size: 22px; }
+      .card { padding: 20px 16px; }
+    }
   </style>
+  <noscript>
+    <style>.lang-pane { display: block; margin-bottom: 40px; }</style>
+  </noscript>
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <span class="badge">Effective Date: November 23, 2026 &bull; Version 1.0</span>
-      <h1>VaultDue Privacy Policy</h1>
-      <p>Package ID: <code>io.github.supportapplication56.vaultdue</code> &bull; Local-First, Hardware-Encrypted Vault for Subscriptions, Warranties &amp; Critical Documents</p>
-    </header>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-dot"></span> VaultDue</div>
+      <nav class="lang-bar" aria-label="Select Language">
+        <button class="lang-btn active" type="button" data-lang="en">English</button>
+        <button class="lang-btn" type="button" data-lang="ar">العربية</button>
+        <button class="lang-btn" type="button" data-lang="de">Deutsch</button>
+        <button class="lang-btn" type="button" data-lang="fr">Français</button>
+        <button class="lang-btn" type="button" data-lang="es">Español</button>
+      </nav>
+    </div>
+  </div>
 
-    <nav class="lang-nav" aria-label="Language navigation">
-      <a href="#en">English (Full Policy)</a>
-      <a href="#ar">العربية (السياسة الكاملة)</a>
-      <a href="#de">Deutsch (Kurzfassung)</a>
-      <a href="#fr">Français (Résumé)</a>
-      <a href="#es">Español (Resumen)</a>
-    </nav>
+  <main class="container">
+    <!-- ==================== 1. ENGLISH ==================== -->
+    <section id="pane-en" class="lang-pane active" lang="en" dir="ltr" data-title="VaultDue — Privacy Policy">
+      <header class="hero">
+        <span class="badge">Effective Date: November 28, 2026 &bull; Version 1.1</span>
+        <h1>VaultDue Privacy Policy</h1>
+        <p>Package ID: <code>io.github.supportapplication56.vaultdue</code> &bull; Local-First, Hardware-Encrypted Vault for Subscriptions, Warranties &amp; Critical Documents</p>
+      </header>
 
-    <section class="trust-grid">
-      <div class="trust-tile">
-        <strong>Zero Cloud Servers</strong>
-        <span>All records, notes, financial totals, and receipt photos stay strictly on your device.</span>
+      <div class="trust-grid">
+        <div class="trust-tile"><strong>Zero Cloud Servers</strong><span>All records, notes, financial totals, and receipt photos stay strictly on your device.</span></div>
+        <div class="trust-tile"><strong>Zero Ads &amp; Zero Tracking</strong><span>No AdMob, no Analytics SDKs, no Advertising ID (<code>AD_ID</code> explicitly removed).</span></div>
+        <div class="trust-tile"><strong>AES-256-GCM Hardware Vault</strong><span>Encrypted at rest via Android Keystore (StrongBox / TEE) with EXIF &amp; GPS stripped from photos.</span></div>
+        <div class="trust-tile"><strong>Optional Play Billing Only</strong><span>One-time non-recurring Pro purchase handled solely by Google Play — no account required.</span></div>
       </div>
-      <div class="trust-tile">
-        <strong>Zero Ads &amp; Zero Tracking</strong>
-        <span>No AdMob, no Analytics SDKs, no Advertising ID (<code>AD_ID</code> explicitly removed).</span>
-      </div>
-      <div class="trust-tile">
-        <strong>AES-256-GCM Hardware Vault</strong>
-        <span>Encrypted at rest via Android Keystore (StrongBox / TEE) with EXIF/GPS stripped from photos.</span>
-      </div>
-      <div class="trust-tile">
-        <strong>Optional Play Billing Only</strong>
-        <span>One-time Pro unlock processed solely by Google Play — no user account or login required.</span>
-      </div>
+
+      <article class="card">
+        <p class="meta">
+          <strong>Data Controller / Publisher:</strong> VaultDue Independent Developer (<code>supportapplication56-spec</code>)<br />
+          <strong>Application:</strong> VaultDue (<code>io.github.supportapplication56.vaultdue</code>)<br />
+          <strong>Official URL:</strong> <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code><br />
+          <strong>Privacy Contact:</strong> <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>
+        </p>
+
+        <div class="callout">
+          <strong>Plain-English Summary:</strong> VaultDue does <strong>not</strong> operate any backend server, does <strong>not</strong> collect your personal records or documents, does <strong>not</strong> display advertisements, and does <strong>not</strong> sell or share your personal information. Everything you enter stays encrypted locally on your Android device.
+        </div>
+
+        <h2>1. Data We Do NOT Collect</h2>
+        <p>VaultDue is engineered under a strict <strong>Local-First &amp; Zero-Knowledge</strong> architecture. We never receive, access, transmit, or store on any developer server:</p>
+        <ul>
+          <li>Your subscriptions, billing amounts, currencies, renewal dates, price-change history, or cancellation notes;</li>
+          <li>Your warranties, purchase prices, serial numbers, or proof/receipt photos;</li>
+          <li>Your passport numbers, national IDs, residency/Iqama numbers, driver's licenses, vehicle registrations, or family profile labels;</li>
+          <li>Text you paste into the <strong>On-Device Smart Text Parser</strong> (processed 100% locally via deterministic rules — never sent to any cloud or AI API);</li>
+          <li>Your Vault PIN, biometric data (handled exclusively by Android OS BiometricPrompt), or <code>.vdvault</code> backup passphrases;</li>
+          <li>Advertising identifiers, device fingerprints, precise location, contacts, SMS messages, or behavioral analytics.</li>
+        </ul>
+
+        <h2>2. Optional In-App Purchase Processing (Google Play Billing)</h2>
+        <p>VaultDue offers a free core tier and an optional <strong>one-time Pro unlock</strong> (<code>vaultdue_pro_lifetime</code> — single non-recurring payment, no subscription) processed exclusively through the official <strong>Google Play Billing Library</strong>.</p>
+        <ul>
+          <li>VaultDue does <strong>not</strong> require sign-up or login and never sees your credit card, bank account, or billing address.</li>
+          <li>Google LLC processes payment transactions, fraud prevention, receipts, and purchase reactivation according to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">Google Play Terms of Service</a>.</li>
+          <li>Network access inside VaultDue is used solely by the Google Play Billing client to verify or reactivate your Pro entitlement with Google Play Store. VaultDue itself sends zero telemetry or cloud API requests.</li>
+        </ul>
+
+        <h2>3. Android Permissions &amp; Why They Exist</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Permission</th><th>Requirement</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><code>com.android.vending.BILLING</code> &amp; <code>INTERNET</code></td><td>Play Billing Library</td><td>Used exclusively by Google Play Billing to process and reactivate the optional one-time Pro purchase.</td></tr>
+              <tr><td><code>POST_NOTIFICATIONS</code></td><td>Optional (Android 13+)</td><td>Delivers local offline renewal/expiry reminders on your device. Lock-screen previews are masked via <code>VISIBILITY_PRIVATE</code>.</td></tr>
+              <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Normal</td><td>Re-registers your offline WorkManager reminder schedule after your phone restarts.</td></tr>
+              <tr><td><code>USE_BIOMETRIC</code></td><td>Normal (Optional)</td><td>Allows optional Class 3 hardware biometric unlock (fingerprint/face) via Android OS.</td></tr>
+              <tr><td><strong>Explicitly NOT Requested / Removed:</strong><br /><code>AD_ID</code>, <code>READ_SMS</code>, <code>READ_MEDIA_IMAGES</code>, <code>CAMERA</code>, <code>ACCESS_FINE_LOCATION</code>, <code>READ_CONTACTS</code>, <code>FOREGROUND_SERVICE</code></td><td>Absent</td><td>Receipt/document photos are imported via Android's privacy-preserving <strong>Photo Picker</strong> without broad gallery permissions.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. Local Security &amp; OWASP MASVS Controls</h2>
+        <ul>
+          <li><strong>Hardware-Backed Encryption:</strong> Every vault record and proof image is encrypted at rest using <strong>AES-256-GCM</strong> with keys managed inside <strong>Android Keystore</strong> (StrongBox hardware security module where available, or TEE), bound with record-specific Additional Authenticated Data (AAD).</li>
+          <li><strong>Automatic EXIF &amp; GPS Stripping:</strong> Attached images are re-encoded in volatile RAM prior to encryption so GPS coordinates, camera serials, and EXIF metadata are permanently removed.</li>
+          <li><strong>PIN &amp; Backup Cryptography:</strong> Vault PINs use salted PBKDF2-HMAC-SHA256 with brute-force lockout protection; portable <code>.vdvault</code> backups use <strong>PBKDF2-HMAC-SHA256 (210,000 iterations)</strong> + authenticated AES-256-GCM encryption.</li>
+          <li><strong>Screen &amp; Backup Hardening:</strong> <code>FLAG_SECURE</code> blocks screenshots and task-switcher thumbnails by default; <code>android:allowBackup="false"</code> prevents unencrypted cloud backup of vault files; copied serial/document numbers are tagged <code>EXTRA_IS_SENSITIVE</code>.</li>
+        </ul>
+
+        <h2>5. International Privacy Rights (GDPR, UK GDPR, CCPA/CPRA, Saudi &amp; UAE PDPL)</h2>
+        <p>Because all vault content resides exclusively on your device under your sole control, you can exercise every statutory right directly inside VaultDue with zero waiting period:</p>
+        <ul>
+          <li><strong>Access &amp; Data Portability (GDPR Art. 15 &amp; 20 / PDPL):</strong> Export your complete vault anytime as an encrypted <code>.vdvault</code> archive or human-readable CSV/JSON file under <em>Security &gt; Encrypted Backup &amp; Data Export</em>.</li>
+          <li><strong>Rectification (GDPR Art. 16):</strong> Edit any record or replace any attachment anytime.</li>
+          <li><strong>Erasure / Data Deletion (GDPR Art. 17 / Google Play Data Deletion Policy):</strong> Permanently delete all records, shred encrypted proof files, clear PIN hashes, and destroy the Android Keystore master key in one tap via <em>Security &gt; Cryptographically Wipe All Data</em>, or uninstall the app.</li>
+          <li><strong>CCPA / CPRA (California Residents):</strong> VaultDue does <strong>not</strong> sell or share personal information or sensitive personal information for cross-context behavioral advertising, and never discriminates against users exercising privacy rights.</li>
+          <li><strong>No Cross-Border Transfers (GDPR Chapter V / Saudi PDPL Art. 29 / UAE PDPL):</strong> VaultDue transmits zero vault data outside your device.</li>
+        </ul>
+
+        <h2>6. User-Initiated Exports, PDFs, External Links &amp; Calendar Actions</h2>
+        <p>If you explicitly tap <em>Share Proof</em>, <em>Export PDF Report</em>, <em>Add to Calendar</em>, <em>Open Official Cancel Page</em>, or <em>Export Plaintext CSV/JSON</em>, Android passes only what you selected to the browser, calendar, or app of your choosing. Once exported or opened outside VaultDue, protection depends on the receiving service or website.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>VaultDue is a personal finance and document utility intended strictly for users aged <strong>13 and older</strong> (or <strong>16 and older</strong> where required by local law, such as certain EU Member States). During onboarding, users confirm they meet the minimum age without submitting a birth date. Because VaultDue collects zero personal data and displays zero ads, no data from children is collected, stored, or profiled.</p>
+
+        <h2>8. Changes to This Policy &amp; Contact</h2>
+        <p>We may update this Privacy Policy as features or laws evolve. The latest version is always published at <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code> and bundled offline inside the app. Contact: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue (<code>io.github.supportapplication56.vaultdue</code>) &bull; <a href="../terms/?lang=en">Terms of Use &amp; Disclaimer</a></footer>
     </section>
 
-    <!-- ===================== ENGLISH FULL POLICY ===================== -->
-    <article id="en" class="card" lang="en">
-      <h1>1. Privacy Policy (English — Binding Global Version)</h1>
-      <p class="muted"><strong>Data Controller / Publisher:</strong> VaultDue Independent Developer (<code>supportapplication56-spec</code>)<br />
-      <strong>Application:</strong> VaultDue (Android Package <code>io.github.supportapplication56.vaultdue</code>)<br />
-      <strong>Official URL:</strong> <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code><br />
-      <strong>Privacy Contact:</strong> <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
+    <!-- ==================== 2. ARABIC ==================== -->
+    <section id="pane-ar" class="lang-pane" lang="ar" dir="rtl" data-title="فولت ديو (VaultDue) — سياسة الخصوصية">
+      <header class="hero">
+        <span class="badge">تاريخ السريان: 28 نوفمبر 2026 &bull; الإصدار 1.1</span>
+        <h1>سياسة الخصوصية لتطبيق VaultDue (فولت ديو)</h1>
+        <p>معرّف التطبيق: <code>io.github.supportapplication56.vaultdue</code> &bull; خزنة محلية مشفّرة عتادياً للاشتراكات والضمانات والوثائق الحيوية</p>
+      </header>
 
-      <div class="callout">
-        <strong>Plain-English Summary:</strong> VaultDue does <strong>not</strong> operate any backend server, does <strong>not</strong> collect your personal records or documents, does <strong>not</strong> display advertisements, and does <strong>not</strong> sell or share your personal information. Everything you enter stays encrypted locally on your Android device.
+      <div class="trust-grid">
+        <div class="trust-tile"><strong>صفر خوادم سحابية</strong><span>جميع سجلاتك وملاحظاتك ومبالغك وصور فواتيرك تبقى محلياً على جهازك فقط.</span></div>
+        <div class="trust-tile"><strong>صفر إعلانات وصفر تتبّع</strong><span>بدون AdMob أو مكتبات تحليل، مع حذف صلاحية معرّف الإعلانات (<code>AD_ID</code>) صراحةً.</span></div>
+        <div class="trust-tile"><strong>تشفير عتادي AES-256-GCM</strong><span>تشفير محلي عبر Android Keystore (StrongBox / TEE) مع مسح EXIF والموقع الجغرافي من الصور.</span></div>
+        <div class="trust-tile"><strong>دفع اختياري عبر Google Play فقط</strong><span>ترقية Pro اختيارية تدفع لمرة واحدة فقط عبر متجر Google Play بدون حساب أو تسجيل دخول.</span></div>
       </div>
 
-      <h2>1. Data We Do NOT Collect</h2>
-      <p>VaultDue is engineered under a strict <strong>Local-First &amp; Zero-Knowledge</strong> architecture. We never receive, access, transmit, or store on our servers:</p>
-      <ul>
-        <li>Your subscriptions, billing amounts, currencies, renewal dates, or cancellation notes;</li>
-        <li>Your warranties, purchase prices, serial numbers, or proof/receipt photos;</li>
-        <li>Your passport numbers, national IDs, residency/Iqama numbers, driver's licenses, or family member names;</li>
-        <li>Text you paste into the <strong>On-Device Smart Text Parser</strong> (processed 100% locally via deterministic rules — never sent to any cloud or AI API);</li>
-        <li>Your Vault PIN, biometric data (handled exclusively by Android OS BiometricPrompt), or backup passphrases;</li>
-        <li>Advertising identifiers, device fingerprints, precise location, contacts, SMS messages, or behavioral analytics.</li>
-      </ul>
+      <article class="card">
+        <p class="meta">
+          <strong>الجهة المسؤولة / الناشر:</strong> مطوّر VaultDue المستقل (<code>supportapplication56-spec</code>)<br />
+          <strong>التطبيق:</strong> VaultDue (<code>io.github.supportapplication56.vaultdue</code>)<br />
+          <strong>الرابط الرسمي:</strong> <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code><br />
+          <strong>البريد الإلكتروني للخصوصية والدعم:</strong> <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>
+        </p>
 
-      <h2>2. Optional In-App Purchase Processing (Google Play Billing)</h2>
-      <p>VaultDue offers a free core tier and an optional one-time <strong>Lifetime Pro Unlock</strong> (<code>vaultdue_pro_lifetime</code>) processed exclusively through the official <strong>Google Play Billing Library</strong>.</p>
-      <ul>
-        <li>VaultDue does <strong>not</strong> collect or see your credit card, bank account, or billing address.</li>
-        <li>Google LLC processes payment transactions, fraud prevention, purchase receipts, and purchase restoration according to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">Google Play Terms of Service</a>.</li>
-        <li>Network access inside VaultDue is used solely by the Google Play Billing client to verify or restore Pro entitlement with Google Play Store. VaultDue itself makes zero outbound API requests.</li>
-      </ul>
+        <div class="callout">
+          <strong>الخلاصة بوضوح تام:</strong> تطبيق <strong>VaultDue</strong> يعمل بمبدأ <strong>«المحلي أولاً — بدون سحابة»</strong>. لا نمتلك أي خادم لتخزين بياناتك، لا نعرض أي إعلانات، لا نستخدم مكتبات تتبّع، ولا نبيع أو نشارك معلوماتك الشخصية إطلاقاً. جميع سجلاتك وفواتيرك ووثائقك تبقى مشفّرة داخل جهازك فقط.
+        </div>
 
-      <h2>3. Android Permissions &amp; Why They Exist</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Permission</th>
-            <th>Requirement</th>
-            <th>Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>com.android.vending.BILLING</code> &amp; <code>INTERNET</code></td>
-            <td>Play Billing Library</td>
-            <td>Used exclusively by Google Play Billing to process and restore the optional one-time Lifetime Pro unlock.</td>
-          </tr>
-          <tr>
-            <td><code>POST_NOTIFICATIONS</code></td>
-            <td>Optional (Android 13+)</td>
-            <td>Delivers local offline renewal/expiry reminders on your device. Lock-screen previews are masked via <code>VISIBILITY_PRIVATE</code>.</td>
-          </tr>
-          <tr>
-            <td><code>RECEIVE_BOOT_COMPLETED</code></td>
-            <td>Normal</td>
-            <td>Re-registers your offline WorkManager reminder schedule after your phone restarts.</td>
-          </tr>
-          <tr>
-            <td><code>USE_BIOMETRIC</code></td>
-            <td>Normal (Optional)</td>
-            <td>Allows optional Class 3 hardware biometric unlock (fingerprint/face) via Android OS.</td>
-          </tr>
-          <tr>
-            <td><strong>Explicitly NOT Requested / Removed:</strong><br /><code>AD_ID</code>, <code>READ_SMS</code>, <code>READ_MEDIA_IMAGES</code>, <code>CAMERA</code>, <code>ACCESS_FINE_LOCATION</code>, <code>READ_CONTACTS</code>, <code>FOREGROUND_SERVICE</code></td>
-            <td>Absent</td>
-            <td>Receipt/document photos are imported via Android's privacy-preserving <strong>Photo Picker</strong> without broad gallery permissions.</td>
-          </tr>
-        </tbody>
-      </table>
+        <h2>1. البيانات التي لا نجمعها إطلاقاً</h2>
+        <p>صُمّم VaultDue وفق معمارية <strong>«محلي أولاً — صفر معرفة»</strong>. لا نستلم ولا نصل ولا نرسل ولا نخزّن على أي خادم خاص بنا:</p>
+        <ul>
+          <li>بيانات الاشتراكات، المبالغ المالية، العملات، مواعيد التجديد، سجل تغيّر الأسعار، أو ملاحظات الإلغاء.</li>
+          <li>بيانات الضمانات، أسعار الشراء، الأرقام التسلسلية، أو صور الفواتير والوثائق المرفقة.</li>
+          <li>أرقام جوازات السفر، الهويات الوطنية، الإقامات، رخص القيادة، استمارات المركبات، أو تصنيفات خزائن العائلة والعمل.</li>
+          <li>النصوص التي تلصقها في <strong>المحلل الذكي المحلي</strong> (تُعالج 100% داخل جهازك بقواعد محلية دون أي إرسال للإنترنت أو لأي خدمة ذكاء اصطناعي).</li>
+          <li>رمز PIN أو بيانات البصمة (يتولى نظام Android إدارتها بالكامل عبر BiometricPrompt) أو كلمات مرور النسخ الاحتياطي <code>.vdvault</code>.</li>
+          <li>معرّفات الإعلانات (<code>AD_ID</code>)، بصمات الأجهزة، الموقع الجغرافي، جهات الاتصال، رسائل SMS، أو تحليلات السلوك.</li>
+        </ul>
 
-      <h2>4. Local Security &amp; OWASP MASVS Controls</h2>
-      <ul>
-        <li><strong>Hardware-Backed Encryption:</strong> Every vault record and proof image is encrypted at rest using <strong>AES-256-GCM</strong> with keys managed inside <strong>Android Keystore</strong> (StrongBox hardware security module where available, or TEE), bound with record-specific Additional Authenticated Data (AAD).</li>
-        <li><strong>Automatic EXIF &amp; GPS Stripping:</strong> Attached images are re-encoded in volatile RAM prior to encryption so GPS coordinates, camera serials, and EXIF metadata are permanently removed.</li>
-        <li><strong>PIN &amp; Backup Cryptography:</strong> Vault PINs and portable <code>.vdvault</code> backups use <strong>PBKDF2-HMAC-SHA256 (210,000 iterations)</strong> with 256-bit random salts and authenticated AES-256-GCM encryption.</li>
-        <li><strong>Screen &amp; Backup Hardening:</strong> <code>FLAG_SECURE</code> blocks screenshots and task-switcher thumbnails by default; <code>android:allowBackup="false"</code> and Android Data Extraction Rules prevent unencrypted cloud backup of vault files; clipboard copies of serial/document numbers are tagged <code>EXTRA_IS_SENSITIVE</code>.</li>
-      </ul>
+        <h2>2. معالجة الترقية الاختيارية بدفعة واحدة عبر Google Play Billing</h2>
+        <p>يوفر التطبيق نسخة مجانية وخيار ترقية اختياري <strong>بدفعة واحدة غير متكررة (VaultDue Pro — بدون اشتراك شهري)</strong> عبر مكتبة الدفع الرسمية من <strong>Google Play</strong>:</p>
+        <ul>
+          <li>لا يطلب التطبيق تسجيل دخول ولا إنشاء حساب ولا يطّلع على بيانات بطاقتك البنكية أو عنوانك.</li>
+          <li>تتولى شركة Google LLC معالجة الدفع ومنع الاحتيال وإصدار الإيصال وإعادة تفعيل الترخيص وفق <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">سياسة خصوصية Google</a> و<a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">شروط خدمة Google Play</a>.</li>
+          <li>تُستخدم صلاحية الشبكة حصرياً من قِبل مكتبة Google Play Billing للتحقق من الشراء أو إعادة تفعيله مع متجر Google Play، ولا يجري التطبيق نفسه أي اتصال خارجي.</li>
+        </ul>
 
-      <h2>5. Your International Privacy Rights (GDPR, UK GDPR, CCPA/CPRA, Saudi &amp; UAE PDPL)</h2>
-      <p>Because all vault content resides exclusively on your device under your sole control, you can exercise every statutory right directly inside VaultDue with zero waiting period:</p>
-      <ul>
-        <li><strong>Right of Access &amp; Data Portability (GDPR Art. 15 &amp; 20 / PDPL):</strong> Export your complete vault anytime as an encrypted <code>.vdvault</code> archive or human-readable CSV/JSON file under <em>Security &gt; Encrypted Backup &amp; Data Portability</em>.</li>
-        <li><strong>Right to Rectification (GDPR Art. 16):</strong> Edit any record or replace any attachment at any time.</li>
-        <li><strong>Right to Erasure / Data Deletion (GDPR Art. 17 / Google Play Data Deletion Policy):</strong> Permanently delete all vault records, overwrite and unlink encrypted proof blobs, clear PIN hashes, and destroy the Android Keystore master key in one tap via <em>Security &gt; Cryptographically Wipe All Data</em>, or uninstall the application from Android Settings.</li>
-        <li><strong>CCPA / CPRA (California Residents):</strong> VaultDue does <strong>not</strong> sell or share personal information or sensitive personal information for cross-context behavioral advertising, and does not discriminate against users exercising privacy rights.</li>
-        <li><strong>No Cross-Border Transfers (GDPR Chapter V / Saudi PDPL Art. 29 / UAE PDPL):</strong> VaultDue transmits zero user vault data outside your device.</li>
-      </ul>
+        <h2>3. الصلاحيات المستخدمة في Android ولماذا توجد</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>الصلاحية</th><th>الحالة</th><th>الغرض الدقيق</th></tr></thead>
+            <tbody>
+              <tr><td><code>BILLING</code> و<code>INTERNET</code></td><td>لمكتبة Google Play Billing فقط</td><td>معالجة وإعادة تفعيل الترقية الاختيارية لنسخة Pro (دفعة واحدة) عبر متجر Google Play حصراً.</td></tr>
+              <tr><td><code>POST_NOTIFICATIONS</code></td><td>اختيارية (Android 13+)</td><td>إرسال تنبيهات محلية بمواعيد انتهاء الاشتراكات والضمانات والوثائق مع إخفاء التفاصيل على شاشة القفل (<code>VISIBILITY_PRIVATE</code>).</td></tr>
+              <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>عادية</td><td>إعادة جدولة التنبيهات المحلية في WorkManager بعد إعادة تشغيل الهاتف.</td></tr>
+              <tr><td><code>USE_BIOMETRIC</code></td><td>عادية (اختيارية)</td><td>قفل الخزنة ببصمة العتاد القوية (Class 3) عبر نظام Android عند رغبة المستخدم.</td></tr>
+              <tr><td><strong>صلاحيات غير مطلوبة / محذوفة صراحةً:</strong><br /><code>AD_ID</code>، <code>READ_SMS</code>، <code>READ_MEDIA_IMAGES</code>، <code>CAMERA</code>، <code>ACCESS_FINE_LOCATION</code>، <code>READ_CONTACTS</code>، <code>FOREGROUND_SERVICE</code></td><td>غير موجودة</td><td>استيراد صور الفواتير يتم عبر <strong>Android Photo Picker</strong> الحديث بدون صلاحية الوصول لكامل معرض الصور.</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h2>6. User-Initiated Exports, PDFs &amp; Calendar Actions</h2>
-      <p>If you explicitly tap <em>Share Proof</em>, <em>Export PDF Proof Dossier</em>, <em>Add to Calendar</em>, or <em>Export Plaintext CSV/JSON</em>, you direct Android to pass that specific document to an app or storage location of your choosing. Once exported outside VaultDue, protection of those files depends on the receiving app or storage service.</p>
+        <h2>4. أمن المعلومات المحلي وضوابط OWASP MASVS</h2>
+        <ul>
+          <li><strong>تشفير عتادي:</strong> يُشفّر كل سجل وصورة محلياً بخوارزمية <strong>AES-256-GCM</strong> بمفاتيح غير قابلة للاستخراج داخل <strong>Android Keystore (StrongBox / TEE)</strong> مع بيانات مصادقة مرتبطة بكل سجل (AAD).</li>
+          <li><strong>إزالة تلقائية لبيانات EXIF وGPS:</strong> يُعاد ترميز الصور المرفقة في الذاكرة المؤقتة قبل تشفيرها لإزالة الإحداثيات الجغرافية ومعلومات الكاميرا نهائياً.</li>
+          <li><strong>تشفير PIN والنسخ الاحتياطي:</strong> يُحفظ رمز PIN كبصمة PBKDF2 مملّحة مع حماية ضد التخمين، وتُشفّر ملفات النسخ الاحتياطي المحمولة <code>.vdvault</code> بـ <strong>PBKDF2-HMAC-SHA256 (210,000 دورة)</strong> + <code>AES-256-GCM</code>.</li>
+          <li><strong>حماية الشاشة والنسخ:</strong> تفعيل <code>FLAG_SECURE</code> لمنع لقطات الشاشة ومعاينة التطبيقات الأخيرة، ومنع النسخ السحابي غير المشفّر (<code>allowBackup="false"</code>)، ووسم الأرقام المنسوخة بـ <code>EXTRA_IS_SENSITIVE</code>.</li>
+        </ul>
 
-      <h2>7. Children's Privacy</h2>
-      <p>VaultDue is a general personal finance and document organization utility intended for users aged <strong>13 and older</strong> (or <strong>16 and older</strong> where required by local law, such as in certain EU Member States). We do not knowingly collect personal information from children.</p>
+        <h2>5. حقوقك القانونية الدولية (GDPR / UK GDPR / CCPA / نظام PDPL السعودي والإماراتي)</h2>
+        <p>لأن كامل بياناتك محفوظة محلياً على جهازك تحت سيطرتك وحدك، يمكنك ممارسة جميع حقوقك النظامية فوراً من داخل التطبيق دون أي انتظار:</p>
+        <ul>
+          <li><strong>حق الوصول ونقل البيانات (المادتان 15 و20 من GDPR / نظام PDPL):</strong> تصدير كامل بياناتك بأي وقت كنسخة مشفّرة <code>.vdvault</code> أو ملف CSV/JSON من <em>الأمان &gt; النسخ الاحتياطي ونقل البيانات</em>.</li>
+          <li><strong>حق التصحيح (المادة 16 من GDPR):</strong> تعديل أي سجل أو استبدال أي مرفق في أي وقت.</li>
+          <li><strong>حق المحو وحذف البيانات (المادة 17 من GDPR / سياسة حذف البيانات في Google Play):</strong> محو جميع السجلات وإتلاف الصور المشفّرة ومسح رمز PIN وتدمير مفتاح التشفير بضغطة زر عبر <em>الأمان &gt; محو تشفيري شامل لكافة البيانات</em>، أو بإزالة تثبيت التطبيق.</li>
+          <li><strong>CCPA / CPRA:</strong> لا يبيع التطبيق ولا يشارك أي معلومات شخصية أو حساسة لأغراض الإعلانات السلوكية.</li>
+          <li><strong>عدم نقل البيانات عبر الحدود (الفصل الخامس من GDPR / المادة 29 من نظام PDPL السعودي):</strong> لا يرسل التطبيق أي بيانات خزنة خارج جهازك إطلاقاً.</li>
+        </ul>
 
-      <h2>8. Changes to This Policy &amp; Contact</h2>
-      <p>We may update this Privacy Policy if new features or legal requirements arise. The latest version is always published at <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code> and bundled offline inside the app. For privacy requests or questions, contact: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
-    </article>
+        <h2>6. عمليات التصدير والروابط الخارجية والتقويم بطلب المستخدم</h2>
+        <p>عند ضغطك صراحةً على <em>مشاركة</em> أو <em>تصدير ملف PDF</em> أو <em>إضافة للتقويم</em> أو <em>فتح صفحة الإلغاء الرسمية</em> أو <em>تصدير CSV/JSON</em>، يمرّر نظام Android فقط ما اخترته إلى المتصفح أو التطبيق الذي تحدده أنت، وتخضع حماية تلك الملفات أو المواقع بعد خروجها لسياسة الجهة المستقبلة.</p>
 
-    <!-- ===================== ARABIC FULL POLICY ===================== -->
-    <article id="ar" class="card" lang="ar" dir="rtl">
-      <h1>2. سياسة الخصوصية الكاملة لتطبيق VaultDue (فولت ديو)</h1>
-      <p class="muted"><strong>الجهة المسؤولة / الناشر:</strong> مطوّر VaultDue المستقل (<code>supportapplication56-spec</code>)<br />
-      <strong>معرّف التطبيق:</strong> <code>io.github.supportapplication56.vaultdue</code><br />
-      <strong>الرابط الرسمي:</strong> <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code><br />
-      <strong>البريد الإلكتروني للخصوصية والدعم:</strong> <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a></p>
+        <h2>7. خصوصية الأطفال</h2>
+        <p>التطبيق أداة تنظيم شخصية ومالية مخصصة للأعمار من <strong>13 عاماً فأكثر</strong> (أو <strong>16 عاماً فأكثر</strong> حيث يفرض القانون المحلي ذلك كما في بعض دول الاتحاد الأوروبي). يؤكد المستخدم بلوغه السن النظامي أثناء الإعداد دون تقديم تاريخ ميلاده، ونظراً لعدم جمع أي بيانات شخصية وعدم عرض إعلانات فلا يتم جمع أو تخزين أي معلومات عن الأطفال.</p>
 
-      <div class="callout">
-        <strong>الخلاصة بوضوح تام:</strong> تطبيق <strong>VaultDue</strong> يعمل بمبدأ <strong>«المحلي أولاً — بدون سحابة»</strong>. لا نمتلك أي خادم لتخزين بياناتك، لا نعرض أي إعلانات، لا نستخدم مكتبات تتبّع، ولا نبيع أو نشارك معلوماتك الشخصية إطلاقاً. جميع سجلاتك وفواتيرك ووثائقك تبقى مشفّرة داخل جهازك فقط.
+        <h2>8. التحديثات والتواصل</h2>
+        <p>قد نحدّث هذه السياسة عند إضافة ميزات أو متطلبات قانونية جديدة، وتُنشر النسخة الأحدث دائماً على <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code> وتُضمَّن داخل التطبيق للعمل بدون إنترنت. للتواصل: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue (<code>io.github.supportapplication56.vaultdue</code>) &bull; <a href="../terms/?lang=ar">شروط الاستخدام وإخلاء المسؤولية</a></footer>
+    </section>
+
+    <!-- ==================== 3. GERMAN (DEUTSCH) ==================== -->
+    <section id="pane-de" class="lang-pane" lang="de" dir="ltr" data-title="VaultDue — Datenschutzerklärung">
+      <header class="hero">
+        <span class="badge">Stand: 28. November 2026 &bull; Version 1.1</span>
+        <h1>VaultDue Datenschutzerklärung (DSGVO)</h1>
+        <p>Paket-ID: <code>io.github.supportapplication56.vaultdue</code> &bull; Lokaler, hardwareverschlüsselter Tresor für Abos, Garantien &amp; wichtige Dokumente</p>
+      </header>
+
+      <div class="trust-grid">
+        <div class="trust-tile"><strong>Keine Cloud-Server</strong><span>Alle Einträge, Beträge, Notizen und Belegfotos bleiben ausschließlich lokal auf Ihrem Gerät.</span></div>
+        <div class="trust-tile"><strong>Keine Werbung &amp; kein Tracking</strong><span>Kein AdMob, keine Analyse-SDKs, keine Werbe-ID (<code>AD_ID</code> ausdrücklich entfernt).</span></div>
+        <div class="trust-tile"><strong>AES-256-GCM Hardware-Tresor</strong><span>Verschlüsselt im Android Keystore (StrongBox / TEE), inklusive automatischer EXIF-/GPS-Entfernung.</span></div>
+        <div class="trust-tile"><strong>Nur optionales Play Billing</strong><span>Einmalige Pro-Freischaltung (kein Abo) ausschließlich über Google Play — ohne Benutzerkonto.</span></div>
       </div>
 
-      <h2>1. البيانات التي لا نجمعها إطلاقاً</h2>
-      <ul>
-        <li>بيانات الاشتراكات، المبالغ المالية، العملات، مواعيد التجديد، وملاحظات الإلغاء.</li>
-        <li>بيانات الضمانات، الأرقام التسلسلية، وصور الفواتير أو الوثائق المرفقة.</li>
-        <li>أرقام جوازات السفر، الهويات الوطنية، الإقامات، رخص القيادة، وأسماء أفراد العائلة.</li>
-        <li>النصوص التي تلصقها في <strong>المحلل الذكي المحلي</strong> (تُعالج 100% داخل جهازك بقواعد محلية دون أي إرسال للإنترنت أو للذكاء الاصطناعي السحابي).</li>
-        <li>رمز PIN أو بيانات البصمة (يتولى نظام Android إدارتها بالكامل عبر BiometricPrompt) أو كلمات مرور النسخ الاحتياطي.</li>
-        <li>معرّفات الإعلانات (<code>AD_ID</code>)، الموقع الجغرافي، جهات الاتصال، أو رسائل SMS.</li>
-      </ul>
+      <article class="card">
+        <p class="meta">
+          <strong>Verantwortlicher / Herausgeber:</strong> Unabhängiger Entwickler von VaultDue (<code>supportapplication56-spec</code>)<br />
+          <strong>Anwendung:</strong> VaultDue (<code>io.github.supportapplication56.vaultdue</code>)<br />
+          <strong>Offizielle URL:</strong> <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code><br />
+          <strong>Datenschutzkontakt:</strong> <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>
+        </p>
 
-      <h2>2. معالجة المشتريات الاختيارية عبر Google Play Billing</h2>
-      <p>يوفر التطبيق نسخة مجانية وخيار ترقية اختياري <strong>لمرة واحدة مدى الحياة (VaultDue Pro)</strong> عبر مكتبة الدفع الرسمية من <strong>Google Play</strong>:</p>
-      <ul>
-        <li>لا يطلب التطبيق تسجيل دخول ولا إنشاء حساب ولا يطّلع على بيانات بطاقتك البنكية.</li>
-        <li>تتولى شركة Google LLC معالجة الدفع وإصدار الإيصال واستعادة المشتريات وفق <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">سياسة خصوصية Google</a>.</li>
-        <li>تُستخدم صلاحية الشبكة حصرياً من قِبل مكتبة Google Play Billing للتحقق من الشراء أو استعادته مع متجر جوجل، ولا يجري التطبيق نفسه أي اتصال خارجي.</li>
-      </ul>
+        <div class="callout">
+          <strong>Kurz und verständlich:</strong> VaultDue betreibt <strong>keinen eigenen Server</strong>, erhebt <strong>keine Ihrer persönlichen Einträge oder Dokumente</strong>, zeigt <strong>keine Werbung</strong> und verkauft oder teilt Ihre Daten nicht. Alles, was Sie eingeben, bleibt verschlüsselt auf Ihrem Android-Gerät.
+        </div>
 
-      <h2>3. الصلاحيات المستخدمة ولماذا نطلبها</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>الصلاحية</th>
-            <th>الحالة</th>
-            <th>الغرض الدقيق</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>BILLING</code> و<code>INTERNET</code></td>
-            <td>لمكتبة Google Play Billing فقط</td>
-            <td>معالجة واستعادة الترقية الاختيارية لنسخة Pro مدى الحياة عبر متجر Google Play حصراً.</td>
-          </tr>
-          <tr>
-            <td><code>POST_NOTIFICATIONS</code></td>
-            <td>اختيارية (Android 13+)</td>
-            <td>إرسال تنبيهات محلية بمواعيد انتهاء الاشتراكات والضمانات والوثائق مع إخفاء التفاصيل على شاشة القفل (<code>VISIBILITY_PRIVATE</code>).</td>
-          </tr>
-          <tr>
-            <td><code>RECEIVE_BOOT_COMPLETED</code></td>
-            <td>عادية</td>
-            <td>إعادة جدولة التنبيهات المحلية بعد إعادة تشغيل الهاتف.</td>
-          </tr>
-          <tr>
-            <td><code>USE_BIOMETRIC</code></td>
-            <td>عادية (اختيارية)</td>
-            <td>قفل الخزنة ببصمة العتاد القوية (Class 3) عند رغبة المستخدم.</td>
-          </tr>
-          <tr>
-            <td><strong>صلاحيات غير مطلوبة / محذوفة صراحةً:</strong><br /><code>AD_ID</code>، <code>READ_SMS</code>، <code>READ_MEDIA_IMAGES</code>، <code>LOCATION</code>، <code>CONTACTS</code>، <code>FOREGROUND_SERVICE</code></td>
-            <td>غير موجودة</td>
-            <td>استيراد صور الفواتير يتم عبر <strong>Android Photo Picker</strong> الحديث بدون صلاحية الوصول لكامل المعرض.</td>
-          </tr>
-        </tbody>
-      </table>
+        <h2>1. Daten, die wir NICHT erheben</h2>
+        <p>VaultDue folgt einer strikten <strong>Local-First- und Zero-Knowledge-Architektur</strong>. Wir empfangen, lesen, übertragen oder speichern auf keinem Entwickler-Server:</p>
+        <ul>
+          <li>Ihre Abonnements, Beträge, Währungen, Verlängerungsdaten, Preiserhöhungen oder Kündigungsnotizen;</li>
+          <li>Ihre Garantien, Kaufpreise, Seriennummern oder Beleg- und Rechnungsfotos;</li>
+          <li>Ihre Reisepassnummern, Personalausweise, Aufenthaltstitel, Führerscheine, Fahrzeugpapiere oder Profilbezeichnungen (Familie/Arbeit/Fahrzeuge);</li>
+          <li>Texte, die Sie in den <strong>lokalen SMS-/Text-Parser</strong> einfügen (100 % Offline-Verarbeitung per lokaler Logik — keine Übertragung an Cloud- oder KI-Dienste);</li>
+          <li>Ihre Tresor-PIN, biometrische Daten (ausschließlich durch Android BiometricPrompt verwaltet) oder Passphrasen für <code>.vdvault</code>-Backups;</li>
+          <li>Werbe-IDs, Geräte-Fingerabdrücke, Standortdaten, Kontakte, SMS-Nachrichten oder Nutzungsstatistiken.</li>
+        </ul>
 
-      <h2>4. أمن المعلومات وضوابط OWASP MASVS</h2>
-      <ul>
-        <li>تشفير كل سجل وصورة محلياً بخوارزمية <strong>AES-256-GCM</strong> بمفاتيح عتادية غير قابلة للاستخراج في <strong>Android Keystore (StrongBox / TEE)</strong>.</li>
-        <li>إزالة تلقائية لكافة بيانات <strong>EXIF والموقع الجغرافي (GPS)</strong> من الصور في الذاكرة المؤقتة قبل تشفيرها.</li>
-        <li>تشفير رمز PIN والنسخ الاحتياطي المحمول (<code>.vdvault</code>) باستخدام <strong>PBKDF2-HMAC-SHA256 (210,000 دورة)</strong> + <code>AES-256-GCM</code>.</li>
-        <li>تفعيل <code>FLAG_SECURE</code> لمنع لقطات الشاشة ومعاينة التطبيقات الأخيرة، ومنع النسخ الاحتياطي السحابي غير المشفّر (<code>allowBackup="false"</code>).</li>
-      </ul>
+        <h2>2. Optionale Einmalzahlung über Google Play Billing</h2>
+        <p>VaultDue bietet eine kostenlose Basisversion sowie eine optionale <strong>einmalige Pro-Freischaltung</strong> (<code>vaultdue_pro_lifetime</code> — Einmalzahlung, kein Abonnement), die ausschließlich über die offizielle <strong>Google Play Billing Library</strong> abgewickelt wird.</p>
+        <ul>
+          <li>VaultDue erfordert kein Konto und erhält keinen Einblick in Ihre Kreditkarte, Bankverbindung oder Rechnungsadresse.</li>
+          <li>Google LLC verarbeitet Zahlungen, Betrugsprävention, Kaufbelege und Lizenz-Reaktivierung gemäß der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google-Datenschutzerklärung</a> und den <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">Google Play-Nutzungsbedingungen</a>.</li>
+          <li>Der Netzwerkzugriff wird ausschließlich vom Google Play Billing Client genutzt, um den Pro-Status mit Google Play zu prüfen oder wiederherzustellen.</li>
+        </ul>
 
-      <h2>5. حقوقك القانونية الدولية (GDPR / CCPA / نظام PDPL السعودي والإماراتي)</h2>
-      <ul>
-        <li><strong>حق الوصول ونقل البيانات:</strong> تصدير كامل بياناتك بأي وقت كنسخة مشفّرة <code>.vdvault</code> أو ملف CSV/JSON من شاشة الأمان.</li>
-        <li><strong>حق المحو وحذف البيانات (سياسة حذف البيانات في Google Play):</strong> محو جميع السجلات وإتلاف الصور المشفّرة وتدمير مفتاح التشفير بضغطة زر عبر <em>الأمان &gt; محو تشفيري شامل لكافة البيانات</em>، أو بإزالة تثبيت التطبيق من إعدادات الجهاز.</li>
-        <li><strong>خصوصية الأطفال:</strong> التطبيق مخصص للأعمار من <strong>13 عاماً فأكثر</strong> (أو 16 حسب القانون المحلي) ولا يجمع بيانات عن الأطفال.</li>
-      </ul>
-    </article>
+        <h2>3. Android-Berechtigungen &amp; deren Zweck</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Berechtigung</th><th>Status</th><th>Zweck</th></tr></thead>
+            <tbody>
+              <tr><td><code>com.android.vending.BILLING</code> &amp; <code>INTERNET</code></td><td>Play Billing Library</td><td>Ausschließlich für Abwicklung und Reaktivierung der optionalen einmaligen Pro-Freischaltung über Google Play.</td></tr>
+              <tr><td><code>POST_NOTIFICATIONS</code></td><td>Optional (Android 13+)</td><td>Lokale Offline-Erinnerungen zu Ablauf- und Kündigungsfristen; Sperrbildschirm-Inhalte werden per <code>VISIBILITY_PRIVATE</code> verborgen.</td></tr>
+              <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Normal</td><td>Stellt lokale WorkManager-Erinnerungen nach einem Geräteneustart automatisch wieder her.</td></tr>
+              <tr><td><code>USE_BIOMETRIC</code></td><td>Normal (Optional)</td><td>Optionale starke biometrische Entsperrung (Class 3 Fingerabdruck/Gesicht) über Android OS.</td></tr>
+              <tr><td><strong>Bewusst NICHT angefordert / entfernt:</strong><br /><code>AD_ID</code>, <code>READ_SMS</code>, <code>READ_MEDIA_IMAGES</code>, <code>CAMERA</code>, <code>ACCESS_FINE_LOCATION</code>, <code>READ_CONTACTS</code>, <code>FOREGROUND_SERVICE</code></td><td>Nicht vorhanden</td><td>Belegfotos werden über den datenschutzfreundlichen <strong>Android Photo Picker</strong> ohne vollen Galeriezugriff importiert.</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-    <!-- ===================== EUROPEAN SUMMARIES (DE / FR / ES) ===================== -->
-    <article id="de" class="card" lang="de">
-      <h2>3. Datenschutzhinweis (Deutsch — DSGVO / GDPR Kurzfassung)</h2>
-      <p><strong>VaultDue</strong> (<code>io.github.supportapplication56.vaultdue</code>) speichert alle Abonnements, Garantien, Belegfotos und Dokumente ausschließlich <strong>lokal und verschlüsselt (AES-256-GCM über Android Keystore)</strong> auf Ihrem Gerät. Keine Cloud-Server, keine Werbung, keine Tracking-SDKs und keine Werbe-ID (<code>AD_ID</code> entfernt). EXIF-/GPS-Metadaten werden vor der Verschlüsselung entfernt. Die optionale einmalige Pro-Freischaltung erfolgt ausschließlich über <strong>Google Play Billing</strong>. Ihre DSGVO-Rechte (Auskunft, Datenübertragbarkeit Art. 20 via <code>.vdvault</code>/CSV/JSON, Löschung Art. 17 via kryptografischer Komplettlöschung) können jederzeit direkt in der App ausgeübt werden. Kontakt: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
-    </article>
+        <h2>4. Lokale Sicherheit &amp; OWASP MASVS</h2>
+        <ul>
+          <li><strong>Hardware-Verschlüsselung:</strong> Alle Einträge und Belegfotos werden ruhend mit <strong>AES-256-GCM</strong> und Schlüsseln im <strong>Android Keystore</strong> (StrongBox / TEE) inklusive eintragsspezifischer AAD verschlüsselt.</li>
+          <li><strong>Automatische EXIF- &amp; GPS-Entfernung:</strong> Angehängte Bilder werden vor der Verschlüsselung im Arbeitsspeicher neu kodiert, sodass GPS-Koordinaten und Kameradaten dauerhaft entfernt werden.</li>
+          <li><strong>PIN- &amp; Backup-Kryptografie:</strong> PINs werden als gesalzener PBKDF2-HMAC-SHA256-Hash mit Sperrschutz gespeichert; portable <code>.vdvault</code>-Backups nutzen <strong>PBKDF2-HMAC-SHA256 (210.000 Iterationen)</strong> + AES-256-GCM.</li>
+          <li><strong>Bildschirm- &amp; Backup-Härtung:</strong> <code>FLAG_SECURE</code> blockiert Screenshots und Vorschauen; <code>android:allowBackup="false"</code> verhindert unverschlüsselte Cloud-Backups; kopierte Nummern werden mit <code>EXTRA_IS_SENSITIVE</code> markiert.</li>
+        </ul>
 
-    <article id="fr" class="card" lang="fr">
-      <h2>4. Politique de Confidentialité (Français — Résumé RGPD)</h2>
-      <p><strong>VaultDue</strong> (<code>io.github.supportapplication56.vaultdue</code>) stocke tous vos abonnements, garanties, justificatifs et documents <strong>exclusivement en local sur votre appareil avec chiffrement matériel AES-256-GCM (Android Keystore)</strong>. Aucun serveur cloud, aucune publicité, aucun traceur analytique et aucun identifiant publicitaire (<code>AD_ID</code> supprimé). Les métadonnées EXIF/GPS des photos sont effacées automatiquement avant chiffrement. Le déblocage Pro optionnel (paiement unique) est traité exclusivement par <strong>Google Play Billing</strong>. Vous pouvez exporter (Art. 20 RGPD) ou effacer cryptographiquement toutes vos données (Art. 17 RGPD) à tout moment dans l'application. Contact : <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
-    </article>
+        <h2>5. Ihre Rechte nach DSGVO, UK GDPR, CCPA &amp; PDPL</h2>
+        <p>Da sämtliche Tresordaten ausschließlich unter Ihrer Kontrolle auf Ihrem Gerät liegen, können Sie Ihre gesetzlichen Rechte jederzeit direkt in der App ausüben:</p>
+        <ul>
+          <li><strong>Auskunft &amp; Datenübertragbarkeit (Art. 15 &amp; 20 DSGVO):</strong> Exportieren Sie Ihren gesamten Tresor jederzeit als verschlüsseltes <code>.vdvault</code>-Archiv oder als CSV-/JSON-Datei unter <em>Sicherheit &gt; Verschlüsseltes Backup</em>.</li>
+          <li><strong>Berichtigung (Art. 16 DSGVO):</strong> Bearbeiten Sie beliebige Einträge oder Belege jederzeit.</li>
+          <li><strong>Recht auf Löschung (Art. 17 DSGVO / Google Play Data Deletion):</strong> Löschen Sie alle Einträge, überschreiben Sie Belegdateien, entfernen Sie die PIN und zerstören Sie den Keystore-Hauptschlüssel per 1-Klick unter <em>Sicherheit &gt; Alle Daten kryptografisch löschen</em> oder durch Deinstallation.</li>
+          <li><strong>Keine Drittlandübermittlung (Kapitel V DSGVO):</strong> VaultDue überträgt keine Tresordaten außerhalb Ihres Geräts.</li>
+        </ul>
 
-    <article id="es" class="card" lang="es">
-      <h2>5. Política de Privacidad (Español — Resumen RGPD / Global)</h2>
-      <p><strong>VaultDue</strong> (<code>io.github.supportapplication56.vaultdue</code>) guarda todas tus suscripciones, garantías, recibos y documentos <strong>exclusivamente en tu dispositivo con cifrado de hardware AES-256-GCM (Android Keystore)</strong>. Sin servidores en la nube, sin anuncios, sin analítica ni ID de publicidad (<code>AD_ID</code> eliminado). Los metadatos EXIF/GPS de las imágenes se eliminan antes de cifrarlas. La mejora opcional Pro de pago único se procesa únicamente mediante <strong>Google Play Billing</strong>. Puedes exportar tus datos (<code>.vdvault</code>/CSV/JSON) o borrar criptográficamente toda la bóveda en un toque desde Seguridad. Contacto: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
-    </article>
+        <h2>6. Vom Nutzer ausgelöste Exporte, PDFs, Links &amp; Kalenderaktionen</h2>
+        <p>Wenn Sie bewusst <em>Teilen</em>, <em>PDF exportieren</em>, <em>Zum Kalender hinzufügen</em>, <em>Offizielle Kündigungsseite öffnen</em> oder <em>CSV/JSON exportieren</em> wählen, übergibt Android nur die von Ihnen gewählten Daten an die gewünschte Ziel-App bzw. den Browser.</p>
 
-    <footer>
-      &copy; 2026 VaultDue (<code>io.github.supportapplication56.vaultdue</code>) &bull;
-      <a href="../terms/">Terms of Use / شروط الاستخدام</a>
-    </footer>
-  </div>
+        <h2>7. Schutz Minderjähriger</h2>
+        <p>VaultDue richtet sich ausschließlich an Personen ab <strong>13 Jahren</strong> (bzw. <strong>16 Jahren</strong>, wo dies nach Art. 8 DSGVO national vorgeschrieben ist). Bei der Einrichtung bestätigen Nutzer das Mindestalter ohne Angabe eines Geburtsdatums. Es werden keine personenbezogenen Daten von Kindern erhoben oder verarbeitet.</p>
+
+        <h2>8. Änderungen &amp; Kontakt</h2>
+        <p>Aktualisierungen dieser Erklärung werden unter <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code> veröffentlicht und offline in der App bereitgestellt. Kontakt: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue (<code>io.github.supportapplication56.vaultdue</code>) &bull; <a href="../terms/?lang=de">Nutzungsbedingungen &amp; Haftungsausschluss</a></footer>
+    </section>
+
+    <!-- ==================== 4. FRENCH (FRANÇAIS) ==================== -->
+    <section id="pane-fr" class="lang-pane" lang="fr" dir="ltr" data-title="VaultDue — Politique de confidentialité">
+      <header class="hero">
+        <span class="badge">Date d'effet : 28 novembre 2026 &bull; Version 1.1</span>
+        <h1>Politique de confidentialité de VaultDue (RGPD)</h1>
+        <p>ID du package : <code>io.github.supportapplication56.vaultdue</code> &bull; Coffre local chiffré matériellement pour abonnements, garanties et documents critiques</p>
+      </header>
+
+      <div class="trust-grid">
+        <div class="trust-tile"><strong>Zéro serveur cloud</strong><span>Toutes vos fiches, montants, notes et justificatifs restent strictement sur votre appareil.</span></div>
+        <div class="trust-tile"><strong>Zéro pub &amp; zéro suivi</strong><span>Aucun AdMob, aucun SDK analytique, aucun identifiant publicitaire (<code>AD_ID</code> supprimé).</span></div>
+        <div class="trust-tile"><strong>Coffre matériel AES-256-GCM</strong><span>Chiffrement via Android Keystore (StrongBox / TEE) et effacement automatique EXIF/GPS.</span></div>
+        <div class="trust-tile"><strong>Play Billing optionnel uniquement</strong><span>Achat unique Pro (sans abonnement) traité exclusivement par Google Play, sans compte utilisateur.</span></div>
+      </div>
+
+      <article class="card">
+        <p class="meta">
+          <strong>Responsable de traitement / Éditeur :</strong> Développeur indépendant de VaultDue (<code>supportapplication56-spec</code>)<br />
+          <strong>Application :</strong> VaultDue (<code>io.github.supportapplication56.vaultdue</code>)<br />
+          <strong>URL officielle :</strong> <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code><br />
+          <strong>Contact confidentialité :</strong> <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>
+        </p>
+
+        <div class="callout">
+          <strong>En résumé clair :</strong> VaultDue n'exploite <strong>aucun serveur distant</strong>, ne collecte <strong>aucune de vos données personnelles ou documents</strong>, n'affiche <strong>aucune publicité</strong> et ne vend ni ne partage vos informations. Tout reste chiffré localement sur votre appareil Android.
+        </div>
+
+        <h2>1. Données que nous NE collectons PAS</h2>
+        <p>VaultDue repose sur une architecture stricte <strong>Locale d'abord &amp; Zéro Connaissance</strong>. Nous ne recevons, ne consultons, ne transmettons et ne stockons jamais sur nos serveurs :</p>
+        <ul>
+          <li>Vos abonnements, montants, devises, dates de renouvellement, hausses de tarifs ou notes de résiliation ;</li>
+          <li>Vos garanties, prix d'achat, numéros de série ou photos de reçus et factures ;</li>
+          <li>Vos numéros de passeport, cartes d'identité, titres de séjour, permis de conduire, cartes grises ou profils (Famille/Travail/Véhicules) ;</li>
+          <li>Les textes collés dans <strong>l'analyseur local SMS/e-mail</strong> (traités 100 % hors ligne par règles déterministes — jamais envoyés à un cloud ou une IA) ;</li>
+          <li>Votre code PIN, vos données biométriques (gérées exclusivement par Android BiometricPrompt) ou vos phrases secrètes <code>.vdvault</code> ;</li>
+          <li>Les identifiants publicitaires, empreintes d'appareil, géolocalisation, contacts, SMS ou analyses comportementales.</li>
+        </ul>
+
+        <h2>2. Achat intégré optionnel en paiement unique (Google Play Billing)</h2>
+        <p>VaultDue propose une version gratuite complète et un <strong>déblocage Pro optionnel en paiement unique</strong> (<code>vaultdue_pro_lifetime</code> — achat non récurrent, sans abonnement) traité exclusivement via la bibliothèque officielle <strong>Google Play Billing</strong>.</p>
+        <ul>
+          <li>Aucun compte ni connexion n'est requis ; VaultDue n'a jamais accès à votre carte bancaire ni à votre adresse de facturation.</li>
+          <li>Google LLC gère le paiement, la prévention de la fraude, les reçus et la réactivation de licence selon la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Google</a> et les <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">Conditions d'utilisation Google Play</a>.</li>
+          <li>L'accès réseau sert uniquement au client Google Play Billing pour vérifier ou réactiver votre achat Pro.</li>
+        </ul>
+
+        <h2>3. Autorisations Android et leur justification</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Autorisation</th><th>Statut</th><th>Finalité précise</th></tr></thead>
+            <tbody>
+              <tr><td><code>com.android.vending.BILLING</code> &amp; <code>INTERNET</code></td><td>Play Billing Library</td><td>Utilisées uniquement par Google Play Billing pour traiter et réactiver l'achat unique Pro optionnel.</td></tr>
+              <tr><td><code>POST_NOTIFICATIONS</code></td><td>Optionnelle (Android 13+)</td><td>Envoie les rappels locaux hors ligne d'échéance ; le contenu sur écran verrouillé est masqué via <code>VISIBILITY_PRIVATE</code>.</td></tr>
+              <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Normale</td><td>Reprogramme automatiquement vos rappels WorkManager hors ligne après redémarrage de l'appareil.</td></tr>
+              <tr><td><code>USE_BIOMETRIC</code></td><td>Normale (Optionnelle)</td><td>Permet le déverrouillage biométrique fort (Class 3 empreinte/visage) via Android OS.</td></tr>
+              <tr><td><strong>Expressément NON demandées / supprimées :</strong><br /><code>AD_ID</code>, <code>READ_SMS</code>, <code>READ_MEDIA_IMAGES</code>, <code>CAMERA</code>, <code>ACCESS_FINE_LOCATION</code>, <code>READ_CONTACTS</code>, <code>FOREGROUND_SERVICE</code></td><td>Absentes</td><td>Les photos de justificatifs sont importées via l'<strong>Android Photo Picker</strong> respectueux de la vie privée, sans accès global à la galerie.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. Sécurité locale et contrôles OWASP MASVS</h2>
+        <ul>
+          <li><strong>Chiffrement matériel :</strong> Chaque fiche et photo est chiffrée au repos en <strong>AES-256-GCM</strong> avec des clés gérées dans l'<strong>Android Keystore</strong> (StrongBox / TEE) et des données authentifiées (AAD) propres à chaque fiche.</li>
+          <li><strong>Suppression automatique EXIF &amp; GPS :</strong> Les images importées sont réencodées en mémoire vive avant chiffrement afin d'effacer définitivement les coordonnées GPS et métadonnées de l'appareil photo.</li>
+          <li><strong>Cryptographie PIN &amp; sauvegardes :</strong> Le code PIN est haché avec PBKDF2-HMAC-SHA256 salé et protection anti-force brute ; les archives portables <code>.vdvault</code> utilisent <strong>PBKDF2-HMAC-SHA256 (210 000 itérations)</strong> + AES-256-GCM.</li>
+          <li><strong>Protection d'écran et sauvegardes :</strong> <code>FLAG_SECURE</code> bloque les captures d'écran et aperçus récents ; <code>android:allowBackup="false"</code> empêche la sauvegarde cloud non chiffrée ; les numéros copiés sont marqués <code>EXTRA_IS_SENSITIVE</code>.</li>
+        </ul>
+
+        <h2>5. Vos droits internationaux (RGPD, UK GDPR, CCPA, PDPL)</h2>
+        <p>Toutes vos données résidant exclusivement sur votre appareil sous votre contrôle, vous pouvez exercer tous vos droits immédiatement dans l'application :</p>
+        <ul>
+          <li><strong>Accès et portabilité (Art. 15 &amp; 20 RGPD) :</strong> Exportez votre coffre à tout moment au format chiffré <code>.vdvault</code> ou en CSV/JSON depuis <em>Sécurité &gt; Sauvegarde chiffrée</em>.</li>
+          <li><strong>Rectification (Art. 16 RGPD) :</strong> Modifiez toute fiche ou pièce jointe à tout moment.</li>
+          <li><strong>Droit à l'effacement (Art. 17 RGPD / Google Play Data Deletion) :</strong> Supprimez définitivement toutes les fiches, détruisez les images chiffrées, effacez le PIN et détruisez la clé maîtresse Keystore en un clic via <em>Sécurité &gt; Effacer cryptographiquement toutes les données</em>, ou en désinstallant l'application.</li>
+          <li><strong>Aucun transfert transfrontalier (Chapitre V RGPD) :</strong> VaultDue ne transmet aucune donnée du coffre hors de votre appareil.</li>
+        </ul>
+
+        <h2>6. Exports, PDF, liens externes et calendrier à l'initiative de l'utilisateur</h2>
+        <p>Lorsque vous touchez explicitement <em>Partager</em>, <em>Exporter en PDF</em>, <em>Ajouter au calendrier</em>, <em>Ouvrir la page officielle de résiliation</em> ou <em>Exporter CSV/JSON</em>, Android transmet uniquement les éléments choisis à l'application ou au navigateur sélectionné.</p>
+
+        <h2>7. Protection des mineurs</h2>
+        <p>VaultDue est destiné exclusivement aux utilisateurs âgés d'au moins <strong>13 ans</strong> (ou <strong>16 ans</strong> lorsque la loi locale l'exige au sein de l'UE). L'utilisateur confirme remplir l'âge minimal lors de l'installation sans fournir de date de naissance. Aucune donnée personnelle de mineur n'est collectée.</p>
+
+        <h2>8. Modifications et contact</h2>
+        <p>La version la plus récente est toujours publiée sur <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code> et intégrée hors ligne dans l'application. Contact : <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue (<code>io.github.supportapplication56.vaultdue</code>) &bull; <a href="../terms/?lang=fr">Conditions d'utilisation et avertissement</a></footer>
+    </section>
+
+    <!-- ==================== 5. SPANISH (ESPAÑOL) ==================== -->
+    <section id="pane-es" class="lang-pane" lang="es" dir="ltr" data-title="VaultDue — Política de Privacidad">
+      <header class="hero">
+        <span class="badge">Fecha de vigencia: 28 de noviembre de 2026 &bull; Versión 1.1</span>
+        <h1>Política de Privacidad de VaultDue (RGPD / Global)</h1>
+        <p>ID del paquete: <code>io.github.supportapplication56.vaultdue</code> &bull; Bóveda local con cifrado de hardware para suscripciones, garantías y documentos críticos</p>
+      </header>
+
+      <div class="trust-grid">
+        <div class="trust-tile"><strong>Sin servidores en la nube</strong><span>Todos tus registros, importes, notas y recibos permanecen exclusivamente en tu dispositivo.</span></div>
+        <div class="trust-tile"><strong>Cero anuncios y cero rastreo</strong><span>Sin AdMob, sin SDKs analíticos y sin ID publicitario (<code>AD_ID</code> eliminado explícitamente).</span></div>
+        <div class="trust-tile"><strong>Bóveda AES-256-GCM por hardware</strong><span>Cifrado en Android Keystore (StrongBox / TEE) con eliminación automática de metadatos EXIF/GPS.</span></div>
+        <div class="trust-tile"><strong>Solo Play Billing opcional</strong><span>Compra única Pro (sin suscripción) procesada únicamente por Google Play, sin crear cuenta.</span></div>
+      </div>
+
+      <article class="card">
+        <p class="meta">
+          <strong>Responsable / Editor:</strong> Desarrollador independiente de VaultDue (<code>supportapplication56-spec</code>)<br />
+          <strong>Aplicación:</strong> VaultDue (<code>io.github.supportapplication56.vaultdue</code>)<br />
+          <strong>URL oficial:</strong> <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code><br />
+          <strong>Contacto de privacidad:</strong> <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>
+        </p>
+
+        <div class="callout">
+          <strong>Resumen claro:</strong> VaultDue <strong>no</strong> opera servidores propios, <strong>no</strong> recopila tus registros ni documentos personales, <strong>no</strong> muestra anuncios y <strong>no</strong> vende ni comparte tu información personal. Todo lo que guardas permanece cifrado localmente en tu dispositivo Android.
+        </div>
+
+        <h2>1. Datos que NO recopilamos</h2>
+        <p>VaultDue está diseñado bajo una arquitectura estricta <strong>Local-First y Conocimiento Cero</strong>. Nunca recibimos, accedemos, transmitimos ni almacenamos en ningún servidor:</p>
+        <ul>
+          <li>Tus suscripciones, importes, divisas, fechas de renovación, subidas de precio o notas de cancelación;</li>
+          <li>Tus garantías, precios de compra, números de serie o fotos de recibos y facturas;</li>
+          <li>Tus números de pasaporte, documentos nacionales de identidad, residencias, licencias de conducir, registros de vehículos o perfiles (Familia/Trabajo/Vehículos);</li>
+          <li>Los textos que pegues en el <strong>analizador local de SMS/correos</strong> (procesados 100 % sin conexión mediante reglas locales — nunca enviados a la nube ni a APIs de IA);</li>
+          <li>Tu PIN de bóveda, datos biométricos (gestionados exclusivamente por Android BiometricPrompt) o contraseñas de copias <code>.vdvault</code>;</li>
+          <li>Identificadores publicitarios, huellas digitales del dispositivo, ubicación exacta, contactos, mensajes SMS ni analítica de comportamiento.</li>
+        </ul>
+
+        <h2>2. Compra integrada opcional de pago único (Google Play Billing)</h2>
+        <p>VaultDue ofrece un nivel gratuito y un <strong>desbloqueo Pro opcional de pago único</strong> (<code>vaultdue_pro_lifetime</code> — un solo pago no recurrente, sin suscripción) procesado exclusivamente mediante la biblioteca oficial <strong>Google Play Billing</strong>.</p>
+        <ul>
+          <li>VaultDue no requiere registro ni inicio de sesión y nunca ve tu tarjeta bancaria ni tu dirección de facturación.</li>
+          <li>Google LLC procesa los pagos, la prevención de fraude, los recibos y la reactivación de licencias conforme a la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad de Google</a> y las <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">Condiciones de Servicio de Google Play</a>.</li>
+          <li>El acceso a red solo es utilizado por el cliente de Google Play Billing para verificar o reactivar tu licencia Pro.</li>
+        </ul>
+
+        <h2>3. Permisos de Android y por qué existen</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Permiso</th><th>Requisito</th><th>Propósito exacto</th></tr></thead>
+            <tbody>
+              <tr><td><code>com.android.vending.BILLING</code> e <code>INTERNET</code></td><td>Play Billing Library</td><td>Usados exclusivamente por Google Play Billing para procesar y reactivar la compra única opcional de Pro.</td></tr>
+              <tr><td><code>POST_NOTIFICATIONS</code></td><td>Opcional (Android 13+)</td><td>Envía recordatorios locales sin conexión de vencimientos; la vista previa en pantalla bloqueada se oculta con <code>VISIBILITY_PRIVATE</code>.</td></tr>
+              <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Normal</td><td>Vuelve a programar los recordatorios locales de WorkManager tras reiniciar el teléfono.</td></tr>
+              <tr><td><code>USE_BIOMETRIC</code></td><td>Normal (Opcional)</td><td>Permite el desbloqueo biométrico fuerte (Class 3 huella/rostro) mediante Android OS.</td></tr>
+              <tr><td><strong>Explícitamente NO solicitados / eliminados:</strong><br /><code>AD_ID</code>, <code>READ_SMS</code>, <code>READ_MEDIA_IMAGES</code>, <code>CAMERA</code>, <code>ACCESS_FINE_LOCATION</code>, <code>READ_CONTACTS</code>, <code>FOREGROUND_SERVICE</code></td><td>Ausentes</td><td>Las fotos de recibos se importan mediante el <strong>Android Photo Picker</strong> sin permisos amplios sobre tu galería.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. Seguridad local y controles OWASP MASVS</h2>
+        <ul>
+          <li><strong>Cifrado por hardware:</strong> Cada registro y foto se cifra en reposo con <strong>AES-256-GCM</strong> usando claves en <strong>Android Keystore</strong> (StrongBox / TEE) vinculadas con datos autenticados (AAD) por registro.</li>
+          <li><strong>Eliminación automática de EXIF y GPS:</strong> Las imágenes adjuntas se recodifican en memoria RAM antes del cifrado para eliminar permanentemente coordenadas GPS y metadatos de la cámara.</li>
+          <li><strong>Criptografía de PIN y copias:</strong> El PIN se guarda como hash PBKDF2-HMAC-SHA256 con sal y bloqueo ante intentos fallidos; las copias portables <code>.vdvault</code> usan <strong>PBKDF2-HMAC-SHA256 (210.000 iteraciones)</strong> + AES-256-GCM.</li>
+          <li><strong>Protección de pantalla y copias:</strong> <code>FLAG_SECURE</code> bloquea capturas y vistas previas recientes; <code>android:allowBackup="false"</code> impide copias en la nube sin cifrar; los números copiados se etiquetan con <code>EXTRA_IS_SENSITIVE</code>.</li>
+        </ul>
+
+        <h2>5. Tus derechos internacionales de privacidad (RGPD, UK GDPR, CCPA/CPRA, PDPL)</h2>
+        <p>Dado que todo el contenido reside únicamente en tu dispositivo bajo tu control, puedes ejercer cada derecho de forma inmediata dentro de la app:</p>
+        <ul>
+          <li><strong>Acceso y portabilidad (Art. 15 y 20 RGPD):</strong> Exporta toda tu bóveda en cualquier momento como archivo cifrado <code>.vdvault</code> o en CSV/JSON desde <em>Seguridad &gt; Copia cifrada</em>.</li>
+          <li><strong>Rectificación (Art. 16 RGPD):</strong> Edita cualquier registro o adjunto en cualquier momento.</li>
+          <li><strong>Derecho de supresión / Eliminación (Art. 17 RGPD / Google Play Data Deletion):</strong> Elimina todos los registros, destruye las imágenes cifradas, borra el PIN y destruye la clave maestra del Keystore en un toque en <em>Seguridad &gt; Borrar criptográficamente todos los datos</em>, o desinstalando la app.</li>
+          <li><strong>CCPA / CPRA:</strong> VaultDue no vende ni comparte información personal ni sensible para publicidad conductual.</li>
+          <li><strong>Sin transferencias internacionales (Capítulo V RGPD):</strong> VaultDue no envía datos de la bóveda fuera de tu dispositivo.</li>
+        </ul>
+
+        <h2>6. Exportaciones, PDF, enlaces externos y calendario iniciados por el usuario</h2>
+        <p>Si pulsas explícitamente <em>Compartir</em>, <em>Exportar PDF</em>, <em>Añadir al calendario</em>, <em>Abrir página oficial de cancelación</em> o <em>Exportar CSV/JSON</em>, Android entrega únicamente lo que elegiste a la aplicación o navegador seleccionado.</p>
+
+        <h2>7. Privacidad de menores</h2>
+        <p>VaultDue está destinado estrictamente a personas mayores de <strong>13 años</strong> (o <strong>16 años</strong> donde lo exija la ley local, como en ciertos Estados miembros de la UE). Durante la configuración inicial confirmas cumplir la edad mínima sin enviar fecha de nacimiento. No recopilamos datos de menores ni mostramos anuncios.</p>
+
+        <h2>8. Cambios y contacto</h2>
+        <p>La versión actualizada se publica siempre en <code>https://supportapplication56-spec.github.io/VaultDue/privacy/</code> y se incluye sin conexión dentro de la app. Contacto: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue (<code>io.github.supportapplication56.vaultdue</code>) &bull; <a href="../terms/?lang=es">Términos de Uso y Aviso Legal</a></footer>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var supported = ["en", "ar", "de", "fr", "es"];
+      function resolveInitialLang() {
+        var params = new URLSearchParams(window.location.search);
+        var q = (params.get("lang") || "").toLowerCase().slice(0, 2);
+        if (supported.indexOf(q) !== -1) return q;
+        var h = (window.location.hash || "").replace("#", "").toLowerCase().slice(0, 2);
+        if (supported.indexOf(h) !== -1) return h;
+        var nav = (navigator.language || "en").toLowerCase().slice(0, 2);
+        if (supported.indexOf(nav) !== -1) return nav;
+        return "en";
+      }
+      function applyLang(lang, updateUrl) {
+        if (supported.indexOf(lang) === -1) lang = "en";
+        var panes = document.querySelectorAll(".lang-pane");
+        for (var i = 0; i < panes.length; i++) {
+          var isMatch = panes[i].id === "pane-" + lang;
+          panes[i].classList.toggle("active", isMatch);
+          if (isMatch && panes[i].dataset.title) {
+            document.title = panes[i].dataset.title;
+          }
+        }
+        var btns = document.querySelectorAll(".lang-btn");
+        for (var j = 0; j < btns.length; j++) {
+          var active = btns[j].getAttribute("data-lang") === lang;
+          btns[j].classList.toggle("active", active);
+          btns[j].setAttribute("aria-pressed", active ? "true" : "false");
+        }
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        if (updateUrl && window.history && window.history.replaceState) {
+          var url = new URL(window.location.href);
+          url.searchParams.set("lang", lang);
+          url.hash = "";
+          window.history.replaceState({}, "", url.toString());
+        }
+      }
+      var btns = document.querySelectorAll(".lang-btn");
+      for (var k = 0; k < btns.length; k++) {
+        btns[k].addEventListener("click", function () {
+          applyLang(this.getAttribute("data-lang"), true);
+        });
+      }
+      applyLang(resolveInitialLang(), false);
+    })();
+  </script>
 </body>
 </html>
