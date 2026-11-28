@@ -1,45 +1,400 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VaultDue — Terms of Use | شروط الاستخدام</title>
+  <meta name="description" content="VaultDue Terms of Use &amp; Disclaimer — Independent Local-First Vault with Optional One-Time Pro Unlock via Google Play." />
+  <title>VaultDue — Terms of Use</title>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.7; max-width: 860px; margin: 0 auto; padding: 28px 18px 56px; color: #0f172a; background: #f5f7fb; }
-    .card { background: #ffffff; border: 1px solid #dce4ef; border-radius: 18px; padding: 26px; margin-bottom: 22px; }
-    h1, h2 { color: #0b1324; }
-    a { color: #059669; }
-    [dir="rtl"] { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
+    :root {
+      --bg: #f6f8fa;
+      --surface: #ffffff;
+      --surface-alt: #edf2f7;
+      --border: #d9e2ec;
+      --text: #0b1220;
+      --muted: #4b5c73;
+      --accent: #059669;
+      --accent-soft: #d1fae5;
+      --accent-dark: #064e3b;
+      --hero-1: #0b1324;
+      --hero-2: #0f2438;
+      --hero-3: #064e3b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --surface: #131c2e;
+        --surface-alt: #1b273d;
+        --border: #25344f;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --accent: #10b981;
+        --accent-soft: #064e3b;
+        --accent-dark: #a7f3d0;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    [dir="rtl"] body, [dir="rtl"] {
+      font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", Arial, sans-serif;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .lang-bar { display: flex; flex-wrap: wrap; gap: 6px; }
+    .lang-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .lang-btn.active { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+    .container { max-width: 900px; margin: 0 auto; padding: 22px 18px 64px; }
+    .lang-pane { display: none; }
+    .lang-pane.active { display: block; }
+    .hero {
+      background: linear-gradient(135deg, var(--hero-1), var(--hero-2), var(--hero-3));
+      color: #ffffff;
+      border-radius: 22px;
+      padding: 28px 26px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.22);
+      color: #a7f3d0;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 26px; line-height: 1.28; }
+    .hero p { margin: 0; color: rgba(255, 255, 255, 0.86); font-size: 14.5px; }
+    .hero code {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-size: 13px;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px 24px;
+      margin-bottom: 22px;
+    }
+    h2 {
+      margin-top: 24px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    h2:first-of-type { margin-top: 6px; }
+    p, li { font-size: 15px; color: var(--text); }
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 13px;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+    .callout {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 14px 0;
+      font-size: 14.5px;
+    }
+    a { color: var(--accent); font-weight: 600; }
+    footer { text-align: center; font-size: 13.5px; color: var(--muted); margin-top: 28px; }
+    @media (max-width: 560px) {
+      .hero { padding: 22px 18px; }
+      .hero h1 { font-size: 22px; }
+      .card { padding: 20px 16px; }
+    }
   </style>
+  <noscript>
+    <style>.lang-pane { display: block; margin-bottom: 40px; }</style>
+  </noscript>
 </head>
 <body>
-  <div class="card">
-    <h1>VaultDue Terms of Use &amp; Disclaimer (Version 1.0)</h1>
-    <p><strong>Effective Date:</strong> November 23, 2026 &bull; <strong>Package:</strong> <code>io.github.supportapplication56.vaultdue</code></p>
-    <h2>1. Independent Personal Organization Tool</h2>
-    <p>VaultDue is an independent local personal organization tool for tracking subscriptions, free trials, warranties, and document expiry dates. VaultDue is not affiliated with any government authority, financial institution, or service provider and does not provide legal, financial, tax, or travel/immigration advice.</p>
-    <h2>2. Best-Effort Local Reminders</h2>
-    <p>Local notifications depend on Android OS scheduling, battery optimization settings, and user-granted notification permissions. You remain solely responsible for verifying billing renewals, free-trial cancellations, warranty terms, and official passport/ID validity dates directly with providers or authorities.</p>
-    <h2>3. Optional One-Time Lifetime Pro Purchase</h2>
-    <p>VaultDue offers a free tier and an optional one-time Lifetime Pro unlock processed exclusively via Google Play Billing. Pricing, taxes, refunds, and purchase restoration are governed by Google Play's billing terms.</p>
-    <h2>4. Local Backups &amp; Encryption Keys</h2>
-    <p>Because VaultDue operates with zero cloud servers and never has access to your device encryption keys or <code>.vdvault</code> backup passphrases, the publisher cannot recover lost data or forgotten passphrases. Export encrypted <code>.vdvault</code> backups periodically to a safe location.</p>
-    <h2>5. Limitation of Liability</h2>
-    <p>To the fullest extent permitted by applicable law, the publisher is not liable for indirect, incidental, or consequential damages, missed renewals, expired warranties, travel disruptions, or data loss arising from device failure, OS resets, or forgotten passphrases.</p>
-    <p><a href="../privacy/">Read Privacy Policy</a></p>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-dot"></span> VaultDue</div>
+      <nav class="lang-bar" aria-label="Select Language">
+        <button class="lang-btn active" type="button" data-lang="en">English</button>
+        <button class="lang-btn" type="button" data-lang="ar">العربية</button>
+        <button class="lang-btn" type="button" data-lang="de">Deutsch</button>
+        <button class="lang-btn" type="button" data-lang="fr">Français</button>
+        <button class="lang-btn" type="button" data-lang="es">Español</button>
+      </nav>
+    </div>
   </div>
 
-  <div class="card" dir="rtl">
-    <h1>شروط الاستخدام وإخلاء المسؤولية — تطبيق VaultDue (الإصدار 1.0)</h1>
-    <h2>1. أداة تنظيم شخصية مستقلة</h2>
-    <p>تطبيق VaultDue أداة تنظيم شخصية محلية ومستقلة لا تتبع لأي جهة حكومية أو مصرفية ولا تقدم استشارات قانونية أو مالية أو سفرية.</p>
-    <h2>2. التنبيهات المحلية ومسؤولية التحقق</h2>
-    <p>تعتمد التنبيهات المحلية على إعدادات الطاقة وتحسين البطارية وصلاحيات الإشعارات في نظام Android، ويبقى التحقق النهائي من مواعيد التجديد وإلغاء الفترات التجريبية وصلاحية الوثائق مسؤولية المستخدم.</p>
-    <h2>3. الترقية الاختيارية لنسخة Pro مدى الحياة</h2>
-    <p>تُعالج عملية الترقية الاختيارية بدفعة واحدة حصرياً عبر Google Play Billing وتخضع لسياسات الدفع والاسترداد الرسمية لمتجر Google Play.</p>
-    <h2>4. النسخ الاحتياطي وكلمات المرور</h2>
-    <p>لأن التطبيق لا يعتمد على خوادم سحابية ولا يطّلع على مفاتيح التشفير أو كلمات مرور النسخ الاحتياطي <code>.vdvault</code>، لا يمكننا استرجاع البيانات في حال فقدان الجهاز أو نسيان كلمة المرور. نوصي بتصدير نسخة مشفّرة بشكل دوري.</p>
-    <p><a href="../privacy/">قراءة سياسة الخصوصية</a></p>
-  </div>
+  <main class="container">
+    <!-- ==================== 1. ENGLISH ==================== -->
+    <section id="pane-en" class="lang-pane active" lang="en" dir="ltr" data-title="VaultDue — Terms of Use">
+      <header class="hero">
+        <span class="badge">Effective Date: November 28, 2026 &bull; Version 1.1</span>
+        <h1>VaultDue Terms of Use &amp; Disclaimer</h1>
+        <p>Package ID: <code>io.github.supportapplication56.vaultdue</code> &bull; Contact: supportapplication56@gmail.com</p>
+      </header>
+
+      <article class="card">
+        <h2>1. Independent Personal Organization Tool</h2>
+        <p>VaultDue is an independent, local-first personal organization utility for tracking subscriptions, free trials, warranties, and document expiry dates. VaultDue is not affiliated with any government authority, financial institution, or service provider and does not provide legal, financial, tax, or immigration/travel advice.</p>
+
+        <h2>2. Best-Effort Local Reminders &amp; Cancellation Guides</h2>
+        <p>Local notifications depend on Android OS scheduling, battery optimization settings, and user-granted notification permissions. Built-in cancellation steps and links are provided as convenient informational references that providers may change at any time. You remain solely responsible for verifying billing renewals, trial cancellations, warranty terms, and passport/ID validity directly with the relevant provider or authority.</p>
+
+        <h2>3. Optional One-Time Pro Purchase &amp; Supported Product Lifecycle</h2>
+        <div class="callout">
+          <strong>Clear One-Time Purchase Terms:</strong> VaultDue Pro (<code>vaultdue_pro_lifetime</code>) is a <strong>single, non-recurring in-app purchase</strong> — NOT a recurring subscription.
+        </div>
+        <p>The optional Pro upgrade unlocks Pro features for the active supported lifecycle of VaultDue on compatible Android versions and is processed exclusively under Google Play's billing, tax, refund, and purchase-reactivation policies. Because VaultDue operates <strong>100% offline with zero cloud servers</strong>, an already-installed version continues working locally on your device without depending on developer servers. However, this one-time purchase does not constitute a guarantee of indefinite future updates, compatibility with future operating systems, or perpetual maintenance in the event of product discontinuation, platform changes, or unforeseen developer unavailability.</p>
+
+        <h2>4. Local Backups &amp; Encryption Keys</h2>
+        <p>Because VaultDue operates with zero cloud servers and never has access to your device encryption keys, Vault PIN, or <code>.vdvault</code> backup passphrases, the publisher cannot recover lost device data or forgotten passphrases. Export encrypted <code>.vdvault</code> backups periodically to a safe location.</p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable mandatory consumer law (including non-waivable statutory rights under EU/EEA law), the publisher is not liable for indirect, incidental, or consequential damages, missed renewals, expired warranties, travel disruptions, or data loss arising from device failure, OS updates, or forgotten passphrases.</p>
+
+        <h2>6. Changes &amp; Contact</h2>
+        <p>We may update these Terms when needed. The latest version is published at <code>https://supportapplication56-spec.github.io/VaultDue/terms/</code>. Questions: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue &bull; <a href="../privacy/?lang=en">Read Privacy Policy</a></footer>
+    </section>
+
+    <!-- ==================== 2. ARABIC ==================== -->
+    <section id="pane-ar" class="lang-pane" lang="ar" dir="rtl" data-title="فولت ديو (VaultDue) — شروط الاستخدام">
+      <header class="hero">
+        <span class="badge">تاريخ السريان: 28 نوفمبر 2026 &bull; الإصدار 1.1</span>
+        <h1>شروط الاستخدام وإخلاء المسؤولية — تطبيق VaultDue</h1>
+        <p>معرّف التطبيق: <code>io.github.supportapplication56.vaultdue</code> &bull; التواصل: supportapplication56@gmail.com</p>
+      </header>
+
+      <article class="card">
+        <h2>1. أداة تنظيم شخصية مستقلة</h2>
+        <p>تطبيق VaultDue أداة تنظيم شخصية محلية ومستقلة لمتابعة الاشتراكات والفترات التجريبية والضمانات ومواعيد انتهاء الوثائق. لا يتبع التطبيق لأي جهة حكومية أو مصرفية أو مزود خدمة، ولا يقدم استشارات قانونية أو مالية أو ضريبية أو سفرية.</p>
+
+        <h2>2. التنبيهات المحلية وأدلة الإلغاء</h2>
+        <p>تعتمد التنبيهات المحلية على إعدادات نظام Android وتحسين البطارية وصلاحيات الإشعارات، كما أن خطوات وروابط الإلغاء المدمجة هي إرشادات مرجعية قد يغيّرها مزودو الخدمات في أي وقت. يبقى التحقق النهائي من مواعيد التجديد وإلغاء الفترات التجريبية وشروط الضمان وصلاحية جوازات السفر مسؤولية المستخدم المباشرة.</p>
+
+        <h2>3. الترقية الاختيارية لنسخة Pro (دفعة واحدة) ودورة حياة التطبيق</h2>
+        <div class="callout">
+          <strong>توضيح شفاف للدفع لمرة واحدة:</strong> ترقية VaultDue Pro (<code>vaultdue_pro_lifetime</code>) هي <strong>عملية شراء لمرة واحدة غير متكررة</strong> وليست اشتراكاً شهرياً أو سنوياً.
+        </div>
+        <p>تمنح الترقية الاختيارية الوصول إلى ميزات Pro طوال دورة الدعم النشطة للتطبيق على إصدارات Android المتوافقة، وتُعالج الفوترة والضرائب والاسترداد وإعادة التفعيل حصرياً عبر سياسات متجر Google Play. ونظراً لأن VaultDue يعمل <strong>محلياً بنسبة 100% دون خوادم سحابية</strong>، فإن نسختك المثبّتة تستمر بالعمل على جهازك دون اعتماد على خوادم المطوّر. ومع ذلك، لا يُعد هذا الشراء لمرة واحدة ضماناً لتوفير تحديثات مستقبلية إلى ما لا نهاية أو توافق دائم مع أنظمة التشغيل المستقبلية أو استمرار الصيانة في حال توقف التطوير أو ظروف قاهرة أو تغييرات في المنصة.</p>
+
+        <h2>4. النسخ الاحتياطي المحلي ومفاتيح التشفير</h2>
+        <p>لأن التطبيق لا يستخدم خوادم سحابية ولا يطّلع إطلاقاً على مفاتيح تشفير جهازك أو رمز PIN أو كلمات مرور النسخ الاحتياطي <code>.vdvault</code>، لا يمكن للناشر استعادة البيانات المفقودة أو كلمات المرور المنسية. نوصي بتصدير نسخة احتياطية مشفّرة <code>.vdvault</code> وحفظها في مكان آمن بشكل دوري.</p>
+
+        <h2>5. حدود المسؤولية</h2>
+        <p>إلى أقصى حد يسمح به القانون المعمول به (مع عدم الإخلال بالحقوق النظامية غير القابلة للتنازل للمستهلك)، لا يتحمل الناشر مسؤولية الأضرار غير المباشرة أو التبعية أو فوات مواعيد التجديد أو انتهاء الضمانات أو تعثّر السفر أو فقدان البيانات الناتج عن تلف الجهاز أو تحديثات النظام أو نسيان كلمات المرور.</p>
+
+        <h2>6. التحديثات والتواصل</h2>
+        <p>قد نحدّث هذه الشروط عند الحاجة وتُنشر النسخة الأحدث دائماً على <code>https://supportapplication56-spec.github.io/VaultDue/terms/</code>. للاستفسار: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue &bull; <a href="../privacy/?lang=ar">قراءة سياسة الخصوصية</a></footer>
+    </section>
+
+    <!-- ==================== 3. GERMAN (DEUTSCH) ==================== -->
+    <section id="pane-de" class="lang-pane" lang="de" dir="ltr" data-title="VaultDue — Nutzungsbedingungen">
+      <header class="hero">
+        <span class="badge">Stand: 28. November 2026 &bull; Version 1.1</span>
+        <h1>VaultDue Nutzungsbedingungen &amp; Haftungsausschluss</h1>
+        <p>Paket-ID: <code>io.github.supportapplication56.vaultdue</code> &bull; Kontakt: supportapplication56@gmail.com</p>
+      </header>
+
+      <article class="card">
+        <h2>1. Unabhängiges persönliches Organisationstool</h2>
+        <p>VaultDue ist ein unabhängiges, lokales Organisationstool zur Verwaltung von Abonnements, Testphasen, Garantien und Dokumentenfristen. VaultDue steht in keiner Verbindung zu Behörden, Banken oder Anbietern und bietet keine Rechts-, Finanz-, Steuer- oder Reiseberatung.</p>
+
+        <h2>2. Lokale Erinnerungen &amp; Kündigungshilfen</h2>
+        <p>Lokale Benachrichtigungen hängen von Android-Systemeinstellungen, Akku-Optimierungen und erteilten Berechtigungen ab. Integrierte Kündigungsschritte und Links dienen als unverbindliche Orientierungshilfe und können sich seitens der Anbieter ändern. Die eigenverantwortliche Prüfung von Kündigungsfristen, Garantien und Passgültigkeiten verbleibt beim Nutzer.</p>
+
+        <h2>3. Optionale Einmalzahlung (Pro) &amp; Produktlebenszyklus</h2>
+        <div class="callout">
+          <strong>Transparente Einmalzahlung:</strong> VaultDue Pro (<code>vaultdue_pro_lifetime</code>) ist ein <strong>einmaliger, nicht wiederkehrender In-App-Kauf</strong> — kein Abonnement.
+        </div>
+        <p>Die Pro-Freischaltung gewährt Zugriff auf alle Pro-Funktionen während des aktiven unterstützten Lebenszyklus von VaultDue auf kompatiblen Android-Versionen und unterliegt ausschließlich den Abrechnungs-, Steuer- und Erstattungsbedingungen von Google Play. Da VaultDue <strong>zu 100 % offline ohne Cloud-Server</strong> funktioniert, bleibt eine installierte Version lokal ohne Abhängigkeit von Entwickler-Servern nutzbar. Der Einmalkauf stellt jedoch keine Garantie für zeitlich unbegrenzte zukünftige Updates, künftige OS-Kompatibilität oder dauerhafte Wartung im Falle einer Einstellung der Entwicklung oder höherer Gewalt dar.</p>
+
+        <h2>4. Lokale Backups &amp; Verschlüsselungsschlüssel</h2>
+        <p>Da VaultDue ohne Cloud-Server arbeitet und keinen Zugriff auf Geräteschlüssel, Tresor-PINs oder <code>.vdvault</code>-Passphrasen hat, können verlorene Daten oder vergessene Passphrasen nicht wiederhergestellt werden. Bitte exportieren Sie regelmäßig verschlüsselte <code>.vdvault</code>-Backups an einen sicheren Ort.</p>
+
+        <h2>5. Haftungsbeschränkung</h2>
+        <p>Soweit gesetzlich zulässig (unbeschadet zwingender Verbraucherrechte nach EU- und nationalem Recht) haftet der Herausgeber nicht für mittelbare Schäden, Folgeschäden, verpasste Kündigungsfristen, abgelaufene Garantien, Reisebehinderungen oder Datenverlust durch Gerätedefekte oder vergessene Passphrasen.</p>
+
+        <h2>6. Änderungen &amp; Kontakt</h2>
+        <p>Die jeweils aktuelle Fassung finden Sie unter <code>https://supportapplication56-spec.github.io/VaultDue/terms/</code>. Kontakt: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue &bull; <a href="../privacy/?lang=de">Datenschutzerklärung lesen</a></footer>
+    </section>
+
+    <!-- ==================== 4. FRENCH (FRANÇAIS) ==================== -->
+    <section id="pane-fr" class="lang-pane" lang="fr" dir="ltr" data-title="VaultDue — Conditions d'utilisation">
+      <header class="hero">
+        <span class="badge">Date d'effet : 28 novembre 2026 &bull; Version 1.1</span>
+        <h1>Conditions d'utilisation et avertissement — VaultDue</h1>
+        <p>ID du package : <code>io.github.supportapplication56.vaultdue</code> &bull; Contact : supportapplication56@gmail.com</p>
+      </header>
+
+      <article class="card">
+        <h2>1. Outil personnel indépendant</h2>
+        <p>VaultDue est un utilitaire local indépendant d'organisation personnelle destiné au suivi des abonnements, essais gratuits, garanties et dates d'expiration de documents. VaultDue n'est affilié à aucune administration, banque ni prestataire et ne fournit aucun conseil juridique, financier, fiscal ou de voyage.</p>
+
+        <h2>2. Rappels locaux et guides de résiliation</h2>
+        <p>Les notifications locales dépendent de la planification Android, des paramètres d'économie d'énergie et des autorisations accordées. Les étapes et liens de résiliation intégrés sont fournis à titre informatif et peuvent évoluer chez les prestataires. Vous demeurez seul responsable de la vérification finale des renouvellements, résiliations, garanties et validités de passeports.</p>
+
+        <h2>3. Achat unique Pro optionnel et cycle de vie du produit</h2>
+        <div class="callout">
+          <strong>Achat unique transparent :</strong> VaultDue Pro (<code>vaultdue_pro_lifetime</code>) est un <strong>achat intégré unique et non récurrent</strong> — et non un abonnement.
+        </div>
+        <p>Cette option débloque les fonctionnalités Pro pendant le cycle de vie actif et pris en charge de VaultDue sur les versions Android compatibles, conformément aux conditions de facturation, de fiscalité et de remboursement de Google Play. VaultDue fonctionnant <strong>100 % hors ligne sans serveur cloud</strong>, votre installation locale reste opérationnelle sans dépendre de serveurs du développeur. Toutefois, cet achat unique ne garantit pas des mises à jour perpétuelles, une compatibilité indéfinie avec de futurs systèmes d'exploitation ni le maintien continu en cas d'arrêt du développement ou d'imprévu.</p>
+
+        <h2>4. Sauvegardes locales et clés de chiffrement</h2>
+        <p>VaultDue n'utilisant aucun serveur cloud et n'ayant aucun accès à vos clés, code PIN ou phrases secrètes <code>.vdvault</code>, l'éditeur ne peut récupérer aucune donnée perdue ni mot de passe oublié. Exportez régulièrement des sauvegardes chiffrées <code>.vdvault</code> en lieu sûr.</p>
+
+        <h2>5. Limitation de responsabilité</h2>
+        <p>Dans toute la mesure permise par la loi applicable (sans préjudice des droits impératifs des consommateurs dans l'UE), l'éditeur décline toute responsabilité en cas de dommages indirects, renouvellements manqués, garanties expirées, perturbations de voyage ou perte de données résultant d'une panne matérielle ou d'un mot de passe oublié.</p>
+
+        <h2>6. Modifications et contact</h2>
+        <p>La dernière version est disponible sur <code>https://supportapplication56-spec.github.io/VaultDue/terms/</code>. Contact : <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue &bull; <a href="../privacy/?lang=fr">Lire la politique de confidentialité</a></footer>
+    </section>
+
+    <!-- ==================== 5. SPANISH (ESPAÑOL) ==================== -->
+    <section id="pane-es" class="lang-pane" lang="es" dir="ltr" data-title="VaultDue — Términos de Uso">
+      <header class="hero">
+        <span class="badge">Fecha de vigencia: 28 de noviembre de 2026 &bull; Versión 1.1</span>
+        <h1>Términos de Uso y Aviso Legal — VaultDue</h1>
+        <p>ID del paquete: <code>io.github.supportapplication56.vaultdue</code> &bull; Contacto: supportapplication56@gmail.com</p>
+      </header>
+
+      <article class="card">
+        <h2>1. Herramienta personal independiente</h2>
+        <p>VaultDue es una herramienta local e independiente de organización personal para controlar suscripciones, pruebas gratuitas, garantías y fechas de vencimiento de documentos. No está afiliada a ningún organismo gubernamental, banco ni proveedor y no ofrece asesoramiento legal, financiero, fiscal ni de viajes.</p>
+
+        <h2>2. Recordatorios locales y guías de cancelación</h2>
+        <p>Las notificaciones locales dependen de la programación de Android, la optimización de batería y los permisos concedidos. Los pasos y enlaces de cancelación integrados son referencias informativas que cada proveedor puede modificar. Sigues siendo responsable de verificar directamente renovaciones, cancelaciones, garantías y la vigencia oficial de pasaportes y documentos.</p>
+
+        <h2>3. Compra única Pro opcional y ciclo de vida del producto</h2>
+        <div class="callout">
+          <strong>Pago único transparente:</strong> VaultDue Pro (<code>vaultdue_pro_lifetime</code>) es una <strong>compra integrada única y no recurrente</strong> — NO es una suscripción.
+        </div>
+        <p>La mejora opcional desbloquea las funciones Pro durante el ciclo de vida activo y compatible de VaultDue en versiones soportadas de Android, sujeta exclusivamente a las condiciones de facturación, impuestos y reembolsos de Google Play. Debido a que VaultDue funciona <strong>100 % sin conexión y sin servidores en la nube</strong>, una copia instalada continúa funcionando localmente sin depender de servidores del desarrollador. No obstante, esta compra única no constituye una garantía de actualizaciones indefinidas, compatibilidad con futuros sistemas operativos ni mantenimiento perpetuo en caso de cese del desarrollo o circunstancias imprevistas.</p>
+
+        <h2>4. Copias de seguridad locales y claves de cifrado</h2>
+        <p>Dado que VaultDue no utiliza servidores en la nube y jamás tiene acceso a tus claves, PIN o contraseñas de respaldo <code>.vdvault</code>, el editor no puede recuperar datos perdidos ni contraseñas olvidadas. Exporta copias cifradas <code>.vdvault</code> periódicamente a un lugar seguro.</p>
+
+        <h2>5. Limitación de responsabilidad</h2>
+        <p>En la máxima medida permitida por la legislación aplicable (sin afectar los derechos irrenunciables del consumidor), el editor no es responsable de daños indirectos o consecuentes, renovaciones no canceladas, garantías vencidas, incidencias de viaje ni pérdida de datos por fallos del dispositivo o contraseñas olvidadas.</p>
+
+        <h2>6. Cambios y contacto</h2>
+        <p>La versión vigente está siempre publicada en <code>https://supportapplication56-spec.github.io/VaultDue/terms/</code>. Contacto: <a href="mailto:supportapplication56@gmail.com">supportapplication56@gmail.com</a>.</p>
+      </article>
+      <footer>&copy; 2026 VaultDue &bull; <a href="../privacy/?lang=es">Leer Política de Privacidad</a></footer>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var supported = ["en", "ar", "de", "fr", "es"];
+      function resolveInitialLang() {
+        var params = new URLSearchParams(window.location.search);
+        var q = (params.get("lang") || "").toLowerCase().slice(0, 2);
+        if (supported.indexOf(q) !== -1) return q;
+        var h = (window.location.hash || "").replace("#", "").toLowerCase().slice(0, 2);
+        if (supported.indexOf(h) !== -1) return h;
+        var nav = (navigator.language || "en").toLowerCase().slice(0, 2);
+        if (supported.indexOf(nav) !== -1) return nav;
+        return "en";
+      }
+      function applyLang(lang, updateUrl) {
+        if (supported.indexOf(lang) === -1) lang = "en";
+        var panes = document.querySelectorAll(".lang-pane");
+        for (var i = 0; i < panes.length; i++) {
+          var isMatch = panes[i].id === "pane-" + lang;
+          panes[i].classList.toggle("active", isMatch);
+          if (isMatch && panes[i].dataset.title) {
+            document.title = panes[i].dataset.title;
+          }
+        }
+        var btns = document.querySelectorAll(".lang-btn");
+        for (var j = 0; j < btns.length; j++) {
+          var active = btns[j].getAttribute("data-lang") === lang;
+          btns[j].classList.toggle("active", active);
+          btns[j].setAttribute("aria-pressed", active ? "true" : "false");
+        }
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        if (updateUrl && window.history && window.history.replaceState) {
+          var url = new URL(window.location.href);
+          url.searchParams.set("lang", lang);
+          url.hash = "";
+          window.history.replaceState({}, "", url.toString());
+        }
+      }
+      var btns = document.querySelectorAll(".lang-btn");
+      for (var k = 0; k < btns.length; k++) {
+        btns[k].addEventListener("click", function () {
+          applyLang(this.getAttribute("data-lang"), true);
+        });
+      }
+      applyLang(resolveInitialLang(), false);
+    })();
+  </script>
 </body>
 </html>
